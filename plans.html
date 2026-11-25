@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>COURTLY - Membership Plans | Starter, Pro Athlete & Elite Player</title>
+  <meta name="description"
+    content="Explore COURTLY badminton and table tennis membership plans in INR: Starter (₹499/mo), Pro Athlete (₹999/mo), and Elite Player (₹1,799/mo).">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- FontAwesome 6 Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Shared Global Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Page-Specific Stylesheet for Plans Page -->
+  <link rel="stylesheet" href="css/plans.css">
+</head>
+
+<body data-page="plans">
+
+  <!-- =========================================================================
+       REUSABLE NAVBAR CONTAINER (Hydrated by js/navbar.js)
+       ========================================================================= -->
+  <header id="app-navbar" class="courtly-navbar-wrapper"></header>
+
+
+  <!-- =========================================================================
+       SECTION 1: PLANS HERO SECTION
+       ========================================================================= -->
+  <section class="pln-hero-section" id="plans-hero">
+    <div class="pln-hero-bg-wrap" aria-hidden="true">
+      <img src="https://i.pinimg.com/736x/74/ff/34/74ff3489656236954535ecdf24013654.jpg"
+        alt="Indoor badminton arena" class="pln-hero-bg-img" loading="eager">
+      <div class="pln-hero-bg-overlay"></div>
+    </div>
+
+    <div class="pln-court-lines" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="row align-items-center g-5">
+
+        <!-- Left Column -->
+        <div class="col-lg-7">
+          <div class="reveal-init">
+            <span class="badge-sports-sub text-uppercase mb-3">
+              <i class="fa-solid fa-crown text-lime"></i>
+              MEMBERSHIP PASSES
+            </span>
+          </div>
+
+          <h1 class="pln-hero-heading reveal-init reveal-delay-1">
+            THE RIGHT PLAN. <span class="text-gradient-lime-teal">THE BETTER GAME.</span>
+          </h1>
+
+          <p class="pln-hero-subheading reveal-init reveal-delay-2">
+            More court time. More opportunities. More reasons to play.
+          </p>
+
+          <p class="pln-hero-desc reveal-init reveal-delay-2">
+            Choose a membership that matches your playing style and enjoy a better way to experience badminton and table
+            tennis.
+          </p>
+
+          <!-- Three Small Highlights -->
+          <div class="d-flex flex-wrap gap-3 mb-4 reveal-init reveal-delay-3">
+            <span class="pln-hero-highlight"><i class="fa-solid fa-clock text-teal"></i> Flexible Court Hours</span>
+            <span class="pln-hero-highlight"><i class="fa-solid fa-bolt text-lime"></i> Priority Booking Options</span>
+            <span class="pln-hero-highlight"><i class="fa-solid fa-award text-teal"></i> Exclusive Player
+              Benefits</span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="d-flex flex-wrap align-items-center gap-3 reveal-init reveal-delay-4">
+            <a href="#plans-pricing" class="btn-courtly-lime">
+              <span>Explore Memberships</span>
+              <i class="fa-solid fa-arrow-down ms-2"></i>
+            </a>
+            <a href="#plans-compare" class="btn-courtly-outline pln-hero-outline-btn">
+              <i class="fa-solid fa-table-columns me-2 text-teal"></i>
+              <span>Compare Plans</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Membership Feature Image -->
+        <div class="col-lg-5 position-relative reveal-init reveal-delay-2">
+          <figure class="pln-hero-image-frame">
+            <img src="https://i.pinimg.com/736x/74/ff/34/74ff3489656236954535ecdf24013654.jpg"
+                 alt="Athletes competing on a sports field"
+                 class="pln-hero-feature-image"
+                 loading="eager">
+            <div class="pln-hero-image-wash" aria-hidden="true"></div>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 2: WHY BECOME A MEMBER? (Asymmetric Bento Grid)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="plans-why">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Member Benefits</span>
+        <h2 class="section-title-main">MORE THAN MEMBERSHIP. IT'S YOUR GAME ADVANTAGE.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Enjoy a more rewarding playing experience with benefits designed around your time, goals, and love for the
+          game.
+        </p>
+      </div>
+
+      <div class="pln-why-bento">
+        <!-- 1. More Court Time (Wide Image Card) -->
+        <div class="pln-why-card pln-why-span-7 pln-why-img-card reveal-init">
+          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1000&q=80"
+            alt="Badminton court playing hours" class="pln-why-bg" loading="lazy">
+          <div class="pln-why-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box teal mb-3"><i class="fa-solid fa-hourglass-half"></i></div>
+            <h3 class="fs-4 fw-bold text-white mb-2">1. More Court Time</h3>
+            <p class="text-light small mb-0">Get dedicated monthly court booking hours based on your selected membership
+              — 4, 10, or 20 hours every month.</p>
+          </div>
+        </div>
+
+        <!-- 2. Better Booking Access -->
+        <div class="pln-why-card pln-why-span-5 pln-why-gradient reveal-init reveal-delay-1">
+          <div class="bento-icon-box lime mb-3"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="fs-4 fw-bold mb-2">2. Better Booking Access</h3>
+          <p class="text-muted mb-0">Enjoy booking access that matches your membership level — from Standard to Priority
+            and VIP Premium access.</p>
+        </div>
+
+        <!-- 3. Tournament Opportunities -->
+        <div class="pln-why-card pln-why-span-5 reveal-init reveal-delay-2">
+          <div class="bento-icon-box mb-3"><i class="fa-solid fa-trophy"></i></div>
+          <h3 class="fs-4 fw-bold mb-2">3. Tournament Opportunities</h3>
+          <p class="text-muted mb-0">Discover competitive opportunities and tournament-related membership benefits
+            across club events.</p>
+        </div>
+
+        <!-- 4. Player Community (Wide Image Card) -->
+        <div class="pln-why-card pln-why-span-7 pln-why-img-card reveal-init reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=1000&q=80"
+            alt="Table tennis community match" class="pln-why-bg" loading="lazy">
+          <div class="pln-why-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box lime mb-3"><i class="fa-solid fa-people-group"></i></div>
+            <h3 class="fs-4 fw-bold text-white mb-2">4. Player Community</h3>
+            <p class="text-light small mb-0">Stay connected with club activities, updates, and fellow badminton and
+              table tennis players.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 3: MEMBERSHIP PLANS AND PRICING (Driven by js/site-data.js)
+       ========================================================================= -->
+  <section class="section-padding membership-bg-section" id="plans-pricing">
+    <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1920&q=80" alt=""
+      aria-hidden="true" class="membership-bg-photo" loading="lazy">
+    <div class="courtly-container position-relative z-2">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Transparent INR Pricing</span>
+        <h2 class="section-title-main">FIND THE PLAN THAT PLAYS YOUR WAY.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Whether you're just getting started or playing regularly, there's a membership designed to support your game.
+        </p>
+      </div>
+
+      <!-- Cards container hydrated by js/plans.js from COURTLY_DATA.membershipPlans -->
+      <div class="row g-4 align-items-stretch" id="plansPricingGrid"></div>
+
+      <p class="text-center small text-dimmed mt-4 mb-0">
+        <i class="fa-solid fa-circle-info text-teal me-1"></i>
+        Membership benefits are subject to the club's booking policies and availability.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 4: COMPARE MEMBERSHIP PLANS
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="plans-compare">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Feature Breakdown</span>
+        <h2 class="section-title-main">EVERY BENEFIT. CLEARLY COMPARED.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Compare the membership features and find the right fit for your playing routine.
+        </p>
+      </div>
+
+      <div class="pln-compare-wrapper reveal-init">
+        <div class="table-responsive">
+          <table class="table pln-compare-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Features</th>
+                <th scope="col">Starter</th>
+                <th scope="col" class="pln-col-featured">
+                  <span class="badge-lime-pill d-inline-block mb-1" style="font-size: 0.65rem;">MOST POPULAR</span><br>
+                  Pro Athlete
+                </th>
+                <th scope="col">Elite Player</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">Monthly Price</td>
+                <td><strong>₹499</strong></td>
+                <td class="pln-col-featured"><strong class="text-lime">₹999</strong></td>
+                <td><strong>₹1,799</strong></td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Court Booking Hours</td>
+                <td>4 hours</td>
+                <td class="pln-col-featured"><strong>10 hours</strong></td>
+                <td>20 hours</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Booking Access</td>
+                <td>Standard</td>
+                <td class="pln-col-featured"><strong>Priority</strong></td>
+                <td>Premium</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Player Dashboard</td>
+                <td>Basic</td>
+                <td class="pln-col-featured">Basic</td>
+                <td>Basic</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Community Event Updates</td>
+                <td><i class="fa-solid fa-circle-check text-teal me-1"></i> Yes</td>
+                <td class="pln-col-featured"><i class="fa-solid fa-circle-check text-lime me-1"></i> Yes</td>
+                <td><i class="fa-solid fa-circle-check text-teal me-1"></i> Yes</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Tournament Registration Benefits</td>
+                <td class="text-dimmed">—</td>
+                <td class="pln-col-featured"><i class="fa-solid fa-circle-check text-lime me-1"></i> Yes</td>
+                <td>Special benefits</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Exclusive Member Offers</td>
+                <td class="text-dimmed">—</td>
+                <td class="pln-col-featured"><i class="fa-solid fa-circle-check text-lime me-1"></i> Yes</td>
+                <td>Exclusive privileges</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 5: WHICH PLAN IS RIGHT FOR YOU? (Interactive Recommender)
+       ========================================================================= -->
+  <section class="section-padding" id="plans-recommender">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Interactive Guide</span>
+        <h2 class="section-title-main">YOUR PLAYING STYLE. YOUR MEMBERSHIP.</h2>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: 3 Selectable Player Profiles -->
+        <div class="col-lg-6 d-flex flex-column gap-3 reveal-init">
+          <button type="button" class="pln-profile-option" data-recommend="starter">
+            <div class="pln-profile-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div>
+              <h4 class="fs-5 fw-bold mb-1">Casual Player</h4>
+              <p class="small text-muted mb-0">Enjoys occasional games and wants a simple way to stay active.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right ms-auto text-muted"></i>
+          </button>
+
+          <button type="button" class="pln-profile-option active" data-recommend="pro-athlete">
+            <div class="pln-profile-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <div>
+              <h4 class="fs-5 fw-bold mb-1">Regular Player</h4>
+              <p class="small text-muted mb-0">Plays consistently and wants greater booking flexibility.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right ms-auto text-lime"></i>
+          </button>
+
+          <button type="button" class="pln-profile-option" data-recommend="elite-player">
+            <div class="pln-profile-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+              <h4 class="fs-5 fw-bold mb-1">Dedicated Player</h4>
+              <p class="small text-muted mb-0">Enjoys frequent sessions and wants premium booking access.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right ms-auto text-muted"></i>
+          </button>
+        </div>
+
+        <!-- Right: Dynamic Recommendation Panel -->
+        <div class="col-lg-6 reveal-init reveal-delay-1">
+          <div class="pln-recommend-panel" id="plnRecommendPanel">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge-lime-pill">RECOMMENDED PLAN</span>
+              <span class="small text-teal fw-bold" id="recProfileLabel">For Regular Players</span>
+            </div>
+
+            <h3 class="fs-2 fw-bold text-gradient-lime-teal mb-1" id="recPlanName">Pro Athlete</h3>
+            <div class="d-flex align-items-baseline gap-2 mb-3">
+              <span class="fs-1 fw-bold text-white" id="recPlanPrice">₹999</span>
+              <span class="small text-muted">/ month</span>
+            </div>
+
+            <ul class="plan-features-list mb-4" id="recPlanBenefits"></ul>
+
+            <a href="#plan-card-pro-athlete" class="btn-courtly-lime w-100" id="recViewPlanBtn">
+              <span>View Plan</span>
+              <i class="fa-solid fa-arrow-up ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 6: HOW MEMBERSHIP WORKS (4-Step Timeline)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt pln-steps-section" id="plans-steps">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Simple Onboarding</span>
+        <h2 class="section-title-main">GET STARTED IN JUST A FEW STEPS.</h2>
+      </div>
+
+      <div class="pln-steps-wrapper reveal-init">
+        <div class="pln-steps-line d-none d-lg-block" aria-hidden="true"></div>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="pln-step-card">
+              <div class="pln-step-num">01</div>
+              <div class="pln-step-icon"><i class="fa-solid fa-list-check"></i></div>
+              <h4 class="fs-5 fw-bold mb-2">Step 1 – Choose Your Plan</h4>
+              <p class="text-muted small mb-0">Explore the available membership options and select the one that fits
+                your routine.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="pln-step-card">
+              <div class="pln-step-num">02</div>
+              <div class="pln-step-icon"><i class="fa-solid fa-user-plus"></i></div>
+              <h4 class="fs-5 fw-bold mb-2">Step 2 – Create Your Account</h4>
+              <p class="text-muted small mb-0">Sign in or register to access your player account.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="pln-step-card">
+              <div class="pln-step-num">03</div>
+              <div class="pln-step-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+              <h4 class="fs-5 fw-bold mb-2">Step 3 – Activate Membership</h4>
+              <p class="text-muted small mb-0">Complete the membership process through the available website workflow.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="pln-step-card">
+              <div class="pln-step-num">04</div>
+              <div class="pln-step-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+              <h4 class="fs-5 fw-bold mb-2">Step 4 – Start Playing</h4>
+              <p class="text-muted small mb-0">Explore court availability and enjoy the benefits of your selected
+                membership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 7: MEMBERSHIP EXPERIENCE SHOWCASE
+       ========================================================================= -->
+  <section class="section-padding" id="plans-showcase">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Club Lifestyle</span>
+        <h2 class="section-title-main">MAKE EVERY SESSION COUNT.</h2>
+      </div>
+
+      <div class="pln-showcase-grid">
+        <div class="pln-showcase-tile tile-tall reveal-init">
+          <img src="https://i.pinimg.com/736x/83/2d/6c/832d6c8ca8a0f1817f123b841449ef3c.jpg"
+            alt="Badminton players practising" loading="lazy">
+          <div class="pln-tile-overlay">
+            <span class="badge-lime-pill mb-2">BADMINTON</span>
+            <h4 class="text-white fw-bold mb-0">Play Your Way.</h4>
+          </div>
+        </div>
+
+        <div class="pln-showcase-tile reveal-init reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=900&q=80"
+            alt="Table tennis match" loading="lazy">
+          <div class="pln-tile-overlay">
+            <span class="badge-sports-sub mb-2">TABLE TENNIS</span>
+            <h4 class="text-white fw-bold mb-0">Stay in the Game.</h4>
+          </div>
+        </div>
+
+        <div class="pln-showcase-tile reveal-init reveal-delay-2">
+          <img src="https://i.pinimg.com/236x/7b/71/c8/7b71c80856c98f9a77ccccac8b8b4e89.jpg"
+            alt="Friends playing together" loading="lazy">
+          <div class="pln-tile-overlay">
+            <span class="badge-sports-sub mb-2">SKILL CLINICS</span>
+            <h4 class="text-white fw-bold mb-0">Grow Your Skills.</h4>
+          </div>
+        </div>
+
+        <div class="pln-showcase-tile tile-wide reveal-init reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80"
+            alt="Sports court environment and community" loading="lazy">
+          <div class="pln-tile-overlay">
+            <span class="badge-lime-pill mb-2">CLUB SPIRIT</span>
+            <h4 class="text-white fw-bold mb-0">Be Part of the Community.</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 8: MEMBERSHIP FAQ
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="plans-faq">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Common Questions</span>
+        <h2 class="section-title-main">A FEW THINGS YOU MAY WANT TO KNOW.</h2>
+      </div>
+
+      <div class="pln-faq-list mx-auto reveal-init" id="plnFaqAccordion">
+        <div class="pln-faq-item open">
+          <button type="button" class="pln-faq-trigger" aria-expanded="true">
+            <span>1. What is included in a membership?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Each membership includes a specific number of court booking hours and access benefits based
+              on the selected plan.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>2. Can I choose between badminton and table tennis?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Members can explore the available badminton and table tennis courts, subject to court
+              availability and applicable booking policies.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>3. What is the difference between Starter and Pro Athlete?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Starter includes 4 court booking hours and standard booking access, while Pro Athlete
+              includes 10 hours and priority booking access along with its listed benefits.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>4. What additional benefits does Elite Player offer?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Elite Player includes 20 court booking hours, premium booking access, special tournament
+              benefits, and exclusive member privileges.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>5. Can I book a court without membership?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Court booking availability and applicable rates follow the existing website booking policy,
+              with hourly bookings available directly on the Court page.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>6. How can I manage my membership?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Members can access their player dashboard to view relevant membership information, subject
+              to the functionality implemented in the project.</p>
+          </div>
+        </div>
+
+        <div class="pln-faq-item">
+          <button type="button" class="pln-faq-trigger" aria-expanded="false">
+            <span>7. Can I change my membership plan?</span>
+            <i class="fa-solid fa-chevron-down pln-faq-icon"></i>
+          </button>
+          <div class="pln-faq-panel">
+            <p class="mb-0">Membership changes follow the club's membership policy and can be reviewed with the club
+              team based on your account status.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 9: FINAL MEMBERSHIP CTA
+       ========================================================================= -->
+  <section class="pln-final-cta-section" id="plans-final-cta">
+    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1920&q=80"
+      alt="Indoor badminton arena lighting" class="pln-final-bg" loading="lazy">
+    <div class="pln-final-overlay" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="pln-final-card reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-3">Join COURTLY</span>
+        <h2 class="pln-hero-heading text-gradient-lime-teal mb-3">READY TO TAKE YOUR GAME FURTHER?</h2>
+        <p class="pln-hero-desc text-white-50 mx-auto mb-4">
+          Find the membership that fits your game and make every court session count.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#plans-pricing" class="btn-courtly-lime">
+            <span>Choose Your Membership</span>
+            <i class="fa-solid fa-crown ms-2"></i>
+          </a>
+          <a href="court.html" class="btn-courtly-outline text-white">
+            <i class="fa-solid fa-table-tennis-paddle-ball me-2 text-teal"></i>
+            <span>Explore Courts</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       REUSABLE FOOTER CONTAINER (Hydrated by js/footer.js)
+       ========================================================================= -->
+  <footer id="app-footer" class="courtly-footer-wrapper"></footer>
+
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS (Shared Booking & Auth Modals)
+       ========================================================================= -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold" id="bookingModalLabel">
+            <i class="fa-solid fa-crown text-lime me-2"></i>Courtly Membership Selection
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <div class="p-3 rounded-3 mb-3"
+            style="background: rgba(40,125,222,0.12); border: 1px solid rgba(40,125,222,0.3);">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="small text-muted" id="modalCourtSport">Membership</span>
+              <span class="fw-bold text-lime" id="modalCourtPrice">₹999/month</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-white mb-0" id="modalCourtName">Pro Athlete Membership</h4>
+          </div>
+
+          <form id="bookingModalForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Preferred First Session Slot</label>
+              <select class="form-select courtly-form-control" id="modalSlotSelect">
+                <option value="06:00 AM">06:00 AM - 07:00 AM</option>
+                <option value="08:00 AM">08:00 AM - 09:00 AM</option>
+                <option value="06:00 PM" selected>06:00 PM - 07:00 PM</option>
+                <option value="08:00 PM">08:00 PM - 09:00 PM</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Player Name</label>
+              <input type="text" class="form-control courtly-form-control" id="bookingPlayerName" value="Alex Morgan"
+                required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Email for Digital Pass</label>
+              <input type="email" class="form-control courtly-form-control" id="bookingPlayerEmail"
+                value="alex.morgan@sports.com" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0 p-3 pt-0">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn-courtly-lime" id="confirmBookingBtn">
+            <span>Submit Request</span>
+            <i class="fa-solid fa-check ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Login / Signup) -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill active"
+              id="tabAuthLogin">Login</button>
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" id="tabAuthSignup">Signup</button>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <form id="formAuthLogin">
+            <h4 class="fs-5 fw-bold mb-3">Welcome to Player Hub</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" value="player@courtly.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Password</label>
+              <input type="password" class="form-control courtly-form-control" value="••••••••••••" required>
+            </div>
+            <button type="submit" class="btn-courtly-primary w-100">Sign In to Dashboard</button>
+          </form>
+
+          <form id="formAuthSignup" class="d-none">
+            <h4 class="fs-5 fw-bold mb-3">Join the Courtly Community</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Full Athlete Name</label>
+              <input type="text" class="form-control courtly-form-control" placeholder="e.g. Jordan Lee" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" placeholder="jordan@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Choose Password</label>
+              <input type="password" class="form-control courtly-form-control" placeholder="Min. 8 characters" required>
+            </div>
+            <button type="submit" class="btn-courtly-lime w-100">Create Free Athlete Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="courtly-toast-container position-fixed bottom-0 end-0 p-3" id="courtly-toast-container"></div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Centralized Site Data -->
+  <script src="js/site-data.js"></script>
+
+  <!-- Reusable Components Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+
+  <!-- Core Animation & Modal Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Plans Page Specific Interactive Script -->
+  <script src="js/plans.js"></script>
+</body>
+
+</html>

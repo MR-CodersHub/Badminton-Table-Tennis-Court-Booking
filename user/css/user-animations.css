@@ -1,0 +1,59 @@
+/* ==========================================================================
+   COURTLY PLAYER DASHBOARD - ANIMATIONS & MOTION SYSTEM
+   Respects prefers-reduced-motion.
+   ========================================================================== */
+
+@keyframes userFadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes userBarGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes userProgressSlide {
+  from {
+    width: 0;
+  }
+}
+
+.user-animate-in {
+  animation: userFadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.user-delay-1 { animation-delay: 0.05s; }
+.user-delay-2 { animation-delay: 0.1s; }
+.user-delay-3 { animation-delay: 0.15s; }
+.user-delay-4 { animation-delay: 0.2s; }
+
+.user-bar-animate {
+  transform-origin: bottom;
+  animation: userBarGrow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.user-progress-animate {
+  animation: userProgressSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

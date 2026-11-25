@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Player - Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/user-animations.css">
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" href="css/user-responsive.css">
+  <style>
+    .settings-section { background: var(--user-card-bg); border: 1px solid var(--user-card-border); border-radius: 1.1rem; padding: 1.5rem; }
+    .settings-section-title { font-family: 'Sora', sans-serif; font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--user-muted); margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--user-card-border); }
+    .settings-row { display: flex; justify-content: space-between; align-items: center; padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.04); gap: 1rem; }
+    .settings-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .settings-label { font-size: .88rem; font-weight: 500; }
+    .settings-desc { font-size: .75rem; color: var(--user-muted); margin-top: .15rem; }
+    .danger-zone { border-color: rgba(220, 53, 69, .3); }
+    .danger-zone .settings-section-title { color: #dc3545; }
+  </style>
+</head>
+<body data-user-page="settings" data-page-title="Settings">
+  <div class="user-shell">
+    <div id="userSidebarMount"></div>
+    <div class="user-main-wrap">
+      <div id="userTopbarMount"></div>
+
+      <main class="user-content">
+        <!-- Page Header -->
+        <div class="mb-4 user-animate-in d-flex flex-wrap justify-content-between align-items-start gap-3">
+          <div>
+            <h1 class="h3 fw-bold mb-1">SETTINGS</h1>
+            <p class="small text-muted mb-0">Manage your account preferences, appearance, and notifications.</p>
+          </div>
+          <button type="button" class="btn-user-primary" id="saveAllBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-1"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save All Settings
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <!-- Left Column -->
+          <div class="col-lg-6">
+            <!-- Account Preferences -->
+            <div class="settings-section mb-4 user-animate-in">
+              <div class="settings-section-title">Account Preferences</div>
+              <div class="mb-3">
+                <label class="form-label small" for="settingName">Display Name</label>
+                <input type="text" class="form-control user-control" id="settingName" placeholder="Your name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small" for="settingEmail">Email Address</label>
+                <input type="email" class="form-control user-control" id="settingEmail" placeholder="your@email.com">
+              </div>
+              <p class="small text-muted mb-0">Changes are saved to demo state only — not sent to any server.</p>
+            </div>
+
+            <!-- Change Password (Demo) -->
+            <div class="settings-section user-animate-in">
+              <div class="settings-section-title">Change Password <span class="user-demo-pill ms-2">DEMO</span></div>
+              <div class="mb-3">
+                <label class="form-label small" for="setPwCurrent">Current Password</label>
+                <input type="password" class="form-control user-control" id="setPwCurrent" placeholder="••••••••">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small" for="setPwNew">New Password</label>
+                <input type="password" class="form-control user-control" id="setPwNew" placeholder="Min. 8 characters">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small" for="setPwConfirm">Confirm New Password</label>
+                <input type="password" class="form-control user-control" id="setPwConfirm" placeholder="Repeat new password">
+              </div>
+              <div id="setPwFeedback" class="small mb-2" style="min-height:1.2em"></div>
+              <button type="button" class="btn-user-outline btn-sm" id="setPwBtn">Update Password (Demo)</button>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-lg-6">
+            <!-- Appearance -->
+            <div class="settings-section mb-4 user-animate-in">
+              <div class="settings-section-title">Appearance</div>
+              <div class="mb-3">
+                <label class="form-label small" for="settingTheme">Color Theme</label>
+                <select class="form-select user-control" id="settingTheme">
+                  <option value="dark">Dark (Default)</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+              <div class="mb-0">
+                <label class="form-label small" for="settingDir">Text Direction</label>
+                <select class="form-select user-control" id="settingDir">
+                  <option value="ltr">LTR — Left to Right</option>
+                  <option value="rtl">RTL — Right to Left</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Email Notifications -->
+            <div class="settings-section mb-4 user-animate-in">
+              <div class="settings-section-title">Email Notifications <span class="user-demo-pill ms-2">DEMO</span></div>
+              <div class="settings-row">
+                <div>
+                  <div class="settings-label">Booking Reminders</div>
+                  <div class="settings-desc">Reminders 24hrs before your court session.</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="notifBooking">
+                </div>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <div class="settings-label">Tournament Announcements</div>
+                  <div class="settings-desc">New tournaments and registration opens.</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="notifTournament">
+                </div>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <div class="settings-label">Membership Updates</div>
+                  <div class="settings-desc">Renewal reminders and plan changes.</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="notifMembership">
+                </div>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <div class="settings-label">General Announcements</div>
+                  <div class="settings-desc">News, promotions, and facility updates.</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="notifGeneral">
+                </div>
+              </div>
+            </div>
+
+            <!-- Privacy -->
+            <div class="settings-section mb-4 user-animate-in">
+              <div class="settings-section-title">Privacy</div>
+              <div class="settings-row">
+                <div>
+                  <div class="settings-label">Public Player Profile</div>
+                  <div class="settings-desc">Allow other players to see your profile.</div>
+                </div>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="privPublic">
+                </div>
+              </div>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="settings-section danger-zone user-animate-in">
+              <div class="settings-section-title">Demo Data</div>
+              <p class="small text-muted mb-3">Reset all demo data back to the original sample state. This clears bookings, notifications, and activity you created during this demo session.</p>
+              <button type="button" class="btn btn-sm btn-outline-danger" id="resetDemoBtn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-1"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
+                Reset Demo Data
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/user-sidebar.js"></script>
+  <script src="js/user-settings.js"></script>
+</body>
+</html>

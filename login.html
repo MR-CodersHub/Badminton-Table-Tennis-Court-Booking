@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="description" content="Sign in to COURTLY to find a court, book your slot, and get back to the game.">
+  <meta name="theme-color" content="#0B1422">
+  <title>Login | COURTLY</title>
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('courtly_theme') || 'dark');
+    document.documentElement.setAttribute('data-bs-theme', localStorage.getItem('courtly_theme') || 'dark');
+    document.documentElement.setAttribute('dir', localStorage.getItem('courtly_direction') || 'ltr');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/auth.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <aside class="auth-visual auth-visual-login" aria-label="COURTLY indoor badminton court">
+      <img class="auth-visual-image" src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Badminton player on an indoor court" fetchpriority="high">
+      <div class="auth-visual-shade"></div>
+      <div class="court-lines" aria-hidden="true">
+        <svg viewBox="0 0 640 760" fill="none">
+          <rect x="36" y="46" width="568" height="668" rx="8"></rect>
+          <path d="M36 210h568M36 550h568M320 46v668M36 380h568"></path>
+        </svg>
+      </div>
+      <div class="auth-visual-inner">
+        <a class="auth-brand" href="index.html" aria-label="COURTLY home">
+          <span class="auth-brand-mark" aria-hidden="true"><img class="auth-brand-image" src="assets/logo.png" alt=""></span>
+          <span>COURTLY</span>
+        </a>
+        <div class="auth-visual-copy">
+          <span class="auth-eyebrow"><span></span> YOUR COURT IS CALLING</span>
+          <h1>WELCOME BACK<br>TO THE GAME.</h1>
+          <p>Your next match is just a few clicks away. Sign in and get back to the court.</p>
+        </div>
+        <div class="auth-glass-note">
+          <span class="auth-note-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div><strong>READY WHEN YOU ARE</strong><p>Find your court. Book your slot. Play your best.</p></div>
+        </div>
+        <span class="auth-visual-caption">BADMINTON <i></i> TABLE TENNIS <i></i> YOUR NEXT GAME</span>
+      </div>
+    </aside>
+
+    <section class="auth-panel" aria-labelledby="form-title">
+      <div class="auth-panel-inner">
+        <a class="auth-back-link" href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Back to Home</span></a>
+        <div class="auth-form-wrap">
+          <div class="auth-mobile-brand">
+            <a class="auth-brand" href="index.html" aria-label="COURTLY home"><span class="auth-brand-mark" aria-hidden="true"><img class="auth-brand-image" src="assets/logo.png" alt=""></span><span>COURTLY</span></a>
+          </div>
+          <span class="auth-form-kicker">YOUR NEXT MATCH STARTS HERE</span>
+          <h2 id="form-title">WELCOME BACK</h2>
+          <p class="auth-form-intro">Sign in to continue your COURTLY experience.</p>
+
+          <form id="loginForm" class="auth-form" novalidate>
+            <div class="auth-field">
+              <label for="loginEmail">Email address</label>
+              <div class="auth-input-wrap">
+                <i class="fa-regular fa-envelope auth-input-icon" aria-hidden="true"></i>
+                <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="loginEmailError">
+              </div>
+              <span class="auth-field-error" id="loginEmailError" hidden></span>
+            </div>
+            <div class="auth-field">
+              <label for="loginPassword">Password</label>
+              <div class="auth-input-wrap">
+                <i class="fa-solid fa-lock auth-input-icon" aria-hidden="true"></i>
+                <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required aria-describedby="loginPasswordError">
+                <button class="auth-password-toggle" type="button" data-password-toggle="loginPassword" aria-label="Show password" aria-pressed="false"><i class="fa-regular fa-eye" aria-hidden="true"></i></button>
+              </div>
+              <span class="auth-field-error" id="loginPasswordError" hidden></span>
+            </div>
+            <div class="auth-form-options">
+              <label class="auth-check"><input type="checkbox" name="remember"><span class="auth-check-box" aria-hidden="true"></span><span>Remember me</span></label>
+              <button class="auth-text-button" type="button" data-open-reset>Forgot password?</button>
+            </div>
+            <button class="auth-submit" type="submit"><span class="auth-submit-label">LOGIN</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <p class="auth-status" id="loginStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+          <div class="auth-socials" aria-label="Demo social sign-in options">
+            <button class="auth-social-button" type="button" data-social="Google"><i class="fa-brands fa-google" aria-hidden="true"></i><span>Google</span></button>
+            <button class="auth-social-button" type="button" data-social="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></button>
+            <button class="auth-social-button" type="button" data-social="Apple"><i class="fa-brands fa-apple" aria-hidden="true"></i><span>Apple</span></button>
+          </div>
+          <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+          <p class="auth-demo-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Demo page — authentication is not connected.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="auth-dialog" id="resetDialog" aria-labelledby="resetTitle">
+    <form method="dialog"><button class="auth-dialog-close" aria-label="Close dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></form>
+    <span class="auth-dialog-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+    <h2 id="resetTitle">Reset your password</h2>
+    <p>Enter your email address and we’ll show the reset state for this demo.</p>
+    <form id="resetForm" class="auth-form" novalidate>
+      <div class="auth-field">
+        <label for="resetEmail">Email address</label>
+        <div class="auth-input-wrap"><i class="fa-regular fa-envelope auth-input-icon" aria-hidden="true"></i><input id="resetEmail" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="resetEmailError"></div>
+        <span class="auth-field-error" id="resetEmailError" hidden></span>
+      </div>
+      <button class="auth-submit" type="submit"><span class="auth-submit-label">CONTINUE</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      <p class="auth-status" id="resetStatus" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+</body>
+</html>

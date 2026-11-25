@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>COURTLY - Explore Our Courts | Badminton & Table Tennis Arenas</title>
+  <meta name="description"
+    content="Explore professionally maintained badminton and table tennis courts at COURTLY. Compare facilities, preview demo time slots in INR, and book your next match.">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- FontAwesome 6 Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Shared Global Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Page-Specific Stylesheet for Court Page -->
+  <link rel="stylesheet" href="css/court.css">
+</head>
+
+<body data-page="court">
+
+  <!-- =========================================================================
+       REUSABLE NAVBAR CONTAINER (Hydrated by js/navbar.js)
+       ========================================================================= -->
+  <header id="app-navbar" class="courtly-navbar-wrapper"></header>
+
+
+  <!-- =========================================================================
+       SECTION 1: COURT HERO SECTION
+       ========================================================================= -->
+  <section class="crt-hero-section" id="court-hero">
+    <div class="crt-hero-bg-wrap" aria-hidden="true">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT84j6Bh8P7igLhu4-9bxUFBwKshUPmSFIkBGwj4futQg&s=10"
+        alt="COURTLY Badminton and Table Tennis Arena" class="crt-hero-bg-img" loading="eager">
+      <div class="crt-hero-bg-overlay"></div>
+    </div>
+
+    <div class="crt-court-lines" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="row align-items-center g-5">
+
+        <!-- Left Column -->
+        <div class="col-lg-7">
+          <div class="reveal-init">
+            <span class="badge-sports-sub text-uppercase mb-3">
+              <span class="live-pulse-dot me-1"></span>
+              4+ COURTS READY FOR PLAY
+            </span>
+          </div>
+
+          <h1 class="crt-hero-heading reveal-init reveal-delay-1">
+            FIND YOUR COURT. <span class="text-gradient-lime-teal">OWN YOUR GAME.</span>
+          </h1>
+
+          <p class="crt-hero-desc reveal-init reveal-delay-2">
+            Explore our professionally maintained badminton and table tennis courts, discover the facilities, and find
+            the perfect space for your next match.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4 reveal-init reveal-delay-3">
+            <a href="#explore-courts" class="btn-courtly-lime">
+              <span>Explore Courts</span>
+              <i class="fa-solid fa-arrow-down ms-2"></i>
+            </a>
+            <a href="#slot-preview" class="btn-courtly-outline crt-hero-outline-btn">
+              <i class="fa-regular fa-clock me-2 text-teal"></i>
+              <span>Book Your Slot</span>
+            </a>
+          </div>
+
+          <!-- Small Statistics Panel -->
+          <div class="crt-hero-stats-panel reveal-init reveal-delay-4">
+            <div class="crt-hero-stat-box">
+              <strong class="text-lime">4+</strong>
+              <span>Premium Courts</span>
+            </div>
+            <div class="crt-hero-stat-divider" aria-hidden="true"></div>
+            <div class="crt-hero-stat-box">
+              <strong class="text-teal">2</strong>
+              <span>Sports Categories</span>
+            </div>
+            <div class="crt-hero-stat-divider" aria-hidden="true"></div>
+            <div class="crt-hero-stat-box">
+              <strong class="text-white">24/7</strong>
+              <span>Flexible Booking Slots</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Floating Glass Info Card & Sports Equipment SVG -->
+        <div class="col-lg-5 position-relative reveal-init reveal-delay-2">
+          <div class="crt-hero-card-stage">
+            <div class="crt-hero-feature-img">
+              <img src="https://i.pinimg.com/736x/fa/b2/27/fab2272a8b5d8cf6c9a9bbf19708b616.jpg"
+                alt="Player smashing shuttlecock on indoor court" loading="eager">
+            </div>
+
+            <!-- Floating Badminton Racket SVG -->
+            <div class="floating-svg-shuttlecock animate-shuttlecock d-none d-md-block"
+              style="top: -20px; right: -20px; left: auto;" aria-hidden="true">
+              <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" width="84" height="98">
+                <rect x="54" y="85" width="12" height="42" rx="5" fill="#174C80" stroke="#20C9A6" stroke-width="2" />
+                <ellipse cx="60" cy="45" rx="32" ry="40" fill="none" stroke="#20C9A6" stroke-width="3" />
+                <line x1="34" y1="30" x2="86" y2="30" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <line x1="32" y1="46" x2="88" y2="46" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <line x1="34" y1="62" x2="86" y2="62" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <line x1="45" y1="8" x2="45" y2="82" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <line x1="60" y1="5" x2="60" y2="85" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <line x1="75" y1="8" x2="75" y2="82" stroke="#C6F36B" stroke-width="0.8" opacity="0.45" />
+                <g transform="translate(88, -2) rotate(20)">
+                  <circle cx="0" cy="22" r="6" fill="#C6F36B" stroke="#101D32" stroke-width="1.5" />
+                  <path d="M-6 16 L0 -4 L6 16" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-width="1.2"
+                    stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Floating Glass Info Card -->
+            <div class="crt-glass-status-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-lime-pill">LIVE ARENA STATUS</span>
+                <span class="small text-teal fw-bold"><span class="live-pulse-dot me-1"></span> Open Today</span>
+              </div>
+              <h4 class="text-white fw-bold fs-6 mb-2">Instant INR Hourly Bookings</h4>
+              <div
+                class="d-flex justify-content-between small text-muted border-top border-secondary border-opacity-25 pt-2">
+                <span>Badminton: <strong class="text-white">₹600–₹750/hr</strong></span>
+                <span>Table Tennis: <strong class="text-lime">₹400–₹450/hr</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 2: CHOOSE YOUR SPORT
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="choose-sport">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Two Dedicated Arenas</span>
+        <h2 class="section-title-main">PICK YOUR GAME. FIND YOUR SPACE.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Whether you enjoy fast-paced badminton rallies or precise table tennis exchanges, we have the right court
+          waiting for you.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Sport Card 1: Badminton -->
+        <div class="col-lg-6 reveal-init">
+          <div class="crt-sport-card" data-select-sport="Badminton">
+            <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1000&q=85"
+              alt="Spacious indoor badminton courts" class="crt-sport-img" loading="lazy">
+            <div class="crt-sport-overlay"></div>
+            <div class="crt-sport-content">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-lime-pill">2 COURTS AVAILABLE</span>
+                <span class="text-teal fw-bold small">From ₹600 / hr</span>
+              </div>
+              <h3 class="crt-sport-title">BADMINTON COURTS</h3>
+              <p class="crt-sport-desc">
+                Spacious indoor courts with shock-absorbing flooring, comfortable anti-glare lighting, and a welcoming
+                playing environment for singles and doubles.
+              </p>
+              <button type="button" class="btn-courtly-lime btn-sm crt-sport-filter-btn" data-sport-filter="Badminton">
+                <span>Explore Badminton Courts</span>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sport Card 2: Table Tennis -->
+        <div class="col-lg-6 reveal-init reveal-delay-1">
+          <div class="crt-sport-card" data-select-sport="Table Tennis">
+            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=1000&q=85"
+              alt="Table Tennis Arena with ITTF competition tables" class="crt-sport-img" loading="lazy">
+            <div class="crt-sport-overlay"></div>
+            <div class="crt-sport-content">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-sports-sub">2 TABLES AVAILABLE</span>
+                <span class="text-lime fw-bold small">From ₹400 / hr</span>
+              </div>
+              <h3 class="crt-sport-title">TABLE TENNIS ARENA</h3>
+              <p class="crt-sport-desc">
+                Quality 25mm ITTF-style tables, comfortable playing space, and an energetic environment tailored for
+                both beginners and competitive players.
+              </p>
+              <button type="button" class="btn-courtly-primary btn-sm crt-sport-filter-btn"
+                data-sport-filter="Table Tennis">
+                <span>Explore Table Tennis Courts</span>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 3: EXPLORE OUR COURTS (Interactive Filter & Sort)
+       ========================================================================= -->
+  <section class="section-padding" id="explore-courts">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Facility Directory</span>
+        <h2 class="section-title-main">YOUR NEXT MATCH STARTS HERE.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Take a closer look at our courts, compare their facilities, and choose the playing space that suits your game.
+        </p>
+      </div>
+
+      <!-- Filter & Sort Controls -->
+      <div class="crt-filter-bar reveal-init">
+        <div class="crt-filter-pills" role="group" aria-label="Filter courts by sport">
+          <button type="button" class="crt-filter-btn active" data-filter="All">
+            <i class="fa-solid fa-border-all me-1"></i> All Courts
+          </button>
+          <button type="button" class="crt-filter-btn" data-filter="Badminton">
+            <i class="fa-solid fa-feather-pointed me-1"></i> Badminton
+          </button>
+          <button type="button" class="crt-filter-btn" data-filter="Table Tennis">
+            <i class="fa-solid fa-table-tennis-paddle-ball me-1"></i> Table Tennis
+          </button>
+        </div>
+
+        <div class="crt-sort-wrap">
+          <label for="courtSortSelect" class="small text-muted fw-bold me-2">Sort by:</label>
+          <select id="courtSortSelect" class="form-select form-select-sm courtly-form-control crt-sort-select">
+            <option value="available">Available First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Court Cards Grid (Populated & Filtered by js/court.js) -->
+      <div class="row g-4" id="courtsDirectoryGrid"></div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 4: COURT DETAILS / FACILITIES SPOTLIGHT
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="facilities-spotlight">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Arena Engineering</span>
+        <h2 class="section-title-main">DESIGNED FOR A BETTER GAME.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Every court at COURTLY is thoughtfully maintained for comfort, visibility, and consistent rally response.
+        </p>
+      </div>
+
+      <!-- Interactive Spotlight Map (Desktop) -->
+      <div class="crt-spotlight-stage reveal-init" id="crtSpotlightStage">
+        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1600&q=85"
+          alt="COURTLY indoor court spotlight" class="crt-spotlight-bg" loading="lazy">
+        <div class="crt-spotlight-overlay"></div>
+
+        <!-- 6 Interactive Markers -->
+        <button type="button" class="crt-spot-marker m-1 active" data-spot="1"
+          aria-label="Quality playing surfaces">01</button>
+        <button type="button" class="crt-spot-marker m-2" data-spot="2" aria-label="Comfortable lighting">02</button>
+        <button type="button" class="crt-spot-marker m-3" data-spot="3" aria-label="Spacious playing areas">03</button>
+        <button type="button" class="crt-spot-marker m-4" data-spot="4" aria-label="Equipment availability">04</button>
+        <button type="button" class="crt-spot-marker m-5" data-spot="5"
+          aria-label="Clean and maintained surroundings">05</button>
+        <button type="button" class="crt-spot-marker m-6" data-spot="6"
+          aria-label="Comfortable player environment">06</button>
+
+        <!-- Active Spotlight Floating Glass Card -->
+        <div class="crt-spotlight-glass-panel" id="crtSpotlightPanel">
+          <span class="badge-lime-pill mb-2 d-inline-block" id="crtSpotTag">FEATURE 01</span>
+          <h4 class="text-white fw-bold mb-2" id="crtSpotTitle">Quality Playing Surfaces</h4>
+          <p class="text-muted small mb-0" id="crtSpotDesc">
+            Multi-layer cushioned hardwood and Olympic-grade synthetic mats engineered for dependable grip and reduced
+            joint impact.
+          </p>
+        </div>
+      </div>
+
+      <!-- Clean Vertical/Grid Cards (Always visible on Mobile/Tablet, quick-select on Desktop) -->
+      <div class="row g-3 mt-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card active" data-spot-card="1">
+            <span class="crt-mini-num">01</span>
+            <div>
+              <h5 class="fw-bold mb-1">Quality Playing Surfaces</h5>
+              <p class="text-muted small mb-0">Shock-absorbing hardwood & synthetic court mats.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card" data-spot-card="2">
+            <span class="crt-mini-num">02</span>
+            <div>
+              <h5 class="fw-bold mb-1">Comfortable Lighting</h5>
+              <p class="text-muted small mb-0">Asymmetric anti-glare LED illumination across courts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card" data-spot-card="3">
+            <span class="crt-mini-num">03</span>
+            <div>
+              <h5 class="fw-bold mb-1">Spacious Playing Areas</h5>
+              <p class="text-muted small mb-0">Generous court run-offs and high overhead clearance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card" data-spot-card="4">
+            <span class="crt-mini-num">04</span>
+            <div>
+              <h5 class="fw-bold mb-1">Equipment Availability</h5>
+              <p class="text-muted small mb-0">On-site racket, paddle, and shuttle rentals ready anytime.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card" data-spot-card="5">
+            <span class="crt-mini-num">05</span>
+            <div>
+              <h5 class="fw-bold mb-1">Clean & Maintained</h5>
+              <p class="text-muted small mb-0">Sanitized courts, nets, and locker facilities daily.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="crt-facility-mini-card" data-spot-card="6">
+            <span class="crt-mini-num">06</span>
+            <div>
+              <h5 class="fw-bold mb-1">Comfortable Environment</h5>
+              <p class="text-muted small mb-0">Climate-controlled indoor halls for year-round play.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 5: COURT AVAILABILITY AND SLOT PREVIEW
+       ========================================================================= -->
+  <section class="section-padding" id="slot-preview">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Demo Slot Checker</span>
+        <h2 class="section-title-main">THE PERFECT TIME TO PLAY.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Find a convenient time for your next session and make every match count. (Interactive demo availability
+          preview)
+        </p>
+      </div>
+
+      <div class="crt-slot-console reveal-init">
+        <div class="row g-4 align-items-stretch">
+
+          <!-- Left: Court, Date & Time Slot Picker -->
+          <div class="col-lg-7">
+            <div class="row g-3 mb-4">
+              <div class="col-sm-7">
+                <label for="slotCourtSelect" class="form-label small fw-bold text-muted">Select Court / Arena</label>
+                <select id="slotCourtSelect" class="form-select courtly-form-control">
+                  <option value="court-01">Badminton Court 01 (₹600/hr)</option>
+                  <option value="court-02">Badminton Court 02 (₹750/hr)</option>
+                  <option value="court-03">Table Tennis Arena 01 (₹450/hr)</option>
+                  <option value="court-04">Table Tennis Arena 02 (₹400/hr)</option>
+                </select>
+              </div>
+              <div class="col-sm-5">
+                <label for="slotDateInput" class="form-label small fw-bold text-muted">Select Date</label>
+                <input type="date" id="slotDateInput" class="form-control courtly-form-control">
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+              <span class="small fw-bold text-muted text-uppercase">Available Time Slots</span>
+              <div class="d-flex align-items-center gap-3 small">
+                <span><span class="crt-legend-dot available"></span> Available</span>
+                <span><span class="crt-legend-dot selected"></span> Selected</span>
+                <span><span class="crt-legend-dot booked"></span> Unavailable</span>
+              </div>
+            </div>
+
+            <div class="crt-slots-grid" id="demoSlotsGrid"></div>
+          </div>
+
+          <!-- Right: Live Booking Summary Card -->
+          <div class="col-lg-5">
+            <div class="crt-summary-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge-lime-pill">DEMO SUMMARY</span>
+                <span class="small text-teal fw-bold" id="summarySportBadge">Badminton</span>
+              </div>
+
+              <h3 class="fs-4 fw-bold text-white mb-3" id="summaryCourtName">Badminton Court 01</h3>
+
+              <div class="crt-summary-row">
+                <span class="text-muted">Date</span>
+                <strong class="text-white" id="summaryDate">—</strong>
+              </div>
+              <div class="crt-summary-row">
+                <span class="text-muted">Selected Slot</span>
+                <strong class="text-teal" id="summarySlot">06:00 PM – 07:00 PM</strong>
+              </div>
+              <div class="crt-summary-row">
+                <span class="text-muted">Duration</span>
+                <strong class="text-white">1 Hour</strong>
+              </div>
+              <div class="crt-summary-row crt-summary-total">
+                <span class="fw-bold">Hourly Rate</span>
+                <strong class="fs-3 text-lime" id="summaryPrice">₹600</strong>
+              </div>
+
+              <button type="button" class="btn-courtly-lime w-100 mt-4" id="continueToBookingBtn">
+                <span>Continue to Booking</span>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+              <p class="small text-dimmed text-center mt-2 mb-0">
+                Demo preview only. Confirm details in the reservation modal.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 6: WHY PLAYERS CHOOSE OUR COURTS (Bento Grid)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="why-choose-courts">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Court Advantages</span>
+        <h2 class="section-title-main">MORE THAN A COURT. A BETTER PLAYING EXPERIENCE.</h2>
+      </div>
+
+      <div class="crt-bento-grid">
+        <!-- 1. Quality Playing Environment (Image Card) -->
+        <div class="crt-bento-card crt-bento-span-6 crt-bento-img-card reveal-init">
+          <img src="https://i.pinimg.com/736x/10/11/6c/10116cc6bf87df122824d71db05391bd.jpg"
+            alt="Spacious indoor badminton courts" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box teal mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4 class="text-white fw-bold mb-2">1. Quality Playing Environment</h4>
+            <p class="text-light small mb-0">Tournament-grade flooring, anti-glare lighting, and balanced indoor climate
+              for every rally.</p>
+          </div>
+        </div>
+
+        <!-- 2. Convenient Slot Booking -->
+        <div class="crt-bento-card crt-bento-span-6 crt-bento-img-card reveal-init reveal-delay-1">
+          <img src="https://i.pinimg.com/736x/9e/c3/a7/9ec3a700dc4fee959603091d99e35090.jpg"
+            alt="Table tennis tables in a competition arena" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box lime mb-3"><i class="fa-solid fa-calendar-check"></i></div>
+            <h4 class="text-white fw-bold mb-2">2. Convenient Slot Booking</h4>
+            <p class="text-light mb-0">Browse real-time demo availability, compare INR hourly rates, and reserve your
+              preferred time slot in seconds.</p>
+          </div>
+        </div>
+
+        <!-- 3. Flexible Playing Sessions -->
+        <div class="crt-bento-card crt-bento-span-3 crt-bento-img-card reveal-init reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=700&q=85"
+            alt="Badminton player reaching for a shot in an indoor court" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box mb-3"><i class="fa-solid fa-clock"></i></div>
+            <h5 class="text-white fw-bold mb-2">3. Flexible Playing Sessions</h5>
+            <p class="text-light small mb-0">Early morning, midday, and prime evening hours built around your schedule.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Multiple Sports Facilities -->
+        <div class="crt-bento-card crt-bento-span-3 crt-bento-img-card reveal-init reveal-delay-2">
+          <img src="https://i.pinimg.com/736x/4d/0c/38/4d0c38b043718a4b1feb43258b9591c7.jpg"
+            alt="Table tennis match in progress" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box teal mb-3"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+            <h5 class="text-white fw-bold mb-2">4. Multiple Sports Facilities</h5>
+            <p class="text-light small mb-0">Dedicated Badminton Courts and Table Tennis Arenas under one roof.</p>
+          </div>
+        </div>
+
+        <!-- 5. Player-Friendly Experience -->
+        <div class="crt-bento-card crt-bento-span-3 crt-bento-img-card reveal-init reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?auto=format&fit=crop&w=700&q=85"
+            alt="Badminton racket and shuttlecock ready for play" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box lime mb-3"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h5 class="text-white fw-bold mb-2">5. Player-Friendly Experience</h5>
+            <p class="text-light small mb-0">Welcoming atmosphere, equipment rentals, and clean amenities for every
+              skill
+              level.</p>
+          </div>
+        </div>
+
+        <!-- 6. Community and Competition -->
+        <div class="crt-bento-card crt-bento-span-3 crt-bento-img-card reveal-init reveal-delay-4">
+          <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=700&q=85"
+            alt="Table tennis arena prepared for competition" class="crt-bento-bg" loading="lazy">
+          <div class="crt-bento-img-overlay"></div>
+          <div class="position-relative z-2 mt-auto">
+            <div class="bento-icon-box mb-3"><i class="fa-solid fa-trophy"></i></div>
+            <h5 class="text-white fw-bold mb-2">6. Community & Competition</h5>
+            <p class="text-light small mb-0">Weekend doubles leagues, open mixers, and seasonal championships.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 7: COURT COMPARISON
+       ========================================================================= -->
+  <section class="section-padding" id="court-comparison">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Side-By-Side Guide</span>
+        <h2 class="section-title-main">FIND THE RIGHT SPACE FOR YOUR GAME.</h2>
+      </div>
+
+      <div class="crt-comparison-wrapper reveal-init">
+        <div class="table-responsive">
+          <table class="table crt-comparison-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col" class="text-teal"><i class="fa-solid fa-feather-pointed me-2"></i>Badminton Courts</th>
+                <th scope="col" class="text-lime"><i class="fa-solid fa-table-tennis-paddle-ball me-2"></i>Table Tennis
+                  Arena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">Sport Type</td>
+                <td>Singles & Doubles Badminton</td>
+                <td>Singles, Doubles & Multi-Ball Drills</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Court Availability</td>
+                <td>2 Dedicated Courts (Court 01 & Court 02)</td>
+                <td>2 Dedicated Arenas (Arena 01 & Arena 02)</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Playing Environment</td>
+                <td>Hardwood / Olympic Vinyl Mat, 800 Lux Anti-Glare LED</td>
+                <td>25mm Blue Matte Top, 14m × 7m Tournament Box</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Equipment</td>
+                <td>Bring own or rent Pro Carbon Rackets & Shuttles</td>
+                <td>Bring own or use Pro Paddles & Ball Feeder Robot</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Booking Flexibility</td>
+                <td>Hourly slots (Morning, Afternoon, Prime Evening)</td>
+                <td>Hourly slots (Morning, Afternoon, Prime Evening)</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Hourly Price</td>
+                <td><strong class="text-teal">₹600 – ₹750 / hour</strong></td>
+                <td><strong class="text-lime">₹400 – ₹450 / hour</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 8: MEMBERSHIP PROMOTION (Consistent ₹499 / ₹999 / ₹1,799)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt membership-bg-section" id="membership-promo">
+    <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1920&q=80" alt=""
+      aria-hidden="true" class="membership-bg-photo" loading="lazy">
+    <div class="courtly-container position-relative z-2">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Membership Passes</span>
+        <h2 class="section-title-main">PLAY MORE. GET MORE WITH MEMBERSHIP.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Make every session more rewarding with a membership that fits your playing routine.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Starter -->
+        <div class="col-12 col-lg-4 reveal-init">
+          <div class="crt-plan-card">
+            <span class="text-muted small fw-bold text-uppercase mb-1">Starter Pass</span>
+            <h3 class="plan-tier-name">STARTER</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-currency">₹</span>
+              <span class="plan-price-amount">499</span>
+              <span class="plan-price-period">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> 4 court booking
+                hours</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Standard booking
+                access</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Basic player
+                dashboard</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Community event
+                updates</li>
+            </ul>
+            <button type="button" class="btn-courtly-outline mt-auto w-100" data-bs-toggle="modal"
+              data-bs-target="#bookingModal" data-court-id="plan-starter" data-court-name="Starter Membership Pass"
+              data-court-sport="Membership" data-court-price="499">
+              <span>Choose Starter</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pro Athlete (Featured) -->
+        <div class="col-12 col-lg-4 reveal-init reveal-delay-1">
+          <div class="crt-plan-card featured-pro">
+            <span class="crt-popular-badge">MOST POPULAR</span>
+            <span class="text-lime small fw-bold text-uppercase mb-1">Competitor Pass</span>
+            <h3 class="plan-tier-name text-gradient-lime-teal">PRO ATHLETE</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-currency text-lime">₹</span>
+              <span class="plan-price-amount text-lime">999</span>
+              <span class="plan-price-period">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check text-lime"></i> 10 court booking hours
+              </li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check text-lime"></i> Priority booking access
+              </li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check text-lime"></i> Tournament registration
+                benefits</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check text-lime"></i> Exclusive member offers
+              </li>
+            </ul>
+            <button type="button" class="btn-courtly-lime mt-auto w-100" data-bs-toggle="modal"
+              data-bs-target="#bookingModal" data-court-id="plan-pro" data-court-name="Pro Athlete Membership Pass"
+              data-court-sport="Membership" data-court-price="999">
+              <span>Choose Pro Athlete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Elite Player -->
+        <div class="col-12 col-lg-4 reveal-init reveal-delay-2">
+          <div class="crt-plan-card">
+            <span class="text-muted small fw-bold text-uppercase mb-1">VIP Pass</span>
+            <h3 class="plan-tier-name">ELITE PLAYER</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-currency">₹</span>
+              <span class="plan-price-amount">1,799</span>
+              <span class="plan-price-period">/ month</span>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> 20 court booking
+                hours</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Premium booking
+                access</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Special
+                tournament benefits</li>
+              <li class="plan-feature-item"><i class="fa-solid fa-circle-check feature-check-icon"></i> Exclusive member
+                privileges</li>
+            </ul>
+            <button type="button" class="btn-courtly-outline mt-auto w-100" data-bs-toggle="modal"
+              data-bs-target="#bookingModal" data-court-id="plan-elite" data-court-name="Elite Player Membership Pass"
+              data-court-sport="Membership" data-court-price="1799">
+              <span>Choose Elite Player</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 reveal-init">
+        <a href="plans.html" class="btn-courtly-primary">
+          <span>View All Plans</span>
+          <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 9: COURT EXPERIENCE GALLERY (Asymmetric Grid + Lightbox)
+       ========================================================================= -->
+  <section class="section-padding" id="court-gallery">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Visual Tour</span>
+        <h2 class="section-title-main">A CLOSER LOOK AT THE GAME.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Click any photograph to view it in full-screen lightbox preview.
+        </p>
+      </div>
+
+      <div class="crt-gallery-grid">
+        <div class="crt-gallery-item item-large reveal-init"
+          data-lightbox-src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Badminton Court 01 — Championship Hardwood & LED Lighting">
+          <img src="https://i.pinimg.com/736x/94/07/7d/94077d63989eee5d528d2c3224e6c7ee.jpg"
+            alt="Badminton court interior" loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Badminton Court</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="crt-gallery-item reveal-init reveal-delay-1"
+          data-lightbox-src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Badminton Players in Action — High-Intensity Rally">
+          <img src="https://i.pinimg.com/1200x/e2/51/1f/e2511f2fa603c9c943e0205bd20f45a6.jpg"
+            alt="Badminton players in action" loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Badminton Action</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="crt-gallery-item reveal-init reveal-delay-2"
+          data-lightbox-src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Table Tennis Arena 01 — 25mm Competition Surface">
+          <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=800&q=80"
+            alt="Table tennis arena" loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Table Tennis Arena</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="crt-gallery-item reveal-init reveal-delay-1"
+          data-lightbox-src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Table Tennis Match — Fast-Paced Spin Exchange">
+          <img src="https://i.pinimg.com/1200x/9f/16/e7/9f16e78b11f2fe12f0bd8707197fef82.jpg" alt="Table tennis match"
+            loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Table Tennis Match</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="crt-gallery-item reveal-init reveal-delay-2"
+          data-lightbox-src="https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Pro Rackets & Shuttles — Ready for Rental">
+          <img src="https://i.pinimg.com/736x/74/ff/34/74ff3489656236954535ecdf24013654.jpg" alt="Sports equipment"
+            loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Sports Equipment</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="crt-gallery-item item-wide reveal-init reveal-delay-3"
+          data-lightbox-src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1400&q=85"
+          data-lightbox-caption="Facility Environment — Climate-Controlled Arena Halls">
+          <img src="https://i.pinimg.com/1200x/f5/ab/d3/f5abd30a3a9c413900271433126b65c0.jpg" alt="Facility environment"
+            loading="lazy">
+          <div class="crt-gallery-caption">
+            <span>Facility Environment</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 10: FINAL CTA
+       ========================================================================= -->
+  <section class="crt-final-cta-section" id="court-final-cta">
+    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1920&q=80"
+      alt="COURTLY indoor arena" class="crt-final-bg" loading="lazy">
+    <div class="crt-final-overlay" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="crt-final-card reveal-init">
+        <div class="crt-final-float-icon left d-none d-md-block animate-shuttlecock" aria-hidden="true">
+          <i class="fa-solid fa-feather-pointed text-teal fs-2 opacity-75"></i>
+        </div>
+        <div class="crt-final-float-icon right d-none d-md-block animate-pingpong" aria-hidden="true">
+          <i class="fa-solid fa-table-tennis-paddle-ball text-lime fs-2 opacity-75"></i>
+        </div>
+
+        <span class="badge-sports-sub text-uppercase mb-3">Step Onto The Court</span>
+        <h2 class="crt-hero-heading text-white mb-3">YOUR COURT IS WAITING. YOUR GAME IS NEXT.</h2>
+        <p class="crt-hero-desc text-white-50 mx-auto mb-4">
+          Choose your court, find your preferred time, and get ready to make your next match unforgettable.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#slot-preview" class="btn-courtly-lime">
+            <span>Book Your Court</span>
+            <i class="fa-solid fa-calendar-check ms-2"></i>
+          </a>
+          <a href="#membership-promo" class="btn-courtly-outline text-white">
+            <i class="fa-solid fa-crown me-2 text-lime"></i>
+            <span>Explore Memberships</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       REUSABLE FOOTER CONTAINER (Hydrated by js/footer.js)
+       ========================================================================= -->
+  <footer id="app-footer" class="courtly-footer-wrapper"></footer>
+
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS (Booking, Court Details, Gallery Lightbox, Auth)
+       ========================================================================= -->
+
+  <!-- Court Details Modal -->
+  <div class="modal fade" id="courtDetailsModal" tabindex="-1" aria-labelledby="courtDetailsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold" id="courtDetailsTitle">Court Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-5">
+              <img src="" alt="" id="detailModalImg" class="w-100 rounded-4" style="height: 240px; object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-sports-sub" id="detailModalSport">Badminton</span>
+                <span class="fw-bold text-lime fs-4" id="detailModalPrice">₹600 / hr</span>
+              </div>
+              <h4 class="fw-bold text-white mb-2" id="detailModalName">Badminton Court 01</h4>
+              <p class="text-muted small mb-3" id="detailModalDesc"></p>
+              <div class="d-flex flex-wrap gap-2 mb-3" id="detailModalTags"></div>
+              <button type="button" class="btn-courtly-lime w-100" id="detailModalBookBtn">
+                <span>Book This Court Now</span>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Preview Modal -->
+  <div class="modal fade" id="galleryLightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <h6 class="modal-title fw-bold mb-0" id="lightboxCaption">Arena Preview</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-2">
+          <img src="" alt="Gallery Preview" id="lightboxImg" class="w-100 rounded-3"
+            style="max-height: 70vh; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Court / Pass Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold" id="bookingModalLabel">
+            <i class="fa-solid fa-calendar-check text-teal me-2"></i>Courtly Session Reservation
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <div class="p-3 rounded-3 mb-3"
+            style="background: rgba(40,125,222,0.12); border: 1px solid rgba(40,125,222,0.3);">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="small text-muted" id="modalCourtSport">Badminton</span>
+              <span class="fw-bold text-lime" id="modalCourtPrice">₹600/hr</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-white mb-0" id="modalCourtName">Badminton Court 01</h4>
+          </div>
+
+          <form id="bookingModalForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Preferred Time Slot</label>
+              <select class="form-select courtly-form-control" id="modalSlotSelect">
+                <option value="06:00 AM">06:00 AM - 07:00 AM</option>
+                <option value="07:00 AM">07:00 AM - 08:00 AM</option>
+                <option value="08:00 AM">08:00 AM - 09:00 AM</option>
+                <option value="05:00 PM">05:00 PM - 06:00 PM</option>
+                <option value="06:00 PM" selected>06:00 PM - 07:00 PM</option>
+                <option value="07:00 PM">07:00 PM - 08:00 PM</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Player Name</label>
+              <input type="text" class="form-control courtly-form-control" id="bookingPlayerName"
+                placeholder="e.g. Alex Morgan" value="Alex Morgan" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Email for Digital Gate QR</label>
+              <input type="email" class="form-control courtly-form-control" id="bookingPlayerEmail"
+                placeholder="athlete@example.com" value="alex.morgan@sports.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Rental Equipment Option</label>
+              <select class="form-select courtly-form-control">
+                <option value="none">Bring Own Rackets & Shuttle / Balls (Free)</option>
+                <option value="pro-racket">Pro Carbon Racket (+ ₹150)</option>
+                <option value="duo-pack">Duo Racket & High-Speed Shuttles (+ ₹250)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0 p-3 pt-0">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn-courtly-lime" id="confirmBookingBtn">
+            <span>Confirm & Receive QR</span>
+            <i class="fa-solid fa-qrcode ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Login / Signup) -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill active"
+              id="tabAuthLogin">Login</button>
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" id="tabAuthSignup">Signup</button>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <form id="formAuthLogin">
+            <h4 class="fs-5 fw-bold mb-3">Welcome to Player Hub</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" value="player@courtly.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Password</label>
+              <input type="password" class="form-control courtly-form-control" value="••••••••••••" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3 small">
+              <label><input type="checkbox" checked> Remember me</label>
+              <a href="#reset" class="text-teal">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn-courtly-primary w-100">Sign In to Dashboard</button>
+          </form>
+
+          <form id="formAuthSignup" class="d-none">
+            <h4 class="fs-5 fw-bold mb-3">Join the Courtly Community</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Full Athlete Name</label>
+              <input type="text" class="form-control courtly-form-control" placeholder="e.g. Jordan Lee" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" placeholder="jordan@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Choose Password</label>
+              <input type="password" class="form-control courtly-form-control" placeholder="Min. 8 characters" required>
+            </div>
+            <button type="submit" class="btn-courtly-lime w-100">Create Free Athlete Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="courtly-toast-container position-fixed bottom-0 end-0 p-3" id="courtly-toast-container"></div>
+
+  <!-- Bootstrap 5 JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Centralized Site Data -->
+  <script src="js/site-data.js"></script>
+
+  <!-- Reusable Components Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+
+  <!-- Core Animation & Modal Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Court Page Specific Interactive Script -->
+  <script src="js/court.js"></script>
+</body>
+
+</html>

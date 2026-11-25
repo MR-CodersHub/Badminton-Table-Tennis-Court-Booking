@@ -7,29 +7,17 @@
 (function () {
   'use strict';
 
-  const BRAND_LOGO_SVG = `
-    <svg class="brand-logo-icon" width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="footerCourtlyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#287DDE" />
-          <stop offset="50%" stop-color="#20C9A6" />
-          <stop offset="100%" stop-color="#C6F36B" />
-        </linearGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" stroke="url(#footerCourtlyGrad)" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.8" />
-      <circle cx="21" cy="21" r="12" fill="#20C9A6" fill-opacity="0.25" stroke="#287DDE" stroke-width="2.2" />
-      <path d="M29.5 29.5 L39 39" stroke="#C6F36B" stroke-width="3.5" stroke-linecap="round" />
-      <path d="M15 15 L24 8 L30 19 Z" fill="none" stroke="#20C9A6" stroke-width="2" stroke-linejoin="round" />
-      <circle cx="15.5" cy="15.5" r="3.2" fill="#C6F36B" />
-      <circle cx="34" cy="18" r="2.8" fill="#FFFFFF" />
-    </svg>
-  `;
-
   function renderFooter() {
     const footerContainer = document.getElementById('app-footer');
     if (!footerContainer) return;
 
     const isHome2 = window.location.pathname.endsWith('home2.html') || (document.body && document.body.dataset.page === 'home2');
+    const isAbout = window.location.pathname.endsWith('about.html') || (document.body && document.body.dataset.page === 'about');
+    const isCourt = window.location.pathname.endsWith('court.html') || (document.body && document.body.dataset.page === 'court');
+    const isPlans = window.location.pathname.endsWith('plans.html') || (document.body && document.body.dataset.page === 'plans');
+    const isBlog = window.location.pathname.endsWith('blog.html') || window.location.pathname.endsWith('blog-details.html') || (document.body && (document.body.dataset.page === 'blog' || document.body.dataset.page === 'blog-details'));
+    const isContact = window.location.pathname.endsWith('contact.html') || (document.body && document.body.dataset.page === 'contact');
+    const isHomePage = !isHome2 && !isAbout && !isCourt && !isPlans && !isBlog && !isContact;
 
     footerContainer.innerHTML = `
       <footer class="courtly-footer position-relative overflow-hidden">
@@ -71,7 +59,7 @@
             <div class="col-12 col-md-6 col-lg-4">
               <a href="index.html" class="courtly-brand d-flex align-items-center text-decoration-none mb-3">
                 <div class="brand-logo-wrap">
-                  ${BRAND_LOGO_SVG}
+                  <img class="brand-logo-icon" src="assets/logo.png" alt="" width="40" height="40">
                 </div>
                 <div class="brand-text-wrap ms-2">
                   <span class="brand-name">COURTLY</span>
@@ -95,13 +83,13 @@
             <div class="col-6 col-md-3 col-lg-2">
               <h5 class="footer-col-title">Explore Arena</h5>
               <ul class="footer-links-list list-unstyled m-0 p-0">
-                <li><a href="index.html" class="footer-link ${!isHome2 ? 'active' : ''}">Home 1</a></li>
+                <li><a href="index.html" class="footer-link ${isHomePage ? 'active' : ''}">Home 1</a></li>
                 <li><a href="home2.html" class="footer-link ${isHome2 ? 'active' : ''}">Home 2</a></li>
-                <li><a href="${isHome2 ? 'home2.html#h2-features' : 'index.html#about-features'}" class="footer-link">About Club</a></li>
-                <li><a href="${isHome2 ? 'home2.html#h2-sports' : 'index.html#live-courts'}" class="footer-link">Court Schedule</a></li>
-                <li><a href="${isHome2 ? 'home2.html#h2-membership' : 'index.html#membership-preview'}" class="footer-link">Membership Plans</a></li>
-                <li><a href="${isHome2 ? 'home2.html#h2-testimonials' : 'index.html#tournaments'}" class="footer-link">Tournaments</a></li>
-                <li><a href="#app-footer" class="footer-link">Contact</a></li>
+                <li><a href="about.html" class="footer-link ${isAbout ? 'active' : ''}">About Club</a></li>
+                <li><a href="court.html" class="footer-link ${isCourt ? 'active' : ''}">Court Schedule</a></li>
+                <li><a href="plans.html" class="footer-link ${isPlans ? 'active' : ''}">Membership Plans</a></li>
+                <li><a href="blog.html" class="footer-link ${isBlog ? 'active' : ''}">Sports Journal</a></li>
+                <li><a href="contact.html" class="footer-link ${isContact ? 'active' : ''}">Contact</a></li>
               </ul>
             </div>
 

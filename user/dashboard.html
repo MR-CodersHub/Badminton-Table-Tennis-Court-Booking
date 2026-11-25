@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Player - Dashboard Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/user-animations.css">
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" href="css/user-responsive.css">
+</head>
+<body data-user-page="overview" data-page-title="Overview">
+  <div class="user-shell">
+    <div id="userSidebarMount"></div>
+    <div class="user-main-wrap">
+      <div id="userTopbarMount"></div>
+
+      <main class="user-content">
+        <!-- Welcome Hero -->
+        <section class="user-welcome-banner user-animate-in mb-4">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1400&q=80" alt="" aria-hidden="true" class="user-welcome-bg">
+          <div class="row align-items-center g-4 position-relative">
+            <div class="col-lg-8">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <span class="user-demo-pill">ILLUSTRATIVE PLAYER DEMO</span>
+                <span class="small text-light opacity-75" id="userCurrentDate"></span>
+              </div>
+              <h1 class="h2 fw-bold mb-2">READY FOR YOUR NEXT GAME, ALEX?</h1>
+              <p class="mb-3 text-light opacity-75">Your courts, your bookings, your game. Everything you need to keep moving is right here.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="find-courts.html" class="btn-user-lime">Book a Court</a>
+                <a href="my-bookings.html" class="btn-user-outline" style="color:#fff;border-color:rgba(255,255,255,0.35);">View My Bookings</a>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-lg-end">
+              <div class="user-floating-glass">
+                <span class="small text-lime fw-bold d-block mb-1">NEXT RALLY</span>
+                <div class="fw-bold small">YOUR NEXT GAME IS WAITING.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 Player KPI Cards -->
+        <section class="row g-3 g-xl-4 mb-4">
+          <div class="col-6 col-xl-3 user-animate-in user-delay-1">
+            <div class="user-card user-card-hover user-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Upcoming Bookings</span>
+                  <div class="user-kpi-value mt-1">03</div>
+                </div>
+                <div class="user-kpi-icon blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+              </div>
+              <small class="text-teal fw-semibold">Next session: Tomorrow</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-xl-3 user-animate-in user-delay-2">
+            <div class="user-card user-card-hover user-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Completed Sessions</span>
+                  <div class="user-kpi-value mt-1">28</div>
+                </div>
+                <div class="user-kpi-icon teal">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+              </div>
+              <small class="text-teal fw-semibold">+4 this month (Demo)</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-xl-3 user-animate-in user-delay-3">
+            <div class="user-card user-card-hover user-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Membership</span>
+                  <div class="user-kpi-value mt-1 fs-4">Pro Athlete</div>
+                </div>
+                <div class="user-kpi-icon lime">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                </div>
+              </div>
+              <small class="text-teal fw-semibold">Active (Demo)</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-xl-3 user-animate-in user-delay-4">
+            <div class="user-card user-card-hover user-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Tournament Entries</span>
+                  <div class="user-kpi-value mt-1">02</div>
+                </div>
+                <div class="user-kpi-icon amber">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+              </div>
+              <small class="text-muted">Upcoming competitions</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Next Booking Spotlight + Membership Overview -->
+        <section class="row g-4 mb-4">
+          <div class="col-12 col-xl-7">
+            <div class="user-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">YOUR NEXT COURT SESSION</h2>
+                  <p class="small text-muted mb-0">Sample reservation preview — not a live booking</p>
+                </div>
+                <span class="status-badge confirmed">Confirmed (demo)</span>
+              </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-12 col-md-5">
+                  <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=85" alt="Badminton Court 01" class="user-thumb-img">
+                </div>
+                <div class="col-12 col-md-7">
+                  <div class="row g-2 small mb-3">
+                    <div class="col-6"><span class="text-muted d-block">Court</span><strong>Badminton Court 01</strong></div>
+                    <div class="col-6"><span class="text-muted d-block">Sport</span><strong>Badminton</strong></div>
+                    <div class="col-6"><span class="text-muted d-block">Sample Date</span><strong>2026-11-26 (Sample)</strong></div>
+                    <div class="col-6"><span class="text-muted d-block">Time</span><strong>06:00 PM – 07:00 PM</strong></div>
+                    <div class="col-6"><span class="text-muted d-block">Booking ID</span><strong>CR-2026-0248</strong></div>
+                    <div class="col-6"><span class="text-muted d-block">Amount Paid</span><strong class="text-teal">₹250 (illustrative)</strong></div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="my-bookings.html" class="btn-user-primary btn-sm">View Booking</a>
+                    <a href="find-courts.html" class="btn-user-outline btn-sm">Find Another Court</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="user-card h-100 d-flex flex-column justify-content-between" id="userDashMembershipCard"></div>
+          </div>
+        </section>
+
+        <!-- Court Discovery -->
+        <section class="mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h2 class="h5 fw-bold mb-1">FIND YOUR NEXT PLAYING SPOT</h2>
+              <p class="small text-muted mb-0">Explore available Badminton &amp; Table Tennis arenas</p>
+            </div>
+            <a href="find-courts.html" class="small text-teal fw-semibold text-decoration-none">Browse All Courts</a>
+          </div>
+          <div class="row g-3 g-xl-4" id="userDashCourtsGrid"></div>
+        </section>
+
+        <!-- Upcoming Tournaments + Recent Activity -->
+        <section class="row g-4">
+          <div class="col-12 col-xl-7">
+            <div class="user-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">UPCOMING TOURNAMENTS</h2>
+                  <p class="small text-muted mb-0">Synced with public tournament schedule</p>
+                </div>
+                <a href="tournaments.html" class="btn-user-outline btn-sm">All Events</a>
+              </div>
+              <div class="d-flex flex-column gap-3" id="userDashTournaments"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="user-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">RECENT ACTIVITY</h2>
+                  <p class="small text-muted mb-0">Your latest demo sessions &amp; updates</p>
+                </div>
+                <a href="activity.html" class="small text-teal fw-semibold text-decoration-none">Full History</a>
+              </div>
+              <div id="userDashActivity"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/user-sidebar.js"></script>
+  <script src="js/user-dashboard.js"></script>
+</body>
+</html>

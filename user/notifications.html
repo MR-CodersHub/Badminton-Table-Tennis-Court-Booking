@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Player - Notifications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/user-animations.css">
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" href="css/user-responsive.css">
+  <style>
+    .notif-card { background: var(--user-card-bg); border: 1px solid var(--user-card-border); border-radius: 1rem; padding: 1.1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; transition: border-color .2s, background .2s; position: relative; }
+    .notif-card.unread { border-color: rgba(40, 125, 222, .35); background: rgba(40, 125, 222, .05); }
+    .notif-card:hover { border-color: var(--user-accent-blue); }
+    .notif-unread-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--user-accent-blue); flex-shrink: 0; margin-top: .35rem; }
+    .notif-unread-dot.hidden { background: transparent; }
+    .notif-body { flex: 1; min-width: 0; }
+    .notif-category { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; padding: .15rem .55rem; border-radius: .3rem; display: inline-block; margin-bottom: .4rem; }
+    .notif-category.bookings { background: rgba(40, 125, 222, .15); color: var(--user-accent-blue); }
+    .notif-category.tournaments { background: rgba(198, 243, 107, .15); color: var(--user-accent-lime); }
+    .notif-category.membership { background: rgba(32, 201, 166, .15); color: var(--user-accent-teal); }
+    .notif-category.announcements { background: rgba(255, 193, 7, .12); color: #ffc107; }
+    .notif-title { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; margin-bottom: .25rem; }
+    .notif-msg { font-size: .82rem; color: var(--user-muted); line-height: 1.5; }
+    .notif-time { font-size: .72rem; color: var(--user-muted); margin-top: .35rem; }
+    .notif-actions { display: flex; gap: .4rem; flex-shrink: 0; flex-wrap: wrap; }
+    .notif-empty { text-align: center; padding: 3rem 1rem; color: var(--user-muted); }
+    .notif-empty svg { opacity: .3; margin-bottom: .75rem; }
+  </style>
+</head>
+<body data-user-page="notifications" data-page-title="Notifications">
+  <div class="user-shell">
+    <div id="userSidebarMount"></div>
+    <div class="user-main-wrap">
+      <div id="userTopbarMount"></div>
+
+      <main class="user-content">
+        <!-- Page Header -->
+        <div class="mb-4 user-animate-in d-flex flex-wrap justify-content-between align-items-start gap-3">
+          <div>
+            <h1 class="h3 fw-bold mb-1">NOTIFICATIONS</h1>
+            <p class="small text-muted mb-0">Stay updated on bookings, tournaments, and announcements.</p>
+          </div>
+          <button type="button" class="btn-user-outline btn-sm" id="markAllReadBtn">Mark All as Read</button>
+        </div>
+
+        <!-- Summary Cards -->
+        <section class="row g-3 mb-4" id="notifSummary"></section>
+
+        <!-- Filter Tabs -->
+        <div class="d-flex flex-wrap gap-2 mb-4" id="notifFilterTabs">
+          <button class="btn-user-primary btn-sm notif-tab" data-filter="all">All</button>
+          <button class="btn-user-outline btn-sm notif-tab" data-filter="Unread">Unread</button>
+          <button class="btn-user-outline btn-sm notif-tab" data-filter="Bookings">Bookings</button>
+          <button class="btn-user-outline btn-sm notif-tab" data-filter="Membership">Membership</button>
+          <button class="btn-user-outline btn-sm notif-tab" data-filter="Tournaments">Tournaments</button>
+          <button class="btn-user-outline btn-sm notif-tab" data-filter="Announcements">Announcements</button>
+        </div>
+
+        <!-- Notification List -->
+        <div class="d-flex flex-column gap-3" id="notifList"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/user-sidebar.js"></script>
+  <script src="js/user-notifications.js"></script>
+</body>
+</html>

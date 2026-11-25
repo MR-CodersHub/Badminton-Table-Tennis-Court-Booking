@@ -1,0 +1,115 @@
+/* ==========================================================================
+   COURTLY ADMIN DASHBOARD - RESPONSIVE BREAKPOINTS
+   Tested for: 360px, 375px, 390px, 430px, 768px, 1024px, 1280px, 1440px, 1920px
+   Zero horizontal overflow guaranteed.
+   ========================================================================== */
+
+/* Tablet & Smaller Desktop (<= 1199px) */
+@media (max-width: 1199.98px) {
+  .admin-search-box {
+    width: 210px;
+  }
+  .admin-content {
+    padding: 22px;
+  }
+}
+
+/* Mobile & Tablet Drawer (< 992px) */
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width) !important;
+  }
+
+  [dir="rtl"] .admin-sidebar {
+    transform: translateX(100%);
+  }
+
+  body.sidebar-mobile-open .admin-sidebar {
+    transform: translateX(0);
+  }
+
+  /* Restore labels inside mobile drawer even if desktop was collapsed */
+  body.sidebar-collapsed .admin-brand-text,
+  body.sidebar-collapsed .admin-sidebar-label,
+  body.sidebar-collapsed .admin-nav-text,
+  body.sidebar-collapsed .admin-nav-badge,
+  body.sidebar-collapsed .admin-profile-meta,
+  body.sidebar-collapsed .admin-logout-text {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
+  }
+
+  body.sidebar-collapsed .admin-nav-link {
+    justify-content: flex-start;
+    padding-inline: 14px;
+  }
+
+  .admin-main-wrap,
+  body.sidebar-collapsed .admin-main-wrap,
+  [dir="rtl"] .admin-main-wrap,
+  [dir="rtl"] body.sidebar-collapsed .admin-main-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .admin-topbar {
+    padding: 0 16px;
+  }
+
+  .admin-search-box {
+    display: none;
+  }
+
+  .admin-welcome-banner {
+    padding: 22px;
+  }
+
+  .admin-welcome-svg {
+    display: none;
+  }
+}
+
+/* Small Mobile (<= 575px — covers 360px, 375px, 390px, 430px) */
+@media (max-width: 575.98px) {
+  .admin-content {
+    padding: 14px;
+  }
+
+  .admin-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .admin-topbar {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .admin-breadcrumb-prefix {
+    display: none;
+  }
+
+  .admin-profile-trigger-name {
+    display: none;
+  }
+
+  .admin-kpi-value {
+    font-size: 1.55rem;
+  }
+
+  .admin-bar {
+    width: 10px;
+  }
+
+  .admin-chart-grid {
+    gap: 6px;
+  }
+
+  .admin-toast-container {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+}

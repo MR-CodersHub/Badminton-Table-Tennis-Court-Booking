@@ -10,47 +10,22 @@
   // Dynamic navigation link generation based on current page
   function getNavLinks() {
     const isHome2 = window.location.pathname.endsWith('home2.html') || (document.body && document.body.dataset.page === 'home2');
+    const isAbout = window.location.pathname.endsWith('about.html') || (document.body && document.body.dataset.page === 'about');
+    const isCourt = window.location.pathname.endsWith('court.html') || (document.body && document.body.dataset.page === 'court');
+    const isPlans = window.location.pathname.endsWith('plans.html') || (document.body && document.body.dataset.page === 'plans');
+    const isBlog = window.location.pathname.endsWith('blog.html') || window.location.pathname.endsWith('blog-details.html') || (document.body && (document.body.dataset.page === 'blog' || document.body.dataset.page === 'blog-details'));
+    const isContact = window.location.pathname.endsWith('contact.html') || (document.body && document.body.dataset.page === 'contact');
+    const isHomePage = !isHome2 && !isAbout && !isCourt && !isPlans && !isBlog && !isContact;
     return [
-      { label: 'Home 1', href: 'index.html', active: !isHome2 },
+      { label: 'Home 1', href: 'index.html', active: isHomePage },
       { label: 'Home 2', href: 'home2.html', active: isHome2 },
-      { label: 'About', href: isHome2 ? 'home2.html#h2-features' : 'index.html#about-features', active: false },
-      { label: 'Court', href: isHome2 ? 'home2.html#h2-sports' : 'index.html#live-courts', active: false },
-      { label: 'Plans', href: isHome2 ? 'home2.html#h2-membership' : 'index.html#membership-preview', active: false },
-      { label: 'Blog', href: isHome2 ? 'home2.html#h2-testimonials' : 'index.html#tournaments', active: false },
-      { label: 'Contact', href: isHome2 ? '#app-footer' : '#contact-info', active: false }
+      { label: 'About', href: 'about.html', active: isAbout },
+      { label: 'Court', href: 'court.html', active: isCourt },
+      { label: 'Plans', href: 'plans.html', active: isPlans },
+      { label: 'Blog', href: 'blog.html', active: isBlog },
+      { label: 'Contact', href: 'contact.html', active: isContact }
     ];
   }
-
-  // SVG Brand Logo fusing a shuttlecock feather line and a table tennis paddle outline
-  const BRAND_LOGO_SVG = `
-    <svg class="brand-logo-icon" width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="courtlyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#287DDE" />
-          <stop offset="50%" stop-color="#20C9A6" />
-          <stop offset="100%" stop-color="#C6F36B" />
-        </linearGradient>
-        <linearGradient id="paddleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#20C9A6" />
-          <stop offset="100%" stop-color="#287DDE" />
-        </linearGradient>
-      </defs>
-      <!-- Court Grid / Ring Background -->
-      <circle cx="24" cy="24" r="22" stroke="url(#courtlyGrad)" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.65" />
-      
-      <!-- Table Tennis Paddle Silhouette -->
-      <circle cx="21" cy="21" r="12" fill="url(#paddleGlow)" fill-opacity="0.25" stroke="#287DDE" stroke-width="2.2" />
-      <path d="M29.5 29.5 L39 39" stroke="#C6F36B" stroke-width="3.5" stroke-linecap="round" />
-      
-      <!-- Badminton Shuttlecock Feather Geometric Silhouette -->
-      <path d="M15 15 L24 8 L30 19 Z" fill="none" stroke="#20C9A6" stroke-width="2" stroke-linejoin="round" />
-      <path d="M19 19 L27 13" stroke="#C6F36B" stroke-width="1.8" stroke-linecap="round" />
-      <circle cx="15.5" cy="15.5" r="3.2" fill="#C6F36B" />
-      
-      <!-- Table Tennis Mini Ball Accent -->
-      <circle cx="34" cy="18" r="2.8" fill="#FFFFFF" />
-    </svg>
-  `;
 
   // Render the Navbar HTML
   function renderNavbar() {
@@ -77,9 +52,8 @@
           
           <!-- LEFT: Brand Logo -->
           <a href="index.html" class="courtly-brand d-flex align-items-center text-decoration-none">
-            <div class="brand-logo-wrap position-relative">
-              ${BRAND_LOGO_SVG}
-              <span class="logo-pulse-glow"></span>
+            <div class="brand-logo-wrap">
+              <img class="brand-logo-icon" src="assets/logo.png" alt="" width="40" height="40">
             </div>
             <div class="brand-text-wrap ms-2">
               <span class="brand-name">COURTLY</span>
@@ -104,8 +78,7 @@
             
             <!-- Direction Toggle (LTR/RTL) -->
             <button type="button" class="courtly-btn-icon" id="toggleDirectionBtn" title="Switch text direction (LTR / RTL)" aria-label="Toggle Direction">
-              <span class="dir-badge" id="directionBadge">${isRtl ? 'RTL' : 'LTR'}</span>
-              <i class="fa-solid fa-repeat icon-symbol"></i>
+              <i class="fa-solid ${isRtl ? 'fa-arrow-left' : 'fa-arrow-right'}" id="directionIcon" aria-hidden="true"></i>
             </button>
 
             <!-- Theme Toggle (Dark / Light) -->
@@ -131,22 +104,22 @@
                   <p class="user-email">guest.athlete@courtly.com</p>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a href="#login-modal" class="dropdown-item" role="menuitem" data-bs-toggle="modal" data-bs-target="#authModal" data-auth-mode="login">
+                <a href="login.html" class="dropdown-item" role="menuitem">
                   <div class="item-icon-box"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>
                   <div class="item-content">
                     <span class="item-title">Login</span>
                     <small class="item-subtitle">Access your court passes</small>
                   </div>
                 </a>
-                <a href="#signup-modal" class="dropdown-item" role="menuitem" data-bs-toggle="modal" data-bs-target="#authModal" data-auth-mode="signup">
+                <a href="signup.html" class="dropdown-item" role="menuitem">
                   <div class="item-icon-box"><i class="fa-solid fa-user-plus"></i></div>
                   <div class="item-content">
                     <span class="item-title">Signup</span>
-                    <small class="item-subtitle">Join community for $0 fee</small>
+                    <small class="item-subtitle">Join community for ₹0 fee</small>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#admin-dashboard" class="dropdown-item" role="menuitem" id="adminDashboardLink">
+                <a href="admin/dashboard.html" class="dropdown-item" role="menuitem" id="adminDashboardLink">
                   <div class="item-icon-box admin-badge"><i class="fa-solid fa-shield-halved"></i></div>
                   <div class="item-content">
                     <span class="item-title">Admin Dashboard</span>
@@ -154,7 +127,7 @@
                   </div>
                   <span class="badge-role">Staff</span>
                 </a>
-                <a href="#player-dashboard" class="dropdown-item" role="menuitem" id="playerDashboardLink">
+                <a href="user/dashboard.html" class="dropdown-item" role="menuitem" id="playerDashboardLink">
                   <div class="item-icon-box player-badge"><i class="fa-solid fa-trophy"></i></div>
                   <div class="item-content">
                     <span class="item-title">Player Dashboard</span>
@@ -182,7 +155,7 @@
         <div class="mobile-drawer-content">
           <div class="drawer-header d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-              ${BRAND_LOGO_SVG}
+              <img class="brand-logo-icon" src="assets/logo.png" alt="" width="40" height="40">
               <div class="ms-2">
                 <span class="brand-name">COURTLY</span>
                 <span class="brand-badge">PRO ARENA</span>
@@ -244,7 +217,7 @@
     const toggleThemeBtn = document.getElementById('toggleThemeBtn');
     const toggleDirectionBtn = document.getElementById('toggleDirectionBtn');
     const themeIcon = document.getElementById('themeIcon');
-    const directionBadge = document.getElementById('directionBadge');
+    const directionIcon = document.getElementById('directionIcon');
 
     // 1. Scroll-triggered glassmorphism
     function handleScroll() {
@@ -346,8 +319,8 @@
         document.documentElement.setAttribute('dir', nextDir);
         localStorage.setItem('courtly_direction', nextDir);
 
-        if (directionBadge) {
-          directionBadge.textContent = nextDir.toUpperCase();
+        if (directionIcon) {
+          directionIcon.className = `fa-solid ${nextDir === 'rtl' ? 'fa-arrow-left' : 'fa-arrow-right'}`;
         }
 
         showToastFeedback(`Layout switched to ${nextDir.toUpperCase()}`);
@@ -359,16 +332,14 @@
     const playerLink = document.getElementById('playerDashboardLink');
 
     if (adminLink) {
-      adminLink.addEventListener('click', (e) => {
-        e.preventDefault();
+      adminLink.addEventListener('click', () => {
         showToastFeedback('Opening Admin Arena Console...');
       });
     }
 
     if (playerLink) {
-      playerLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showToastFeedback('Opening Player Pass & Matches...');
+      playerLink.addEventListener('click', () => {
+        showToastFeedback('Opening Player Space...');
       });
     }
   }

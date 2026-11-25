@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Admin - Membership Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin-animations.css">
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-responsive.css">
+</head>
+<body data-admin-page="memberships" data-page-title="Memberships">
+  <div class="admin-shell">
+    <div id="adminSidebarMount"></div>
+    <div class="admin-main-wrap">
+      <div id="adminTopbarMount"></div>
+
+      <main class="admin-content">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 admin-animate-in">
+          <div>
+            <span class="admin-demo-pill mb-1">PLANS SYNCED WITH PUBLIC PLANS PAGE</span>
+            <h1 class="h3 fw-bold mb-1">MEMBERSHIP MANAGEMENT</h1>
+            <p class="small text-muted mb-0">Monitor Starter, Pro Athlete, and Elite Player passes and demo subscriptions.</p>
+          </div>
+          <a href="../plans.html" target="_blank" rel="noopener noreferrer" class="btn-admin-outline">Manage Plans (Public View)</a>
+        </div>
+
+        <!-- 3 Plan Summary Cards -->
+        <section class="row g-3 g-xl-4 mb-4" id="adminPlanCards"></section>
+
+        <!-- Active Subscriptions Summary + Distribution Chart -->
+        <section class="row g-4 mb-4">
+          <div class="col-12 col-lg-4">
+            <div class="admin-card h-100 d-flex flex-column justify-content-center">
+              <span class="small text-muted fw-semibold">Total Active Subscriptions (Demo)</span>
+              <div class="admin-kpi-value my-2" id="totalActiveSubs">0</div>
+              <p class="small text-muted mb-0">Across Starter (₹499/mo), Pro Athlete (₹999/mo), and Elite Player (₹1,799/mo).</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="admin-card h-100">
+              <h2 class="h6 fw-bold mb-3">PLAN DISTRIBUTION (DEMO)</h2>
+              <div class="d-flex flex-column gap-3" id="planDistributionBars"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Subscriptions Table -->
+        <section class="admin-card">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <h2 class="h5 fw-bold mb-0">MEMBER SUBSCRIPTIONS</h2>
+            <div class="d-flex flex-wrap gap-2">
+              <input type="search" class="form-control form-control-sm admin-control" id="memSearch" placeholder="Search player..." style="width:190px;">
+              <select class="form-select form-select-sm admin-control" id="memPlanFilter" style="width:150px;">
+                <option value="all">All Plans</option>
+                <option value="Starter">Starter</option>
+                <option value="Pro Athlete">Pro Athlete</option>
+                <option value="Elite Player">Elite Player</option>
+              </select>
+              <select class="form-select form-select-sm admin-control" id="memStatusFilter" style="width:140px;">
+                <option value="all">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Player</th>
+                  <th>Plan</th>
+                  <th>Monthly Fee</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="memTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Member Details Modal -->
+  <div class="modal fade" id="viewMemberModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content admin-modal">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Subscription Details (Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="viewMemberBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn-admin-outline btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Subscription Modal -->
+  <div class="modal fade" id="editSubModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form class="modal-content admin-modal" id="editSubForm">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Edit Subscription (Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row g-3">
+          <input type="hidden" id="editSubId">
+          <div class="col-12">
+            <label class="form-label small">Player Name</label>
+            <input type="text" class="form-control admin-control" id="editSubPlayer" readonly>
+          </div>
+          <div class="col-6">
+            <label class="form-label small">Membership Plan</label>
+            <select class="form-select admin-control" id="editSubPlan">
+              <option value="Starter">Starter (₹499/mo)</option>
+              <option value="Pro Athlete">Pro Athlete (₹999/mo)</option>
+              <option value="Elite Player">Elite Player (₹1,799/mo)</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label class="form-label small">Status</label>
+            <select class="form-select admin-control" id="editSubStatus">
+              <option value="Active">Active</option>
+              <option value="Pending">Pending</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label small">End Date</label>
+            <input type="date" class="form-control admin-control" id="editSubEnd" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-admin-outline btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn-admin-primary btn-sm">Save Subscription</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/admin-sidebar.js"></script>
+  <script src="js/admin-memberships.js"></script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+/* ==========================================================================
+   COURTLY - CONTACT PAGE STYLESHEET
+   Hero • Contact Cards • Enquiry Form • Timings • Map • FAQ
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Section 1: Contact Hero
+   -------------------------------------------------------------------------- */
+.cnt-hero-section {
+  position: relative;
+  min-height: 90vh;
+  padding-top: 8.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  background: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.cnt-hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cnt-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.cnt-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 20, 34, 0.94) 0%, rgba(16, 29, 50, 0.85) 55%, rgba(23, 76, 128, 0.72) 100%);
+}
+
+.cnt-court-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(32, 201, 166, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 201, 166, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cnt-hero-heading {
+  font-size: clamp(2.4rem, 5vw, 4.1rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 0.85rem;
+}
+
+.cnt-hero-subheading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-lime);
+  margin-bottom: 0.85rem;
+}
+
+.cnt-hero-desc {
+  font-size: 1.14rem;
+  line-height: 1.65;
+  color: #CBD5E1;
+  max-width: 590px;
+  margin-bottom: 1.75rem;
+}
+
+.cnt-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #F1F5F9;
+}
+
+.cnt-hero-outline-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cnt-hero-image-frame {
+  position: relative;
+  height: clamp(28rem, 42vw, 34rem);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.25rem 5rem 1.25rem 1.25rem;
+  border: 1px solid rgba(198, 243, 107, 0.38);
+  box-shadow: 0 30px 70px rgba(3, 10, 20, 0.48);
+}
+
+.cnt-hero-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1);
+}
+
+.cnt-hero-image-frame:hover .cnt-hero-feature-image {
+  transform: scale(1.035);
+}
+
+.cnt-hero-image-wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(11, 20, 34, 0.08) 35%, rgba(32, 201, 166, 0.42) 100%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section 2: Contact Information Cards
+   -------------------------------------------------------------------------- */
+.cnt-info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.cnt-info-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-teal);
+}
+
+.cnt-info-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background: rgba(32, 201, 166, 0.14);
+  border: 1px solid rgba(32, 201, 166, 0.35);
+  color: var(--color-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.cnt-info-card:hover .cnt-info-icon {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   3. Section 3: Contact Form & Support Panel
+   -------------------------------------------------------------------------- */
+.cnt-form-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  height: 100%;
+  box-shadow: var(--shadow-card);
+}
+
+.cnt-field-error {
+  font-size: 0.8rem;
+  color: #FF6B81;
+  margin-top: 0.35rem;
+  min-height: 1.1rem;
+}
+
+.cnt-success-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.cnt-support-panel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 520px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+}
+
+.cnt-support-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.cnt-support-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 20, 34, 0.35) 0%, rgba(11, 20, 34, 0.95) 75%);
+  z-index: 1;
+}
+
+.cnt-support-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cnt-support-glass-box {
+  background: rgba(16, 29, 50, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(32, 201, 166, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.cnt-quick-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #F1F5F9;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.cnt-quick-link:hover {
+  background: rgba(32, 201, 166, 0.14);
+  color: var(--color-lime);
+}
+
+/* --------------------------------------------------------------------------
+   4. Section 4: Office Timings
+   -------------------------------------------------------------------------- */
+.cnt-timings-card {
+  max-width: 820px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.cnt-timing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: var(--radius-md);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.cnt-timing-row:last-child {
+  border-bottom: none;
+}
+
+.cnt-timing-row.today {
+  background: rgba(32, 201, 166, 0.12);
+  border: 1px solid rgba(32, 201, 166, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   5. Section 5: Location & Map
+   -------------------------------------------------------------------------- */
+.cnt-map-frame {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(32,201,166,0.08);
+}
+
+/* Responsive iframe wrapper — 16:9 within the frame */
+.cnt-map-embed-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 360px;
+}
+
+.cnt-map-embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* "Sample Location" label below the map */
+.cnt-map-sample-label {
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-teal);
+  background: rgba(32, 201, 166, 0.07);
+  border-top: 1px solid rgba(32, 201, 166, 0.18);
+  letter-spacing: 0.01em;
+}
+
+.cnt-map-placeholder {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 480px;
+  margin: auto;
+}
+
+.cnt-location-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+}
+
+/* --------------------------------------------------------------------------
+   6. Section 6: Social Media — Rich Brand Cards
+   -------------------------------------------------------------------------- */
+.cnt-social-placeholder {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem 2rem;
+  text-align: center;
+}
+
+/* Legacy simple card (kept for backward compat) */
+.cnt-social-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+.cnt-social-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-lime);
+}
+
+/* ── Rich Social Card ───────────────────────────────────────────── */
+.cnt-social-card-rich {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 2rem 1.5rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.34,1.4,0.64,1),
+              border-color 0.25s ease,
+              box-shadow 0.28s ease;
+  height: 100%;
+}
+
+/* subtle top glow strip */
+.cnt-social-card-rich::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.85;
+  transition: opacity 0.25s;
+}
+
+.cnt-social-card-rich:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.4);
+  color: var(--text-main);
+}
+
+/* Platform accent top-strips & icon colours */
+.soc-instagram::before  { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.soc-facebook::before   { background: linear-gradient(90deg, #1877f2, #3b8fed); }
+.soc-youtube::before    { background: linear-gradient(90deg, #ff0000, #cc0000); }
+.soc-linkedin::before   { background: linear-gradient(90deg, #0077b5, #00a0dc); }
+
+.soc-instagram:hover  { border-color: rgba(220, 39, 67, 0.5); }
+.soc-facebook:hover   { border-color: rgba(24, 119, 242, 0.5); }
+.soc-youtube:hover    { border-color: rgba(255, 0, 0, 0.5); }
+.soc-linkedin:hover   { border-color: rgba(0, 119, 181, 0.5); }
+
+/* Icon wrapper */
+.cnt-soc-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: transform 0.25s ease;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.soc-instagram .cnt-soc-icon-wrap  { color: #e6683c; }
+.soc-facebook  .cnt-soc-icon-wrap  { color: #1877f2; }
+.soc-youtube   .cnt-soc-icon-wrap  { color: #ff0000; }
+.soc-linkedin  .cnt-soc-icon-wrap  { color: #0077b5; }
+
+.cnt-social-card-rich:hover .cnt-soc-icon-wrap {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+/* Platform label */
+.cnt-soc-platform-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dimmed);
+  margin-bottom: 8px;
+}
+
+/* Card title */
+.cnt-soc-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+/* Description */
+.cnt-soc-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0 0 auto;
+  padding-bottom: 1.25rem;
+  flex: 1;
+}
+
+/* CTA button-link */
+.cnt-soc-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-top: auto;
+  transition: background 0.22s, color 0.22s;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.soc-instagram .cnt-soc-btn  { color: #e6683c; border-color: rgba(220,39,67,0.3); }
+.soc-facebook  .cnt-soc-btn  { color: #4a9af5; border-color: rgba(24,119,242,0.3); }
+.soc-youtube   .cnt-soc-btn  { color: #ff4444; border-color: rgba(255,0,0,0.3); }
+.soc-linkedin  .cnt-soc-btn  { color: #00a0dc; border-color: rgba(0,119,181,0.3); }
+
+.soc-instagram:hover .cnt-soc-btn { background: rgba(220,39,67,0.15); }
+.soc-facebook:hover  .cnt-soc-btn { background: rgba(24,119,242,0.15); }
+.soc-youtube:hover   .cnt-soc-btn { background: rgba(255,0,0,0.15); }
+.soc-linkedin:hover  .cnt-soc-btn { background: rgba(0,119,181,0.15); }
+
+/* Light theme adjustments */
+[data-theme="light"] .cnt-social-card-rich {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .cnt-social-card-rich:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.14);
+}
+[data-theme="light"] .cnt-soc-icon-wrap {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.08);
+}
+[data-theme="light"] .cnt-map-sample-label {
+  background: rgba(32,201,166,0.08);
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .cnt-map-embed-wrap {
+    min-height: 260px;
+  }
+  .cnt-soc-title   { font-size: 0.9rem; }
+  .cnt-soc-desc    { font-size: 0.75rem; }
+  .cnt-soc-btn     { font-size: 0.72rem; padding: 7px 14px; }
+  .cnt-soc-icon-wrap { width: 52px; height: 52px; border-radius: 14px; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Section 7: FAQ Accordion
+   -------------------------------------------------------------------------- */
+.cnt-faq-list {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cnt-faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.cnt-faq-item.open {
+  border-color: var(--color-teal);
+}
+
+.cnt-faq-trigger {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  cursor: pointer;
+}
+
+[dir="rtl"] .cnt-faq-trigger {
+  text-align: right;
+}
+
+.cnt-faq-icon {
+  color: var(--color-teal);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.cnt-faq-item.open .cnt-faq-icon {
+  transform: rotate(180deg);
+  color: var(--color-lime);
+}
+
+.cnt-faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  transition: max-height 0.35s ease, padding-bottom 0.35s ease;
+}
+
+.cnt-faq-item.open .cnt-faq-panel {
+  max-height: 240px;
+  padding-bottom: 1.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section 8: Final CTA
+   -------------------------------------------------------------------------- */
+.cnt-final-cta-section {
+  position: relative;
+  padding: 6.5rem 0;
+  background: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.cnt-final-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  z-index: 0;
+}
+
+.cnt-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(23, 76, 128, 0.45) 0%, rgba(11, 20, 34, 0.95) 75%);
+  z-index: 1;
+}
+
+.cnt-final-card {
+  position: relative;
+  background: rgba(16, 29, 50, 0.84);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid var(--color-teal);
+  border-radius: var(--radius-xl);
+  padding: 4.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .cnt-form-card,
+  .cnt-timings-card,
+  .cnt-final-card {
+    padding: 2rem 1.35rem;
+  }
+
+  .cnt-support-panel {
+    min-height: 400px;
+  }
+
+  .cnt-timing-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

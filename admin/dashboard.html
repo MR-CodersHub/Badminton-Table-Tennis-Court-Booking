@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Admin - Dashboard Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin-animations.css">
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-responsive.css">
+</head>
+<body data-admin-page="dashboard" data-page-title="Dashboard">
+  <div class="admin-shell">
+    <div id="adminSidebarMount"></div>
+    <div class="admin-main-wrap">
+      <div id="adminTopbarMount"></div>
+
+      <main class="admin-content">
+        <!-- Welcome Banner -->
+        <section class="admin-welcome-banner admin-animate-in mb-4">
+          <svg class="admin-welcome-svg" viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="12" y="12" width="236" height="136" rx="12" stroke="#C6F36B" stroke-width="2" stroke-dasharray="8 6"/>
+            <line x1="130" y1="12" x2="130" y2="148" stroke="#20C9A6" stroke-width="2"/>
+            <circle cx="130" cy="80" r="34" stroke="#FFFFFF" stroke-width="2"/>
+          </svg>
+          <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 position-relative">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <span class="admin-demo-pill">DEMO ARENA TELEMETRY</span>
+                <span class="small text-light opacity-75" id="dashCurrentDate"></span>
+              </div>
+              <h1 class="h2 fw-bold mb-1">GOOD MORNING, ADMIN!</h1>
+              <p class="mb-0 text-light opacity-75">Here's what's happening across your COURTLY sports arena today.</p>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="bookings.html" class="btn-admin-lime">View Bookings</a>
+              <a href="courts.html" class="btn-admin-outline" style="color:#fff;border-color:rgba(255,255,255,0.35);">Manage Courts</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 KPI Summary Cards -->
+        <section class="row g-3 g-xl-4 mb-4">
+          <div class="col-12 col-sm-6 col-xl-3 admin-animate-in admin-delay-1">
+            <div class="admin-card admin-card-hover admin-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Total Bookings</span>
+                  <div class="admin-kpi-value mt-1">248</div>
+                </div>
+                <div class="admin-kpi-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="admin-trend-pill">+12.5% from last month</span>
+                <span class="small text-muted">Demo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 admin-animate-in admin-delay-2">
+            <div class="admin-card admin-card-hover admin-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Active Players</span>
+                  <div class="admin-kpi-value mt-1">1,284</div>
+                </div>
+                <div class="admin-kpi-icon teal">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="admin-trend-pill">+8.2% from last month</span>
+                <span class="small text-muted">Demo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 admin-animate-in admin-delay-3">
+            <div class="admin-card admin-card-hover admin-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Monthly Revenue</span>
+                  <div class="admin-kpi-value mt-1">₹1,48,500</div>
+                </div>
+                <div class="admin-kpi-icon lime">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="admin-trend-pill">+10.4% from last month</span>
+                <span class="small text-muted">Demo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3 admin-animate-in admin-delay-4">
+            <div class="admin-card admin-card-hover admin-kpi-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small text-muted fw-semibold">Active Memberships</span>
+                  <div class="admin-kpi-value mt-1">186</div>
+                </div>
+                <div class="admin-kpi-icon amber">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="admin-trend-pill">+6.8% from last month</span>
+                <span class="small text-muted">Demo</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Booking Overview + Live Court Activity -->
+        <section class="row g-4 mb-4">
+          <div class="col-12 col-xl-7">
+            <div class="admin-card h-100">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">BOOKING OVERVIEW</h2>
+                  <p class="small text-muted mb-0">Badminton vs Table Tennis session comparison (Illustrative demo)</p>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <select class="form-select form-select-sm admin-control" id="dashChartRange" aria-label="Chart range">
+                    <option value="weekly" selected>Last 7 Days</option>
+                    <option value="monthly">Last 6 Months</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mb-2 small">
+                <span class="d-inline-flex align-items-center gap-2">
+                  <span style="width:12px;height:12px;border-radius:3px;background:var(--color-teal);display:inline-block;"></span>
+                  Badminton
+                </span>
+                <span class="d-inline-flex align-items-center gap-2">
+                  <span style="width:12px;height:12px;border-radius:3px;background:var(--color-lime);display:inline-block;"></span>
+                  Table Tennis
+                </span>
+              </div>
+
+              <div class="admin-chart-grid" id="dashBookingChart"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="admin-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">LIVE COURT ACTIVITY</h2>
+                  <p class="small text-muted mb-0">Real-time demo occupancy across 4 courts</p>
+                </div>
+                <a href="courts.html" class="small text-teal fw-semibold text-decoration-none">All Courts</a>
+              </div>
+              <div class="d-flex flex-column gap-3" id="dashCourtActivity"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Bookings Table -->
+        <section class="admin-card mb-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+            <div>
+              <h2 class="h5 fw-bold mb-1">RECENT BOOKINGS</h2>
+              <p class="small text-muted mb-0">Sample booking records in INR (₹)</p>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <input type="search" class="form-control form-control-sm admin-control" id="dashBookingSearch" placeholder="Filter player or ID..." style="width:190px;">
+              <select class="form-select form-select-sm admin-control" id="dashBookingStatusFilter" style="width:140px;">
+                <option value="all">All Status</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+              <a href="bookings.html" class="btn-admin-primary btn-sm">View All Bookings</a>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Player Name</th>
+                  <th>Court</th>
+                  <th>Sport</th>
+                  <th>Date</th>
+                  <th>Time Slot</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="dashRecentBookingsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Upcoming Tournaments & Recent Activity -->
+        <section class="row g-4">
+          <div class="col-12 col-xl-7">
+            <div class="admin-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">UPCOMING TOURNAMENTS</h2>
+                  <p class="small text-muted mb-0">Synced with public tournament schedule</p>
+                </div>
+                <a href="tournaments.html" class="btn-admin-outline btn-sm">Manage All</a>
+              </div>
+              <div class="row g-3" id="dashUpcomingTournaments"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="admin-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h2 class="h5 fw-bold mb-1">RECENT ACTIVITY</h2>
+                  <p class="small text-muted mb-0">Latest facility &amp; player demo events</p>
+                </div>
+                <span class="admin-demo-pill">LIVE LOG</span>
+              </div>
+              <div class="admin-timeline" id="dashActivityTimeline"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Booking Detail Modal -->
+  <div class="modal fade" id="dashBookingDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content admin-modal">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Booking Details (Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="dashBookingDetailBody"></div>
+        <div class="modal-footer">
+          <a href="bookings.html" class="btn-admin-primary btn-sm">Manage in Bookings</a>
+          <button type="button" class="btn-admin-outline btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/admin-sidebar.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

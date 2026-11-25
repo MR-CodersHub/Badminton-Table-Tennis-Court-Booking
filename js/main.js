@@ -15,10 +15,44 @@
       id: 'court-01',
       name: 'Badminton Court 01 (Championship Wood)',
       sport: 'Badminton',
-      price: 24,
+      price: 600,
       image: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80'
     }
   };
+
+  function initMembershipPricing() {
+    const planCards = document.querySelectorAll(
+      '.membership-card[data-membership-plan], .h2-pricing-card[data-membership-plan]'
+    );
+    if (!planCards.length) return;
+
+    const plans = window.COURTLY_DATA && window.COURTLY_DATA.membershipPlans;
+    if (!Array.isArray(plans)) {
+      console.error('Membership pricing data is unavailable.');
+      return;
+    }
+
+    planCards.forEach(card => {
+      const planId = card.getAttribute('data-membership-plan');
+      const plan = plans.find(item => item.id === planId);
+      const currencyEl = card.querySelector('.plan-price-currency');
+      const amountEl = card.querySelector('.plan-price-amount');
+
+      if (!plan || !currencyEl || !amountEl) {
+        console.error(`Membership pricing markup is incomplete for "${planId}".`);
+        return;
+      }
+
+      const priceParts = /^(₹)\s*([\d,]+)$/.exec(plan.price);
+      if (!priceParts) {
+        console.error(`Membership price is invalid for "${planId}".`);
+        return;
+      }
+
+      currencyEl.textContent = priceParts[1];
+      amountEl.textContent = priceParts[2];
+    });
+  }
 
   // 1. Time Slot Selector Logic
   function initTimeSlotSelector() {
@@ -190,7 +224,7 @@
 
         if (modalCourtName) modalCourtName.textContent = courtName;
         if (modalCourtSport) modalCourtSport.textContent = courtSport;
-        if (modalCourtPrice) modalCourtPrice.textContent = `$${courtPrice}/hr`;
+        if (modalCourtPrice) modalCourtPrice.textContent = `₹${courtPrice}/hr`;
 
         if (modalSlotSelect) {
           modalSlotSelect.value = AppState.selectedTimeSlot;
@@ -395,6 +429,7 @@
 
   // Initialize on DOM load
   document.addEventListener('DOMContentLoaded', () => {
+    initMembershipPricing();
     initTimeSlotSelector();
     initTournamentCountdown();
     initTestimonialCarousel();

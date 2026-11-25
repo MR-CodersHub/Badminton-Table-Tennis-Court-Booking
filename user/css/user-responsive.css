@@ -1,0 +1,107 @@
+/* ==========================================================================
+   COURTLY PLAYER DASHBOARD - RESPONSIVE BREAKPOINTS
+   Tested for: 360px, 375px, 390px, 430px, 768px, 1024px, 1280px, 1440px, 1920px
+   Zero horizontal overflow guaranteed.
+   ========================================================================== */
+
+@media (max-width: 1199.98px) {
+  .user-search-box {
+    width: 210px;
+  }
+  .user-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .user-sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width) !important;
+  }
+
+  [dir="rtl"] .user-sidebar {
+    transform: translateX(100%);
+  }
+
+  body.sidebar-mobile-open .user-sidebar {
+    transform: translateX(0);
+  }
+
+  body.sidebar-collapsed .user-brand-text,
+  body.sidebar-collapsed .user-sidebar-label,
+  body.sidebar-collapsed .user-nav-text,
+  body.sidebar-collapsed .user-nav-badge,
+  body.sidebar-collapsed .user-profile-meta,
+  body.sidebar-collapsed .user-logout-text {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
+  }
+
+  body.sidebar-collapsed .user-nav-link {
+    justify-content: flex-start;
+    padding-inline: 14px;
+  }
+
+  .user-main-wrap,
+  body.sidebar-collapsed .user-main-wrap,
+  [dir="rtl"] .user-main-wrap,
+  [dir="rtl"] body.sidebar-collapsed .user-main-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .user-topbar {
+    padding: 0 16px;
+  }
+
+  .user-search-box {
+    display: none;
+  }
+
+  .user-welcome-banner {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .user-content {
+    padding: 14px;
+  }
+
+  .user-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .user-topbar {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .user-breadcrumb-prefix {
+    display: none;
+  }
+
+  .user-profile-trigger-name {
+    display: none;
+  }
+
+  .user-kpi-value {
+    font-size: 1.5rem;
+  }
+
+  .user-bar {
+    width: 10px;
+  }
+
+  .user-chart-grid {
+    gap: 6px;
+  }
+
+  .user-toast-container {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+}

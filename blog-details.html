@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>COURTLY - Article | The Courtly Journal</title>
+  <meta name="description" content="Read full badminton, table tennis, training, fitness, and community stories from The Courtly Journal.">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- FontAwesome 6 Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Shared Global Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Page-Specific Stylesheet for Blog Details -->
+  <link rel="stylesheet" href="css/blog-details.css">
+</head>
+<body data-page="blog-details">
+
+  <!-- =========================================================================
+       REUSABLE NAVBAR CONTAINER (Hydrated by js/navbar.js)
+       ========================================================================= -->
+  <header id="app-navbar" class="courtly-navbar-wrapper"></header>
+
+
+  <!-- Invalid / Missing Slug Fallback State -->
+  <section class="bld-not-found-section d-none" id="articleNotFoundState">
+    <div class="courtly-container text-center">
+      <div class="bld-not-found-card mx-auto">
+        <div class="bento-icon-box teal mx-auto mb-3"><i class="fa-solid fa-file-circle-question"></i></div>
+        <span class="badge-sports-sub text-uppercase mb-3">Article Not Found</span>
+        <h1 class="fs-1 fw-bold mb-3">We couldn't find that story.</h1>
+        <p class="text-muted mb-4">
+          The article link may be incomplete or the slug doesn't match one of our published guides. Explore all six stories in The Courtly Journal.
+        </p>
+        <a href="blog.html" class="btn-courtly-lime">
+          <i class="fa-solid fa-arrow-left me-2"></i>
+          <span>Back to All Articles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Main Dynamic Article Wrapper (Hidden only if slug is invalid) -->
+  <main id="articleContentWrapper">
+
+    <!-- =========================================================================
+         SECTION 1: BLOG DETAIL HERO
+         ========================================================================= -->
+    <section class="bld-hero-section" id="detail-hero">
+      <div class="bld-court-lines" aria-hidden="true"></div>
+      <div class="courtly-container position-relative z-2">
+        <div class="bld-hero-inner mx-auto">
+          <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+            <a href="blog.html" class="small text-teal text-decoration-none fw-bold me-2">
+              <i class="fa-solid fa-arrow-left me-1"></i> The Courtly Journal
+            </a>
+            <span class="badge-lime-pill" id="detailCategory">Category</span>
+          </div>
+
+          <h1 class="bld-hero-title" id="detailTitle">Loading article...</h1>
+          <p class="bld-hero-excerpt" id="detailExcerpt"></p>
+
+          <div class="bld-meta-bar">
+            <div class="d-flex align-items-center gap-3">
+              <img src="" alt="" class="bld-hero-author-img" id="detailAuthorPhoto">
+              <div>
+                <strong class="d-block text-white small" id="detailAuthorName">Author</strong>
+                <span class="small text-dimmed" id="detailAuthorRole">Contributor</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 small text-muted">
+              <span><i class="fa-regular fa-calendar text-teal me-1"></i> <span id="detailDate">Date</span></span>
+              <span><i class="fa-regular fa-clock text-lime me-1"></i> <span id="detailReadingTime">5 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 2: ARTICLE COVER IMAGE
+         ========================================================================= -->
+    <section class="bld-cover-section" id="detail-cover">
+      <div class="courtly-container">
+        <div class="bld-cover-wrap mx-auto">
+          <img src="" alt="" id="detailCoverImg" class="bld-cover-img">
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 3, 4 & 5: ARTICLE BODY + AUTHOR CARD + SIDEBAR
+         ========================================================================= -->
+    <section class="section-padding" id="detail-main">
+      <div class="courtly-container">
+        <div class="row g-5">
+
+          <!-- Left Column: Article Body & Author Info -->
+          <div class="col-lg-8">
+            <article class="bld-article-body" id="detailArticleBody"></article>
+
+            <!-- Section 4: Author Information Card -->
+            <div class="bld-author-card mt-5" id="detailAuthorCard">
+              <img src="" alt="" class="bld-author-card-img" id="authorCardImg">
+              <div>
+                <span class="badge-sports-sub py-1 px-2 mb-2 d-inline-block" style="font-size: 0.7rem;">ABOUT THE AUTHOR</span>
+                <h3 class="fs-4 fw-bold mb-1" id="authorCardName">Author Name</h3>
+                <span class="small text-teal fw-bold d-block mb-2" id="authorCardRole">Role</span>
+                <p class="text-muted small mb-0" id="authorCardBio">Author bio</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Section 5 Sidebar (Categories & Recent Posts) -->
+          <aside class="col-lg-4">
+            <div class="bld-sidebar-sticky">
+
+              <!-- Categories Widget -->
+              <div class="bld-sidebar-card mb-4">
+                <h4 class="fs-5 fw-bold mb-3">
+                  <i class="fa-solid fa-folder-open text-teal me-2"></i>Categories
+                </h4>
+                <div class="bld-sidebar-cats" id="sidebarCategories"></div>
+              </div>
+
+              <!-- Recent Posts Widget -->
+              <div class="bld-sidebar-card">
+                <h4 class="fs-5 fw-bold mb-3">
+                  <i class="fa-solid fa-clock-rotate-left text-lime me-2"></i>Recent Posts
+                </h4>
+                <div class="d-flex flex-column gap-3" id="sidebarRecentPosts"></div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 6: RELATED ARTICLES
+         ========================================================================= -->
+    <section class="section-padding bg-section-alt" id="detail-related">
+      <div class="courtly-container">
+        <div class="text-center section-heading-wrap">
+          <span class="badge-sports-sub text-uppercase mb-2">Keep Reading</span>
+          <h2 class="section-title-main">MORE STORIES YOU MIGHT ENJOY.</h2>
+        </div>
+
+        <div class="row g-4" id="relatedArticlesGrid"></div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 7: BACK TO BLOG & PREVIOUS / NEXT NAVIGATION
+         ========================================================================= -->
+    <section class="py-5" id="detail-nav">
+      <div class="courtly-container">
+        <div class="bld-post-nav-box">
+          <a href="blog.html" class="bld-nav-side prev" id="prevArticleLink">
+            <span class="small text-teal fw-bold d-block mb-1"><i class="fa-solid fa-arrow-left me-1"></i> Previous Article</span>
+            <strong class="bld-nav-title" id="prevArticleTitle">—</strong>
+          </a>
+
+          <a href="blog.html" class="btn-courtly-outline flex-shrink-0">
+            <i class="fa-solid fa-grid-2 me-2"></i>
+            <span>Back to All Articles</span>
+          </a>
+
+          <a href="blog.html" class="bld-nav-side next text-lg-end" id="nextArticleLink">
+            <span class="small text-lime fw-bold d-block mb-1">Next Article <i class="fa-solid fa-arrow-right ms-1"></i></span>
+            <strong class="bld-nav-title" id="nextArticleTitle">—</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================================
+       SECTION 8: REUSABLE FOOTER CONTAINER (Hydrated by js/footer.js)
+       ========================================================================= -->
+  <footer id="app-footer" class="courtly-footer-wrapper"></footer>
+
+
+  <!-- Auth Modal (Shared for Navbar Profile Dropdown) -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill active" id="tabAuthLogin">Login</button>
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" id="tabAuthSignup">Signup</button>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <form id="formAuthLogin">
+            <h4 class="fs-5 fw-bold mb-3">Welcome to Player Hub</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" value="player@courtly.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Password</label>
+              <input type="password" class="form-control courtly-form-control" value="••••••••••••" required>
+            </div>
+            <button type="submit" class="btn-courtly-primary w-100">Sign In to Dashboard</button>
+          </form>
+
+          <form id="formAuthSignup" class="d-none">
+            <h4 class="fs-5 fw-bold mb-3">Join the Courtly Community</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Full Athlete Name</label>
+              <input type="text" class="form-control courtly-form-control" placeholder="e.g. Jordan Lee" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" placeholder="jordan@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Choose Password</label>
+              <input type="password" class="form-control courtly-form-control" placeholder="Min. 8 characters" required>
+            </div>
+            <button type="submit" class="btn-courtly-lime w-100">Create Free Athlete Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="courtly-toast-container position-fixed bottom-0 end-0 p-3" id="courtly-toast-container"></div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Centralized Data -->
+  <script src="js/site-data.js"></script>
+  <script src="js/blog-data.js"></script>
+
+  <!-- Reusable Components Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+
+  <!-- Core Animation & Main Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Blog Details Script -->
+  <script src="js/blog-details.js"></script>
+</body>
+</html>

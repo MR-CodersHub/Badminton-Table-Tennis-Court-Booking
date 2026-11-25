@@ -1,0 +1,1300 @@
+/* ==========================================================================
+   COURTLY - ABOUT US PAGE STYLESHEET
+   Theme: "MORE THAN A GAME. A COMMUNITY BUILT AROUND SPORT."
+   Maintains exact design tokens & identity from Home 1 and Home 2.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Section 1: About Hero (Immersive Full-Width Editorial)
+   -------------------------------------------------------------------------- */
+.abt-hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 8.5rem;
+  padding-bottom: 6.5rem;
+  display: flex;
+  align-items: center;
+  background: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.abt-hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.abt-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  transform: scale(1.06);
+  animation: abtHeroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes abtHeroZoom {
+  0%   { transform: scale(1.04); }
+  100% { transform: scale(1.12); }
+}
+
+.abt-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 20, 34, 0.94) 0%, rgba(16, 29, 50, 0.82) 55%, rgba(23, 76, 128, 0.65) 100%);
+}
+
+.abt-court-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(32, 201, 166, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 201, 166, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.abt-hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.abt-hero-glow-orb.orb-1 {
+  width: 360px;
+  height: 360px;
+  background: rgba(32, 201, 166, 0.18);
+  top: 10%;
+  left: -80px;
+}
+
+.abt-hero-glow-orb.orb-2 {
+  width: 420px;
+  height: 420px;
+  background: rgba(40, 125, 222, 0.2);
+  bottom: -60px;
+  right: -80px;
+}
+
+.abt-hero-watermark {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 13vw, 11.5rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.abt-hero-heading {
+  font-size: clamp(2.4rem, 5vw, 4.15rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 1.4rem;
+}
+
+.abt-hero-desc {
+  font-size: 1.18rem;
+  line-height: 1.65;
+  color: #CBD5E1;
+  max-width: 600px;
+  margin-bottom: 2.2rem;
+}
+
+.abt-hero-outline-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.abt-hero-visual-wrap {
+  position: relative;
+}
+
+.abt-hero-img-container {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1.5px solid rgba(32, 201, 166, 0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+.abt-hero-img-container img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt-hero-img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Floating Glass Panel: THE COURTLY PROMISE */
+.abt-promise-card {
+  position: absolute;
+  bottom: -26px;
+  left: -26px;
+  background: rgba(11, 20, 34, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid var(--color-teal);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  max-width: 340px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+
+[dir="rtl"] .abt-promise-card {
+  left: auto;
+  right: -26px;
+}
+
+.abt-promise-badge {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-lime);
+  text-transform: uppercase;
+}
+
+.abt-promise-heading {
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #FFFFFF;
+  margin-bottom: 0.85rem;
+}
+
+.abt-promise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.abt-promise-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #F1F5F9;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section 2: Our Company Story (Story in Motion)
+   -------------------------------------------------------------------------- */
+.abt-story-section {
+  overflow: hidden;
+}
+
+.abt-story-timeline-track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(32, 201, 166, 0.12);
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.abt-story-timeline-line {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-teal), var(--color-lime));
+  transform-origin: top;
+  transform: scaleY(0.15);
+  transition: transform 0.15s ease-out;
+}
+
+.abt-story-visual-wrap {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.abt-story-img-main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 480px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.abt-story-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.abt-story-visual-wrap:hover .abt-story-img-main img {
+  transform: scale(1.04);
+}
+
+.abt-story-img-overlap {
+  position: absolute;
+  bottom: 0;
+  right: -18px;
+  width: 230px;
+  height: 180px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 4px solid var(--bg-secondary);
+  box-shadow: var(--shadow-card);
+  z-index: 2;
+}
+
+[dir="rtl"] .abt-story-img-overlap {
+  right: auto;
+  left: -18px;
+}
+
+.abt-story-img-overlap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.abt-floating-year-badge {
+  position: absolute;
+  top: 18px;
+  left: -16px;
+  background: var(--color-lime);
+  color: var(--color-deep-navy);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 24px rgba(198, 243, 107, 0.35);
+  z-index: 3;
+}
+
+[dir="rtl"] .abt-floating-year-badge {
+  left: auto;
+  right: -16px;
+}
+
+.abt-story-floating-ball {
+  position: absolute;
+  top: -18px;
+  right: 20px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.abt-story-lead {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.abt-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.abt-stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.abt-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Section 3: Our Mission & Vision (Asymmetric Split)
+   -------------------------------------------------------------------------- */
+.abt-mission-section {
+  background: var(--bg-primary);
+}
+
+.abt-mv-panel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  padding: 3.25rem 2.75rem;
+  min-height: 430px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.abt-mv-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 20, 34, 0.35) 0%, rgba(11, 20, 34, 0.94) 80%);
+  z-index: 1;
+}
+
+.abt-mv-panel:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-teal);
+}
+
+.abt-vision-panel:hover {
+  border-color: var(--color-lime);
+}
+
+.abt-mv-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt-mv-panel:hover .abt-mv-bg {
+  transform: scale(1.06);
+}
+
+.abt-mv-watermark {
+  position: absolute;
+  top: 1.25rem;
+  left: 2rem;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.abt-mv-float-icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(16, 29, 50, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  z-index: 2;
+}
+
+.abt-mv-content {
+  position: relative;
+  z-index: 2;
+}
+
+.abt-mv-title {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.85rem;
+}
+
+.abt-mv-desc {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #CBD5E1;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section 4: Our Values (5-Element Bento Grid)
+   -------------------------------------------------------------------------- */
+.abt-values-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.abt-value-card {
+  grid-column: span 4;
+  min-height: 240px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.15rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+}
+
+.abt-value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-card);
+}
+
+.abt-value-card.card-wide {
+  grid-column: span 7;
+  min-height: 290px;
+}
+
+.abt-value-card.card-tall {
+  grid-column: span 5;
+  grid-row: span 1;
+  min-height: 290px;
+}
+
+.abt-value-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.6s ease;
+}
+
+.abt-value-card.card-image-feature:hover .abt-value-bg-img {
+  transform: scale(1.06);
+}
+
+.abt-value-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 20, 34, 0.45) 0%, rgba(11, 20, 34, 0.94) 85%);
+  z-index: 1;
+}
+
+.abt-value-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.abt-value-icon.teal {
+  background: rgba(32, 201, 166, 0.16);
+  color: var(--color-teal);
+  border: 1px solid rgba(32, 201, 166, 0.35);
+}
+
+.abt-value-icon.lime {
+  background: rgba(198, 243, 107, 0.16);
+  color: var(--color-lime);
+  border: 1px solid rgba(198, 243, 107, 0.35);
+}
+
+.abt-value-icon.blue {
+  background: rgba(40, 125, 222, 0.18);
+  color: #60A5FA;
+  border: 1px solid rgba(40, 125, 222, 0.35);
+}
+
+.abt-value-num {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-dimmed);
+}
+
+.abt-value-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 0.65rem;
+}
+
+.abt-value-desc {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.abt-value-accent-shape {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  bottom: -55px;
+  right: -45px;
+  background: radial-gradient(circle, rgba(32, 201, 166, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Section 5: Our Journey – Timeline & Milestones
+   -------------------------------------------------------------------------- */
+.abt-journey-section {
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.abt-timeline-wrapper {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.abt-timeline-track {
+  position: absolute;
+  top: 108px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-pill);
+  z-index: 0;
+}
+
+.abt-timeline-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-lime));
+  border-radius: var(--radius-pill);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.abt-milestone-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.15rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.abt-milestone-card:hover,
+.abt-milestone-card.active {
+  transform: translateY(-8px);
+  border-color: var(--color-lime);
+  box-shadow: 0 14px 32px rgba(198, 243, 107, 0.16);
+}
+
+.abt-milestone-year {
+  font-family: var(--font-heading);
+  font-size: 2.15rem;
+  font-weight: 900;
+  color: var(--text-dimmed);
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.abt-milestone-card.active .abt-milestone-year {
+  color: var(--color-lime);
+}
+
+.abt-milestone-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-medium);
+  color: var(--color-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  transition: all 0.3s ease;
+}
+
+.abt-milestone-card.active .abt-milestone-dot {
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+  color: var(--color-deep-navy);
+  box-shadow: 0 0 20px rgba(198, 243, 107, 0.45);
+}
+
+.abt-milestone-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.abt-milestone-desc {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Section 6: Meet Our Team (Oversized Portrait Cards)
+   -------------------------------------------------------------------------- */
+.abt-team-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 430px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.abt-team-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-teal);
+}
+
+.abt-team-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.abt-team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abt-team-card:hover .abt-team-img-wrap img {
+  transform: scale(1.07);
+}
+
+.abt-team-social-float {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.45rem;
+  z-index: 3;
+}
+
+.abt-team-social-float a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(11, 20, 34, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.abt-team-social-float a:hover {
+  background: var(--color-teal);
+  color: var(--color-deep-navy);
+  border-color: var(--color-teal);
+}
+
+.abt-team-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(11, 20, 34, 0.96) 90%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  z-index: 2;
+}
+
+.abt-team-role {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-lime);
+  margin-bottom: 0.25rem;
+}
+
+.abt-team-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.abt-team-bio {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.abt-team-card:hover .abt-team-bio,
+.abt-team-card:focus-within .abt-team-bio {
+  max-height: 140px;
+  opacity: 1;
+  margin-top: 0.65rem;
+}
+
+.abt-team-bio p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #CBD5E1;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. Section 7: Our Impact in Numbers
+   -------------------------------------------------------------------------- */
+.abt-impact-section {
+  position: relative;
+  padding: 6.5rem 0;
+  background: var(--color-deep-navy);
+  overflow: hidden;
+}
+
+.abt-impact-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  z-index: 0;
+}
+
+.abt-impact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 20, 34, 0.9) 0%, rgba(16, 29, 50, 0.84) 100%);
+  z-index: 1;
+}
+
+.abt-glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(65px);
+}
+
+.abt-glow-circle.glow-c1 {
+  width: 280px;
+  height: 280px;
+  background: rgba(32, 201, 166, 0.22);
+  top: -60px;
+  left: 8%;
+}
+
+.abt-glow-circle.glow-c2 {
+  width: 240px;
+  height: 240px;
+  background: rgba(198, 243, 107, 0.16);
+  bottom: -70px;
+  right: 12%;
+}
+
+.abt-glow-circle.glow-c3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(40, 125, 222, 0.2);
+  top: 40%;
+  left: 48%;
+}
+
+.abt-impact-stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.25rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.abt-impact-stat:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-teal);
+}
+
+.abt-impact-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.abt-impact-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  margin-top: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section 8: Player Feedback (Editorial Featured + Mini Cards)
+   -------------------------------------------------------------------------- */
+.abt-featured-testimonial {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem;
+  box-shadow: var(--shadow-card);
+  height: 100%;
+}
+
+.abt-quote-icon {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--color-teal);
+  opacity: 0.45;
+}
+
+.abt-featured-quote {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--text-heading);
+  margin: 1.25rem 0 2rem;
+  transition: opacity 0.25s ease;
+}
+
+.abt-mini-testimonial {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.65rem;
+  transition: all var(--transition-normal);
+}
+
+.abt-mini-testimonial:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active);
+}
+
+.abt-mini-quote {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
+.abt-mini-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-teal);
+}
+
+.abt-mini-author {
+  color: var(--text-heading);
+}
+
+/* --------------------------------------------------------------------------
+   9. Section 9: Why Players Choose Us (Interactive Hotspots)
+   -------------------------------------------------------------------------- */
+.abt-why-section {
+  background: var(--bg-primary);
+}
+
+.abt-facility-showcase {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 540px;
+  border: 1.5px solid var(--border-medium);
+  box-shadow: var(--shadow-card);
+}
+
+.abt-facility-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.68);
+}
+
+.abt-info-point {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(16, 29, 50, 0.85);
+  border: 2px solid var(--color-teal);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 0 0 6px rgba(32, 201, 166, 0.22);
+  transition: all var(--transition-fast);
+}
+
+.abt-info-point:hover,
+.abt-info-point.active {
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+  color: var(--color-deep-navy);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 8px rgba(198, 243, 107, 0.28);
+}
+
+.abt-info-point.point-1 { top: 18%; left: 16%; }
+.abt-info-point.point-2 { top: 34%; left: 46%; }
+.abt-info-point.point-3 { top: 20%; right: 18%; }
+.abt-info-point.point-4 { bottom: 22%; left: 22%; }
+.abt-info-point.point-5 { bottom: 26%; left: 52%; }
+.abt-info-point.point-6 { bottom: 18%; right: 16%; }
+
+.abt-info-desc {
+  position: absolute;
+  background: rgba(11, 20, 34, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--color-teal);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  width: 270px;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+.abt-info-desc.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.abt-info-desc.desc-1 { top: 28%; left: 14%; }
+.abt-info-desc.desc-2 { top: 44%; left: 42%; }
+.abt-info-desc.desc-3 { top: 30%; right: 14%; }
+.abt-info-desc.desc-4 { bottom: 32%; left: 18%; }
+.abt-info-desc.desc-5 { bottom: 36%; left: 46%; }
+.abt-info-desc.desc-6 { bottom: 28%; right: 12%; }
+
+.abt-info-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.abt-info-text {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #CBD5E1;
+}
+
+.abt-mobile-why-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   10. Section 10: Final CTA – Be Part of Our Story
+   -------------------------------------------------------------------------- */
+.abt-final-cta-section {
+  position: relative;
+  padding: 6.5rem 0;
+  background: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.abt-final-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  z-index: 0;
+}
+
+.abt-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(23, 76, 128, 0.45) 0%, rgba(11, 20, 34, 0.95) 75%);
+  z-index: 1;
+}
+
+.abt-final-card {
+  position: relative;
+  background: rgba(16, 29, 50, 0.82);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid var(--color-teal);
+  border-radius: var(--radius-xl);
+  padding: 4.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.55), 0 0 40px rgba(32, 201, 166, 0.15);
+  overflow: hidden;
+}
+
+.abt-final-float-left {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  pointer-events: none;
+}
+
+.abt-final-float-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Light Mode Adjustments
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .abt-story-lead {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .abt-value-card,
+[data-theme="light"] .abt-milestone-card,
+[data-theme="light"] .abt-featured-testimonial,
+[data-theme="light"] .abt-mini-testimonial,
+[data-theme="light"] .abt-mobile-why-card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-subtle);
+}
+
+[data-theme="light"] .abt-timeline-track {
+  background: rgba(16, 29, 50, 0.12);
+}
+
+[data-theme="light"] .abt-milestone-dot {
+  background: #FFFFFF;
+}
+
+[data-theme="light"] .abt-milestone-card.active .abt-milestone-year {
+  color: var(--color-royal-blue);
+}
+
+[data-theme="light"] .abt-story-section .badge-sports-sub,
+[data-theme="light"] #about-values .badge-sports-sub,
+[data-theme="light"] .abt-journey-section .badge-sports-sub,
+[data-theme="light"] #about-team .badge-sports-sub,
+[data-theme="light"] #about-feedback .badge-sports-sub,
+[data-theme="light"] .abt-why-section .badge-sports-sub {
+  color: var(--color-royal-blue);
+}
+
+[data-theme="light"] .abt-hero-section .badge-sports-sub,
+[data-theme="light"] .abt-final-card .badge-sports-sub,
+[data-theme="light"] .abt-mv-panel .badge-sports-sub {
+  color: var(--color-teal);
+  background: rgba(32, 201, 166, 0.14);
+  border-color: rgba(32, 201, 166, 0.4);
+}
+
+[data-theme="light"] .abt-hero-section .text-teal,
+[data-theme="light"] .abt-promise-card .text-teal,
+[data-theme="light"] .abt-mv-panel .text-teal,
+[data-theme="light"] .abt-impact-section .text-teal,
+[data-theme="light"] .abt-info-desc .text-teal,
+[data-theme="light"] .abt-final-card .text-teal {
+  color: var(--color-teal) !important;
+}
+
+[data-theme="light"] .abt-hero-section .text-lime,
+[data-theme="light"] .abt-promise-card .text-lime,
+[data-theme="light"] .abt-mv-panel .text-lime,
+[data-theme="light"] .abt-value-card.card-image-feature .text-lime,
+[data-theme="light"] .abt-impact-section .text-lime,
+[data-theme="light"] .abt-info-desc .text-lime,
+[data-theme="light"] .abt-final-card .text-lime {
+  color: var(--color-lime) !important;
+}
+
+[data-theme="light"] .abt-promise-card .text-info {
+  color: #60A5FA !important;
+}
+
+[data-theme="light"] .abt-mv-panel .badge-lime-pill,
+[data-theme="light"] .abt-impact-section .badge-lime-pill {
+  color: var(--color-deep-navy);
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+}
+
+[data-theme="light"] .abt-milestone-dot {
+  color: #087F6D;
+}
+
+[data-theme="light"] .abt-hero-section .hero-scroll-indicator {
+  color: #CBD5E1;
+}
+
+[data-theme="light"] .abt-hero-section .scroll-mouse-icon {
+  border-color: #CBD5E1;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .abt-promise-card {
+    position: static;
+    max-width: 100%;
+    margin-top: 1.25rem;
+    animation: none;
+  }
+
+  .abt-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abt-value-card,
+  .abt-value-card.card-wide {
+    grid-column: span 1;
+    grid-row: auto;
+    min-height: 230px;
+  }
+
+  .abt-value-card.card-tall {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 280px;
+  }
+
+  .abt-timeline-track {
+    top: 0;
+    bottom: 0;
+    left: 22px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .abt-timeline-progress {
+    width: 100% !important;
+    height: 100%;
+  }
+
+  .abt-timeline-grid {
+    grid-template-columns: 1fr;
+    padding-left: 3.25rem;
+  }
+
+  .abt-milestone-card {
+    text-align: left;
+    padding: 1.5rem;
+  }
+
+  .abt-milestone-dot {
+    position: absolute;
+    left: -3.25rem;
+    top: 1.5rem;
+    margin: 0;
+  }
+
+  .abt-facility-showcase {
+    height: 360px;
+  }
+
+  .abt-info-point,
+  .abt-info-desc {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .abt-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abt-value-card,
+  .abt-value-card.card-wide,
+  .abt-value-card.card-tall {
+    grid-column: span 1;
+    min-height: auto;
+  }
+
+  .abt-value-card.card-tall {
+    min-height: 280px;
+  }
+
+  .abt-hero-section {
+    padding-top: 7.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .abt-hero-img-container img {
+    height: 340px;
+  }
+
+  .abt-story-img-main {
+    height: 330px;
+  }
+
+  .abt-story-img-overlap {
+    position: static;
+    width: 100%;
+    height: 180px;
+    margin-top: 1rem;
+    border: 2px solid var(--border-subtle);
+  }
+
+  .abt-mv-panel {
+    padding: 2.25rem 1.5rem;
+    min-height: 340px;
+  }
+
+  .abt-team-card {
+    height: 370px;
+  }
+
+  .abt-featured-testimonial {
+    padding: 2rem 1.5rem;
+  }
+
+  .abt-final-card {
+    padding: 3rem 1.5rem;
+  }
+}

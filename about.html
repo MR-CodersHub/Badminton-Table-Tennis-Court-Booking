@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>COURTLY - About Us | More Than A Game</title>
+  <meta name="description"
+    content="Discover the story, mission, vision, values, and team behind COURTLY — a welcoming indoor badminton and table tennis community built for the love of the game.">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- FontAwesome 6 Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Shared Global Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Page-Specific Stylesheet for About Page -->
+  <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body data-page="about">
+
+  <!-- =========================================================================
+       REUSABLE NAVBAR CONTAINER (Hydrated by js/navbar.js)
+       ========================================================================= -->
+  <header id="app-navbar" class="courtly-navbar-wrapper"></header>
+
+
+  <!-- =========================================================================
+       SECTION 1: ABOUT HERO – OUR STORY BEGINS HERE
+       ========================================================================= -->
+  <section class="abt-hero-section" id="about-hero">
+    <!-- Full-width Indoor Arena Backdrop with Zoom Effect -->
+    <div class="abt-hero-bg-wrap" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1920&q=85"
+        alt="COURTLY Indoor Badminton Arena" class="abt-hero-bg-img" loading="eager">
+      <div class="abt-hero-bg-overlay"></div>
+    </div>
+
+    <!-- Decorative Court-Line SVG Pattern & Glowing Orbs -->
+    <div class="abt-court-pattern" aria-hidden="true"></div>
+    <div class="abt-hero-glow-orb orb-1" aria-hidden="true"></div>
+    <div class="abt-hero-glow-orb orb-2" aria-hidden="true"></div>
+
+    <!-- Oversized Background Typography -->
+    <div class="abt-hero-watermark" aria-hidden="true">OUR • STORY • BEGINS</div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="row align-items-center g-5">
+
+        <!-- Left Column: Editorial Story Intro -->
+        <div class="col-lg-7">
+          <div class="reveal-init">
+            <span class="badge-sports-sub text-uppercase mb-3">
+              <i class="fa-solid fa-compass text-lime"></i>
+              GET TO KNOW COURTLY
+            </span>
+          </div>
+
+          <h1 class="abt-hero-heading reveal-init reveal-delay-1">
+            BUILT FOR THE LOVE OF <span class="text-gradient-lime-teal">THE GAME.</span>
+          </h1>
+
+          <p class="abt-hero-desc reveal-init reveal-delay-2">
+            We believe sport brings people together, creates unforgettable moments and inspires us to become better
+            every day. COURTLY is a place where passion, performance and community meet.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4 reveal-init reveal-delay-3">
+            <a href="#about-story" class="btn-courtly-lime">
+              <span>Discover Our Journey</span>
+              <i class="fa-solid fa-arrow-down ms-2"></i>
+            </a>
+            <a href="index.html#live-courts" class="btn-courtly-outline abt-hero-outline-btn">
+              <i class="fa-solid fa-table-tennis-paddle-ball me-2 text-teal"></i>
+              <span>Explore Our Courts</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Frame + Unique Idea (THE COURTLY PROMISE) -->
+        <div class="col-lg-5 position-relative reveal-init reveal-delay-2">
+          <div class="abt-hero-visual-wrap">
+            <div class="abt-hero-img-container">
+              <img src="https://i.pinimg.com/1200x/73/c7/40/73c7400f6be051869757ec3c91e0ffee.jpg"
+                alt="Athletes competing at COURTLY indoor sports arena" loading="eager">
+            </div>
+
+            <!-- Floating Badminton Racket & Shuttlecock SVG -->
+            <div class="floating-svg-shuttlecock animate-shuttlecock d-none d-md-block"
+              style="top: -22px; right: -22px; left: auto;" aria-hidden="true">
+              <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" width="84" height="98">
+                <rect x="54" y="85" width="12" height="42" rx="5" fill="#174C80" stroke="#20C9A6" stroke-width="2" />
+                <rect x="56" y="90" width="8" height="16" rx="3" fill="rgba(32,201,166,0.25)" />
+                <ellipse cx="60" cy="45" rx="32" ry="40" fill="none" stroke="#20C9A6" stroke-width="3" />
+                <ellipse cx="60" cy="45" rx="28" ry="36" fill="rgba(32,201,166,0.08)" stroke="#20C9A6"
+                  stroke-width="1.5" opacity="0.5" />
+                <line x1="34" y1="30" x2="86" y2="30" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <line x1="32" y1="46" x2="88" y2="46" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <line x1="34" y1="62" x2="86" y2="62" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <line x1="45" y1="8" x2="45" y2="82" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <line x1="60" y1="5" x2="60" y2="85" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <line x1="75" y1="8" x2="75" y2="82" stroke="#C6F36B" stroke-width="0.8" opacity="0.4" />
+                <g transform="translate(88, -2) rotate(20)">
+                  <circle cx="0" cy="22" r="6" fill="#C6F36B" stroke="#101D32" stroke-width="1.5" />
+                  <path d="M-6 16 L0 -4 L6 16" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-width="1.2"
+                    stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Unique Idea: THE COURTLY PROMISE Floating Glass Panel -->
+            <div class="abt-promise-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="abt-promise-badge">THE COURTLY PROMISE</span>
+                <span class="live-pulse-dot" style="background: #C6F36B;"></span>
+              </div>
+              <h4 class="abt-promise-heading">ONE COMMUNITY. TWO SPORTS. COUNTLESS POSSIBILITIES.</h4>
+              <div class="abt-promise-list">
+                <div class="abt-promise-pill">
+                  <i class="fa-solid fa-feather-pointed text-teal"></i>
+                  <span>Badminton</span>
+                </div>
+                <div class="abt-promise-pill">
+                  <i class="fa-solid fa-table-tennis-paddle-ball text-lime"></i>
+                  <span>Table Tennis</span>
+                </div>
+                <div class="abt-promise-pill">
+                  <i class="fa-solid fa-users text-info"></i>
+                  <span>Every Skill Level</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Animated Scroll Indicator -->
+    <a href="#about-story" class="hero-scroll-indicator text-decoration-none" aria-label="Scroll to Our Story">
+      <div class="scroll-mouse-icon">
+        <div class="scroll-mouse-wheel"></div>
+      </div>
+      <span>SCROLL TO EXPLORE</span>
+    </a>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 2: OUR COMPANY STORY (Story in Motion)
+       ========================================================================= -->
+  <section class="abt-story-section section-padding bg-section-alt position-relative" id="about-story">
+    <!-- Story in Motion: Vertical Decorative Progress Line -->
+    <div class="abt-story-timeline-track d-none d-lg-block" aria-hidden="true">
+      <div class="abt-story-timeline-line" id="abtStoryLine"></div>
+    </div>
+
+    <div class="courtly-container position-relative z-1">
+      <div class="row align-items-center g-5">
+
+        <!-- Left Column: Layered Editorial Imagery + Est. Badge -->
+        <div class="col-lg-6 reveal-init">
+          <div class="abt-story-visual-wrap">
+            <div class="abt-floating-year-badge">
+              <i class="fa-solid fa-calendar-star me-1"></i> Est. 2022
+            </div>
+
+            <div class="abt-story-img-main">
+              <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=85"
+                alt="Indoor sports court facility at COURTLY" loading="lazy">
+            </div>
+
+            <div class="abt-story-img-overlap">
+              <img src="https://i.pinimg.com/736x/b5/f6/05/b5f6058959ad474def2bedc2e0654e4d.jpg"
+                alt="Players enjoying a rally together" loading="lazy">
+            </div>
+
+            <!-- Small Floating Table Tennis Ball Illustration -->
+            <div class="abt-story-floating-ball animate-pingpong d-none d-sm-block" aria-hidden="true">
+              <svg viewBox="0 0 60 60" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="22" fill="url(#abtBallGrad)" stroke="#FFFFFF" stroke-width="2" />
+                <circle cx="23" cy="22" r="4" fill="#FFFFFF" opacity="0.7" />
+                <defs>
+                  <radialGradient id="abtBallGrad" cx="35%" cy="35%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="65%" stop-color="#C6F36B" />
+                    <stop offset="100%" stop-color="#20C9A6" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Brand Story, Narrative & Statistics -->
+        <div class="col-lg-6 reveal-init reveal-delay-1">
+          <span class="badge-sports-sub text-uppercase mb-3">OUR STORY</span>
+          <h2 class="section-title-main mb-3">IT STARTED WITH A LOVE FOR SPORT.</h2>
+          <p class="abt-story-lead mb-3">
+            COURTLY was imagined as more than just a place to play. We wanted to create a welcoming sports destination
+            where players could enjoy quality facilities, discover new challenges and become part of an active
+            community.
+          </p>
+          <p class="text-muted mb-3">
+            Too often, passionate badminton and table tennis players had to settle for crowded halls, inconsistent
+            lighting, or complicated booking calls. We set out to change that by combining tournament-grade surfaces
+            with a seamless digital reservation experience.
+          </p>
+          <p class="text-muted mb-4">
+            From early-morning singles drills to vibrant weekend doubles leagues, every detail of our arena is crafted
+            so players of all backgrounds feel inspired the moment they step onto the court.
+          </p>
+
+          <!-- Illustrative Supporting Statistics -->
+          <div class="row g-3 mb-4 pt-3 border-top border-secondary border-opacity-25">
+            <div class="col-6 col-sm-3">
+              <div class="abt-stat-item">
+                <span class="abt-stat-number text-teal">2</span>
+                <span class="abt-stat-label">Sports Categories</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="abt-stat-item">
+                <span class="abt-stat-number text-lime">4+</span>
+                <span class="abt-stat-label">Premium Courts</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="abt-stat-item">
+                <span class="abt-stat-number text-teal">500+</span>
+                <span class="abt-stat-label">Player Sessions</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="abt-stat-item">
+                <span class="abt-stat-number text-lime">100%</span>
+                <span class="abt-stat-label">Passion for Sport</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="index.html#live-courts" class="btn-courtly-primary">
+            <span>Explore Our Facilities</span>
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 3: OUR MISSION AND VISION (Asymmetric Split Composition)
+       ========================================================================= -->
+  <section class="abt-mission-section section-padding" id="about-mission-vision">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Purpose & Direction</span>
+        <h2 class="section-title-main">WHAT DRIVES EVERYTHING WE DO.</h2>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Asymmetric Left: Large Mission Panel -->
+        <div class="col-lg-7 reveal-init">
+          <div class="abt-mv-panel abt-mission-panel">
+            <img src="https://www.euroschoolindia.com/blogs/wp-content/uploads/2023/08/how-to-play-badminton.jpg"
+              alt="Indoor sports arena lighting and court" class="abt-mv-bg" loading="lazy">
+            <div class="abt-mv-watermark" aria-hidden="true">MISSION</div>
+
+            <!-- Floating SVG Decoration -->
+            <div class="abt-mv-float-icon d-none d-sm-flex" aria-hidden="true">
+              <i class="fa-solid fa-bullseye text-teal"></i>
+            </div>
+
+            <div class="abt-mv-content">
+              <span class="badge-lime-pill d-inline-block mb-3">OUR MISSION</span>
+              <h3 class="abt-mv-title">MAKING EVERY GAME COUNT.</h3>
+              <p class="abt-mv-desc">
+                Our mission is to create an accessible, welcoming and inspiring sports environment where players can
+                enjoy quality facilities, develop their abilities and experience the joy of playing together.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asymmetric Right: Vision Panel -->
+        <div class="col-lg-5 reveal-init reveal-delay-1">
+          <div class="abt-mv-panel abt-vision-panel">
+            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=900&q=85"
+              alt="Table tennis competition play" class="abt-mv-bg" loading="lazy">
+            <div class="abt-mv-watermark" aria-hidden="true">VISION</div>
+
+            <!-- Floating SVG Decoration -->
+            <div class="abt-mv-float-icon d-none d-sm-flex" aria-hidden="true">
+              <i class="fa-solid fa-eye text-lime"></i>
+            </div>
+
+            <div class="abt-mv-content">
+              <span class="badge-sports-sub d-inline-block mb-3">OUR VISION</span>
+              <h3 class="abt-mv-title">INSPIRING A MORE ACTIVE TOMORROW.</h3>
+              <p class="abt-mv-desc">
+                Our vision is to become a trusted sports destination that encourages participation, builds stronger
+                sporting communities and makes quality playing experiences available to everyone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 4: OUR VALUES (5-Element Asymmetric Bento Grid)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="about-values">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Core Principles</span>
+        <h2 class="section-title-main">THE VALUES BEHIND EVERY GAME.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Everything we build is guided by the values that make sport meaningful.
+        </p>
+      </div>
+
+      <div class="abt-values-grid">
+        <!-- 01 – COMMUNITY (Wide) -->
+        <div class="abt-value-card card-wide reveal-init">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="abt-value-icon teal">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <span class="abt-value-num">01 — COMMUNITY</span>
+          </div>
+          <h3 class="abt-value-title">COMMUNITY</h3>
+          <p class="abt-value-desc">
+            Creating a welcoming environment where players connect and grow together. Whether it's a casual evening
+            rally or a weekend doubles mixer, camaraderie comes first.
+          </p>
+          <div class="abt-value-accent-shape shape-teal" aria-hidden="true"></div>
+        </div>
+
+        <!-- 02 – EXCELLENCE (Image-based Feature Card) -->
+        <div class="abt-value-card card-tall card-image-feature reveal-init reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?auto=format&fit=crop&w=800&q=80"
+            alt="Precision badminton and table tennis equipment" class="abt-value-bg-img" loading="lazy">
+          <div class="abt-value-img-overlay"></div>
+          <div class="position-relative z-2 d-flex flex-column h-100 justify-content-between">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="abt-value-icon lime">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <span class="abt-value-num text-lime">02 — EXCELLENCE</span>
+            </div>
+            <div class="mt-auto pt-4">
+              <h3 class="abt-value-title text-white">EXCELLENCE</h3>
+              <p class="abt-value-desc text-light mb-0">
+                Maintaining high standards in our facilities and player experiences — from shock-absorbing court
+                surfaces to glare-free LED illumination.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 – INCLUSIVITY -->
+        <div class="abt-value-card reveal-init reveal-delay-2">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="abt-value-icon blue">
+              <i class="fa-solid fa-universal-access"></i>
+            </div>
+            <span class="abt-value-num">03 — INCLUSIVITY</span>
+          </div>
+          <h3 class="abt-value-title">INCLUSIVITY</h3>
+          <p class="abt-value-desc mb-0">
+            Encouraging people of different ages and skill levels to enjoy sports at their own pace.
+          </p>
+        </div>
+
+        <!-- 04 – PASSION -->
+        <div class="abt-value-card reveal-init reveal-delay-3">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="abt-value-icon lime">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <span class="abt-value-num">04 — PASSION</span>
+          </div>
+          <h3 class="abt-value-title">PASSION</h3>
+          <p class="abt-value-desc mb-0">
+            Bringing energy, dedication and enthusiasm into everything we do across every court.
+          </p>
+        </div>
+
+        <!-- 05 – GROWTH -->
+        <div class="abt-value-card reveal-init reveal-delay-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="abt-value-icon teal">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <span class="abt-value-num">05 — GROWTH</span>
+          </div>
+          <h3 class="abt-value-title">GROWTH</h3>
+          <p class="abt-value-desc mb-0">
+            Supporting players as they learn, improve and discover new possibilities on and off the court.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 5: OUR JOURNEY – TIMELINE AND MILESTONES
+       ========================================================================= -->
+  <section class="abt-journey-section section-padding" id="about-journey">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Milestones</span>
+        <h2 class="section-title-main">EVERY GREAT GAME HAS A BEGINNING.</h2>
+        <p class="section-subtitle-main mx-auto">
+          From an idea inspired by sport to a growing community of players, every milestone represents another step
+          forward.
+        </p>
+      </div>
+
+      <!-- Interactive Horizontal (Desktop) / Vertical (Mobile) Timeline -->
+      <div class="abt-timeline-wrapper reveal-init" id="journeyTimeline">
+        <div class="abt-timeline-track" aria-hidden="true">
+          <div class="abt-timeline-progress" id="timelineProgressLine"></div>
+        </div>
+
+        <div class="abt-timeline-grid">
+          <!-- 2022 -->
+          <div class="abt-milestone-card active" data-year="2022" data-index="0" id="milestone-2022" tabindex="0"
+            role="button" aria-label="2022 The Idea">
+            <div class="abt-milestone-year">2022</div>
+            <div class="abt-milestone-dot">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h4 class="abt-milestone-title">THE IDEA</h4>
+            <p class="abt-milestone-desc">The vision of creating a welcoming indoor sports destination begins.</p>
+          </div>
+
+          <!-- 2023 -->
+          <div class="abt-milestone-card" data-year="2023" data-index="1" id="milestone-2023" tabindex="0" role="button"
+            aria-label="2023 The Foundation">
+            <div class="abt-milestone-year">2023</div>
+            <div class="abt-milestone-dot">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h4 class="abt-milestone-title">THE FOUNDATION</h4>
+            <p class="abt-milestone-desc">Planning begins around quality courts, better facilities and player-friendly
+              experiences.</p>
+          </div>
+
+          <!-- 2024 -->
+          <div class="abt-milestone-card" data-year="2024" data-index="2" id="milestone-2024" tabindex="0" role="button"
+            aria-label="2024 The First Rally">
+            <div class="abt-milestone-year">2024</div>
+            <div class="abt-milestone-dot">
+              <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+            </div>
+            <h4 class="abt-milestone-title">THE FIRST RALLY</h4>
+            <p class="abt-milestone-desc">The sports facility concept takes shape with badminton and table tennis
+              experiences.</p>
+          </div>
+
+          <!-- 2025 -->
+          <div class="abt-milestone-card" data-year="2025" data-index="3" id="milestone-2025" tabindex="0" role="button"
+            aria-label="2025 Growing Together">
+            <div class="abt-milestone-year">2025</div>
+            <div class="abt-milestone-dot">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h4 class="abt-milestone-title">GROWING TOGETHER</h4>
+            <p class="abt-milestone-desc">More players, community activities and sports experiences become part of the
+              journey.</p>
+          </div>
+
+          <!-- 2026 -->
+          <div class="abt-milestone-card" data-year="2026" data-index="4" id="milestone-2026" tabindex="0" role="button"
+            aria-label="2026 The Next Chapter">
+            <div class="abt-milestone-year">2026</div>
+            <div class="abt-milestone-dot">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h4 class="abt-milestone-title">THE NEXT CHAPTER</h4>
+            <p class="abt-milestone-desc">Expanding the digital experience with convenient online bookings, memberships
+              and tournament participation.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center small text-dimmed mt-3 mb-0">
+        <i class="fa-regular fa-hand-pointer me-1 text-teal"></i> Click or hover any milestone to explore our story
+        timeline.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 6: MEET OUR TEAM
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="about-team">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Leadership & Coaching</span>
+        <h2 class="section-title-main">THE PEOPLE BEHIND THE PASSION.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Behind every great sports experience is a team that cares about the details, the players and the love of the
+          game.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Team Member 01: Alex Morgan -->
+        <div class="col-12 col-sm-6 col-lg-3 reveal-init">
+          <div class="abt-team-card">
+            <div class="abt-team-img-wrap">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85"
+                alt="Alex Morgan - Club Director" loading="lazy">
+            </div>
+            <div class="abt-team-social-float">
+              <a href="#linkedin" aria-label="Alex Morgan LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#twitter" aria-label="Alex Morgan X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="abt-team-overlay">
+              <div class="abt-team-info">
+                <span class="abt-team-role">Club Director</span>
+                <h4 class="abt-team-name">Alex Morgan</h4>
+                <div class="abt-team-bio">
+                  <p>Guides the club's vision and works to create an outstanding sports environment for every player.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 02: Daniel Carter -->
+        <div class="col-12 col-sm-6 col-lg-3 reveal-init reveal-delay-1">
+          <div class="abt-team-card">
+            <div class="abt-team-img-wrap">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=85"
+                alt="Daniel Carter - Sports Operations Manager" loading="lazy">
+            </div>
+            <div class="abt-team-social-float">
+              <a href="#linkedin" aria-label="Daniel Carter LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#twitter" aria-label="Daniel Carter X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="abt-team-overlay">
+              <div class="abt-team-info">
+                <span class="abt-team-role">Sports Operations Manager</span>
+                <h4 class="abt-team-name">Daniel Carter</h4>
+                <div class="abt-team-bio">
+                  <p>Oversees daily facility operations and ensures every court is ready for a great playing experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 03: Sophia Williams -->
+        <div class="col-12 col-sm-6 col-lg-3 reveal-init reveal-delay-2">
+          <div class="abt-team-card">
+            <div class="abt-team-img-wrap">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85"
+                alt="Sophia Williams - Community & Events Manager" loading="lazy">
+            </div>
+            <div class="abt-team-social-float">
+              <a href="#linkedin" aria-label="Sophia Williams LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#twitter" aria-label="Sophia Williams X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="abt-team-overlay">
+              <div class="abt-team-info">
+                <span class="abt-team-role">Community & Events Manager</span>
+                <h4 class="abt-team-name">Sophia Williams</h4>
+                <div class="abt-team-bio">
+                  <p>Builds player connections and coordinates tournaments, events and community activities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 04: Ryan Mitchell -->
+        <div class="col-12 col-sm-6 col-lg-3 reveal-init reveal-delay-3">
+          <div class="abt-team-card">
+            <div class="abt-team-img-wrap">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85"
+                alt="Ryan Mitchell - Head Sports Coach" loading="lazy">
+            </div>
+            <div class="abt-team-social-float">
+              <a href="#linkedin" aria-label="Ryan Mitchell LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#twitter" aria-label="Ryan Mitchell X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="abt-team-overlay">
+              <div class="abt-team-info">
+                <span class="abt-team-role">Head Sports Coach</span>
+                <h4 class="abt-team-name">Ryan Mitchell</h4>
+                <div class="abt-team-bio">
+                  <p>Encourages player development and promotes a positive, skill-focused sporting environment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 7: OUR IMPACT IN NUMBERS
+       ========================================================================= -->
+  <section class="abt-impact-section" id="about-impact">
+    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1920&q=80"
+      alt="Sports court background" class="abt-impact-bg" loading="lazy">
+    <div class="abt-impact-overlay" aria-hidden="true"></div>
+
+    <!-- Decorative Glowing Circles -->
+    <div class="abt-glow-circle glow-c1" aria-hidden="true"></div>
+    <div class="abt-glow-circle glow-c2" aria-hidden="true"></div>
+    <div class="abt-glow-circle glow-c3" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-lime-pill d-inline-block mb-2">BY THE NUMBERS</span>
+        <h2 class="section-title-main text-white">THE COMMUNITY MAKES IT SPECIAL.</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-lg-3 reveal-init">
+          <div class="abt-impact-stat">
+            <div class="abt-impact-num-wrap">
+              <span class="abt-impact-number" data-target="500" data-suffix="+">0+</span>
+            </div>
+            <span class="abt-impact-label">Player Sessions</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3 reveal-init reveal-delay-1">
+          <div class="abt-impact-stat">
+            <div class="abt-impact-num-wrap">
+              <span class="abt-impact-number text-lime" data-target="4" data-suffix="+">0+</span>
+            </div>
+            <span class="abt-impact-label">Premium Courts</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3 reveal-init reveal-delay-2">
+          <div class="abt-impact-stat">
+            <div class="abt-impact-num-wrap">
+              <span class="abt-impact-number text-teal" data-target="2" data-suffix="">0</span>
+            </div>
+            <span class="abt-impact-label">Sports Categories</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3 reveal-init reveal-delay-3">
+          <div class="abt-impact-stat">
+            <div class="abt-impact-num-wrap">
+              <span class="abt-impact-number" data-target="20" data-suffix="+">0+</span>
+            </div>
+            <span class="abt-impact-label">Community Events</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 8: PLAYER FEEDBACK (Editorial Featured + Supporting Reviews)
+       ========================================================================= -->
+  <section class="section-padding bg-section-alt" id="about-feedback">
+    <div class="courtly-container">
+
+      <div class="row align-items-end justify-content-between section-heading-wrap g-4 reveal-init">
+        <div class="col-lg-8">
+          <span class="badge-sports-sub text-uppercase mb-2">Player Feedback</span>
+          <h2 class="section-title-main">THE STORIES THAT KEEP US MOVING.</h2>
+          <p class="section-subtitle-main">
+            Our favourite moments come from the players who make this community what it is.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <div class="d-flex align-items-center justify-content-lg-end gap-2">
+            <button type="button" class="courtly-btn-icon" id="abtPrevBtn" aria-label="Previous Testimonial">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <span class="fw-bold text-teal small px-2" id="abtReviewCounter">01 / 04</span>
+            <button type="button" class="courtly-btn-icon" id="abtNextBtn" aria-label="Next Testimonial">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Large Featured Review -->
+        <div class="col-lg-7 reveal-init">
+          <div class="abt-featured-testimonial d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <div class="abt-quote-icon">“</div>
+                <div class="d-flex align-items-center gap-1 text-warning fs-6" id="abtFeaturedStars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <p class="abt-featured-quote" id="abtFeaturedQuote">
+                "The courts are well maintained and the booking experience makes planning my weekly games so
+                convenient."
+              </p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80"
+                alt="Ethan Brooks" class="author-avatar" id="abtFeaturedAvatar" loading="lazy">
+              <div>
+                <strong class="author-name" id="abtFeaturedName">Ethan Brooks</strong>
+                <span class="author-sport-tag" id="abtFeaturedSport">Badminton Player</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Smaller Supporting Reviews -->
+        <div class="col-lg-5 d-flex flex-column gap-4 reveal-init reveal-delay-1">
+          <!-- Mini Review 1: Olivia Parker -->
+          <div class="abt-mini-testimonial flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-sports-sub py-1 px-2" style="font-size: 0.7rem;">Table Tennis</span>
+                <div class="text-warning small">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <p class="abt-mini-quote mb-3">
+                "A welcoming environment with great facilities. I enjoy coming here for regular matches with friends."
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                alt="Olivia Parker" class="abt-mini-avatar" loading="lazy">
+              <div>
+                <strong class="d-block small abt-mini-author">Olivia Parker</strong>
+                <span class="text-dimmed" style="font-size: 0.75rem;">Table Tennis Regular</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini Review 2: Noah Bennett -->
+          <div class="abt-mini-testimonial flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge-lime-pill py-1 px-2" style="font-size: 0.7rem;">Badminton</span>
+                <div class="text-warning small">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <p class="abt-mini-quote mb-3">
+                "Great place to practise, meet other players and enjoy competitive matches. The overall experience is
+                excellent."
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                alt="Noah Bennett" class="abt-mini-avatar" loading="lazy">
+              <div>
+                <strong class="d-block small abt-mini-author">Noah Bennett</strong>
+                <span class="text-dimmed" style="font-size: 0.75rem;">Badminton Competitor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 9: WHY PLAYERS CHOOSE US (Interactive Hotspots)
+       ========================================================================= -->
+  <section class="abt-why-section section-padding" id="about-why-choose">
+    <div class="courtly-container">
+
+      <div class="text-center section-heading-wrap reveal-init">
+        <span class="badge-sports-sub text-uppercase mb-2">Arena Highlights</span>
+        <h2 class="section-title-main">THE DIFFERENCE IS IN THE EXPERIENCE.</h2>
+        <p class="section-subtitle-main mx-auto">
+          Tap or hover the interactive markers on the arena map below to explore what sets COURTLY apart.
+        </p>
+      </div>
+
+      <div class="abt-facility-showcase reveal-init" id="facilityShowcase">
+        <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1600&q=85"
+          alt="COURTLY Interactive Arena Highlights" class="abt-facility-img" loading="lazy">
+
+        <!-- 6 Interactive Information Points -->
+        <button type="button" class="abt-info-point point-1 active" data-info="1"
+          aria-label="Convenient Booking Experience">
+          <span class="abt-point-num">1</span>
+        </button>
+        <div class="abt-info-desc desc-1 visible" id="info-desc-1">
+          <div class="abt-info-title"><i class="fa-solid fa-mobile-screen-button text-teal me-2"></i>Convenient Booking
+            Experience</div>
+          <p class="abt-info-text mb-0">Explore courts and reserve your session in just a few clicks with instant QR
+            gate pass confirmation.</p>
+        </div>
+
+        <button type="button" class="abt-info-point point-2" data-info="2" aria-label="Well-Maintained Courts">
+          <span class="abt-point-num">2</span>
+        </button>
+        <div class="abt-info-desc desc-2" id="info-desc-2">
+          <div class="abt-info-title"><i class="fa-solid fa-layer-group text-lime me-2"></i>Well-Maintained Courts</div>
+          <p class="abt-info-text mb-0">Professional-grade shock-absorbing surfaces and ITTF 25mm tables maintained
+            daily for consistent bounce.</p>
+        </div>
+
+        <button type="button" class="abt-info-point point-3" data-info="3" aria-label="Flexible Playing Sessions">
+          <span class="abt-point-num">3</span>
+        </button>
+        <div class="abt-info-desc desc-3" id="info-desc-3">
+          <div class="abt-info-title"><i class="fa-solid fa-clock text-teal me-2"></i>Flexible Playing Sessions</div>
+          <p class="abt-info-text mb-0">Choose early morning, midday, prime evening, or late-night sessions designed
+            around your routine.</p>
+        </div>
+
+        <button type="button" class="abt-info-point point-4" data-info="4" aria-label="Welcoming Sports Community">
+          <span class="abt-point-num">4</span>
+        </button>
+        <div class="abt-info-desc desc-4" id="info-desc-4">
+          <div class="abt-info-title"><i class="fa-solid fa-people-group text-lime me-2"></i>Welcoming Sports Community
+          </div>
+          <p class="abt-info-text mb-0">Connect with fellow players, join social mixers, and enjoy a supportive club
+            culture for all levels.</p>
+        </div>
+
+        <button type="button" class="abt-info-point point-5" data-info="5" aria-label="Membership Opportunities">
+          <span class="abt-point-num">5</span>
+        </button>
+        <div class="abt-info-desc desc-5" id="info-desc-5">
+          <div class="abt-info-title"><i class="fa-solid fa-crown text-teal me-2"></i>Membership Opportunities</div>
+          <p class="abt-info-text mb-0">Flexible athlete passes starting at ₹499/mo with priority booking windows and
+            member perks.</p>
+        </div>
+
+        <button type="button" class="abt-info-point point-6" data-info="6" aria-label="Tournament Experiences">
+          <span class="abt-point-num">6</span>
+        </button>
+        <div class="abt-info-desc desc-6" id="info-desc-6">
+          <div class="abt-info-title"><i class="fa-solid fa-trophy text-lime me-2"></i>Tournament Experiences</div>
+          <p class="abt-info-text mb-0">Compete in seasonal Badminton Opens and Table Tennis Challenges with organized
+            brackets.</p>
+        </div>
+      </div>
+
+      <!-- Mobile / Tablet Accessible Feature Cards Fallback -->
+      <div class="row g-3 mt-4 d-lg-none">
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-mobile-screen-button text-teal me-2"></i>Convenient Booking
+              Experience</h5>
+            <p class="text-muted small mb-0">Reserve your court in seconds with instant QR gate access.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-layer-group text-lime me-2"></i>Well-Maintained Courts</h5>
+            <p class="text-muted small mb-0">Professional shock-absorbing flooring and anti-glare LED lighting.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-clock text-teal me-2"></i>Flexible Playing Sessions</h5>
+            <p class="text-muted small mb-0">Morning, afternoon, and late-night sessions tailored to your schedule.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-people-group text-lime me-2"></i>Welcoming Sports Community
+            </h5>
+            <p class="text-muted small mb-0">Meet players of all skill levels in a friendly club atmosphere.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-crown text-teal me-2"></i>Membership Opportunities</h5>
+            <p class="text-muted small mb-0">Plans from ₹499/mo to ₹1,799/mo with priority court access.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="abt-mobile-why-card">
+            <h5 class="fw-bold mb-1"><i class="fa-solid fa-trophy text-lime me-2"></i>Tournament Experiences</h5>
+            <p class="text-muted small mb-0">Participate in sanctioned club leagues and seasonal championships.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 10: FINAL CTA – BE PART OF OUR STORY
+       ========================================================================= -->
+  <section class="abt-final-cta-section" id="about-final-cta">
+    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80"
+      alt="Badminton arena action" class="abt-final-bg" loading="lazy">
+    <div class="abt-final-overlay" aria-hidden="true"></div>
+
+    <div class="courtly-container position-relative z-2">
+      <div class="abt-final-card reveal-init">
+        <!-- Floating Racket & Ball Decorations -->
+        <div class="abt-final-float-left d-none d-md-block animate-shuttlecock" aria-hidden="true">
+          <i class="fa-solid fa-feather-pointed text-teal fs-2 opacity-75"></i>
+        </div>
+        <div class="abt-final-float-right d-none d-md-block animate-pingpong" aria-hidden="true">
+          <i class="fa-solid fa-table-tennis-paddle-ball text-lime fs-2 opacity-75"></i>
+        </div>
+
+        <span class="badge-sports-sub text-uppercase mb-3">BE PART OF OUR STORY</span>
+        <h2 class="abt-hero-heading text-white mb-3">YOUR NEXT CHAPTER STARTS ON THE COURT.</h2>
+        <p class="abt-hero-desc text-white-50 mx-auto mb-4">
+          Whether you're here to practise, compete or simply enjoy the game, there's always room for one more player.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="index.html#live-courts" class="btn-courtly-lime">
+            <span>Explore Our Courts</span>
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+          <button type="button" class="btn-courtly-outline text-white" data-bs-toggle="modal"
+            data-bs-target="#authModal" data-auth-mode="signup">
+            <i class="fa-solid fa-user-plus me-2 text-teal"></i>
+            <span>Become a Member</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       REUSABLE FOOTER CONTAINER (Hydrated by js/footer.js)
+       ========================================================================= -->
+  <footer id="app-footer" class="courtly-footer-wrapper"></footer>
+
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS (Shared with Home 1 & Home 2)
+       ========================================================================= -->
+
+  <!-- Quick Court / Pass Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold" id="bookingModalLabel">
+            <i class="fa-solid fa-calendar-check text-teal me-2"></i>Courtly Session Reservation
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <div class="p-3 rounded-3 mb-3"
+            style="background: rgba(40,125,222,0.12); border: 1px solid rgba(40,125,222,0.3);">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="small text-muted" id="modalCourtSport">Session Selection</span>
+              <span class="fw-bold text-lime" id="modalCourtPrice">Standard Rate</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-white mb-0" id="modalCourtName">Courtly Arena Pass</h4>
+          </div>
+
+          <form id="bookingModalForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Preferred Time Slot</label>
+              <select class="form-select courtly-form-control" id="modalSlotSelect">
+                <option value="06:00 AM">06:00 AM - 07:00 AM (Early Bird)</option>
+                <option value="08:00 AM">08:00 AM - 09:00 AM (Morning Peak)</option>
+                <option value="11:00 AM">11:00 AM - 12:00 PM (Midday)</option>
+                <option value="06:00 PM" selected>06:00 PM - 07:00 PM (Prime Evening)</option>
+                <option value="08:00 PM">08:00 PM - 09:00 PM (Late Night Match)</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Player Name</label>
+              <input type="text" class="form-control courtly-form-control" id="bookingPlayerName"
+                placeholder="e.g. Alex Morgan" value="Alex Morgan" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Email for Digital Gate QR</label>
+              <input type="email" class="form-control courtly-form-control" id="bookingPlayerEmail"
+                placeholder="athlete@example.com" value="alex.morgan@sports.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted">Gear Preference</label>
+              <select class="form-select courtly-form-control">
+                <option value="own">Bring Own Rackets & Shuttles (Free)</option>
+                <option value="hire">Pro Carbon Racket & Shuttle Pack (+ ₹150)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0 p-3 pt-0">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn-courtly-lime" id="confirmBookingBtn">
+            <span>Confirm & Receive QR</span>
+            <i class="fa-solid fa-qrcode ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Login / Signup) -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content courtly-modal-style">
+        <div class="modal-header courtly-modal-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill active"
+              id="tabAuthLogin">Login</button>
+            <button type="button" class="btn btn-sm btn-outline-info rounded-pill" id="tabAuthSignup">Signup</button>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body courtly-modal-body">
+          <form id="formAuthLogin">
+            <h4 class="fs-5 fw-bold mb-3">Welcome to Player Hub</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" value="player@courtly.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Password</label>
+              <input type="password" class="form-control courtly-form-control" value="••••••••••••" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3 small">
+              <label><input type="checkbox" checked> Remember me</label>
+              <a href="#reset" class="text-teal">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn-courtly-primary w-100">Sign In to Dashboard</button>
+          </form>
+
+          <form id="formAuthSignup" class="d-none">
+            <h4 class="fs-5 fw-bold mb-3">Join the Courtly Community</h4>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Full Athlete Name</label>
+              <input type="text" class="form-control courtly-form-control" placeholder="e.g. Jordan Lee" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Email Address</label>
+              <input type="email" class="form-control courtly-form-control" placeholder="jordan@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Choose Password</label>
+              <input type="password" class="form-control courtly-form-control" placeholder="Min. 8 characters" required>
+            </div>
+            <button type="submit" class="btn-courtly-lime w-100">Create Free Athlete Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="courtly-toast-container position-fixed bottom-0 end-0 p-3" id="courtly-toast-container"></div>
+
+  <!-- Bootstrap 5 JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Centralized Site Data -->
+  <script src="js/site-data.js"></script>
+
+  <!-- Reusable Components Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+
+  <!-- Core Animation & Modal Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- About Page Specific Interactive Script -->
+  <script src="js/about.js"></script>
+</body>
+
+</html>

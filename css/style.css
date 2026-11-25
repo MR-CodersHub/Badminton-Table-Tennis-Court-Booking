@@ -243,7 +243,7 @@
   --text-main: #1D2A3A;
   --text-heading: #0B1422;
   --text-muted: #5A6A80;
-  --text-dimmed: #8D9CAB;
+  --text-dimmed: #64748B;
   
   --border-subtle: rgba(16, 29, 50, 0.09);
   --border-medium: rgba(23, 76, 128, 0.18);
@@ -257,6 +257,67 @@
   --shadow-glow-blue: 0 0 30px rgba(40, 125, 222, 0.2);
 
   --grid-line: rgba(16, 29, 50, 0.04);
+}
+
+/* Keep fixed white labels readable on surfaces that switch to light mode. */
+[data-theme="light"] .hero-glass-card .text-white,
+[data-theme="light"] .tournament-countdown-panel .text-white,
+[data-theme="light"] .tournament-event-card .text-white,
+[data-theme="light"] .modal-content.courtly-modal-style .text-white {
+  color: var(--text-heading) !important;
+}
+
+[data-theme="light"] .event-date-badge {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .brand-badge {
+  color: #547A0E;
+}
+
+[data-theme="light"] .text-teal {
+  color: #087F6D !important;
+}
+
+[data-theme="light"] .text-lime {
+  color: #547A0E !important;
+}
+
+[data-theme="light"] .text-warning {
+  color: #8A4B08 !important;
+}
+
+[data-theme="light"] .text-info {
+  color: #087990 !important;
+}
+
+[data-theme="light"] .court-status-pill.text-teal {
+  color: var(--color-teal) !important;
+}
+
+[data-theme="light"] .court-status-pill.text-lime {
+  color: var(--color-lime) !important;
+}
+
+[data-theme="light"] .final-cta-section .text-teal {
+  color: var(--color-teal) !important;
+}
+
+[data-theme="light"] .final-cta-section .text-lime {
+  color: var(--color-lime) !important;
+}
+
+[data-theme="light"] .final-cta-section .text-warning {
+  color: var(--color-warning) !important;
+}
+
+[data-theme="light"] .court-card .court-sport-name,
+[data-theme="light"] .h2-editorial-tag {
+  color: #087F6D;
+}
+
+[data-theme="light"] .badge-lime-pill {
+  color: #547A0E;
 }
 
 /* --------------------------------------------------------------------------
@@ -367,6 +428,137 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
+/* Colour Utility Helpers (used across both Home 1 and Home 2) */
+.text-teal  { color: var(--color-teal)  !important; }
+.text-lime  { color: var(--color-lime)  !important; }
+.text-navy  { color: var(--color-deep-navy) !important; }
+.bg-teal    { background-color: var(--color-teal) !important; }
+.bg-lime    { background-color: var(--color-lime) !important; }
+.bg-navy    { background-color: var(--color-deep-navy) !important; }
+
+/* Custom section background (replaces Bootstrap bg-secondary conflict) */
+.bg-section-alt { background: var(--bg-secondary); }
+
+/* Low-opacity sports background photo for Membership / Pricing sections */
+.membership-bg-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.membership-bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] .membership-bg-photo {
+  opacity: 0.08;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar — Light Mode: transparent (un-scrolled) state over dark hero images
+   All page heroes use dark overlays regardless of theme, so nav text must
+   remain light/white until the navbar gains its glass background on scroll.
+   -------------------------------------------------------------------------- */
+
+/* When NOT scrolled in light mode → nav links must be light (hero is dark) */
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-nav-menu .nav-link {
+  color: rgba(247, 249, 252, 0.82);
+}
+
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-nav-menu .nav-link:hover {
+  color: var(--color-teal);
+}
+
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-nav-menu .nav-link.active {
+  color: #ffffff;
+}
+
+/* Brand name stays readable */
+[data-theme="light"] .courtly-navbar:not(.scrolled) .brand-name {
+  color: #ffffff;
+}
+
+/* Icon buttons: keep visible over dark hero */
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-btn-icon {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-teal);
+  color: var(--color-teal);
+}
+
+/* Profile button: name text visible */
+[data-theme="light"] .courtly-navbar:not(.scrolled) .profile-name {
+  color: rgba(247, 249, 252, 0.90);
+}
+
+[data-theme="light"] .courtly-navbar:not(.scrolled) .dropdown-arrow {
+  color: rgba(247, 249, 252, 0.70);
+}
+
+/* Profile button container border */
+[data-theme="light"] .courtly-navbar:not(.scrolled) .courtly-profile-btn {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Once scrolled, glass nav kicks in — use normal light-mode palette */
+[data-theme="light"] .courtly-navbar.scrolled .courtly-nav-menu .nav-link {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .courtly-nav-menu .nav-link:hover {
+  color: var(--color-electric-blue);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .courtly-nav-menu .nav-link.active {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .brand-name {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .courtly-btn-icon {
+  background: var(--bg-card);
+  border-color: var(--border-subtle);
+  color: var(--text-main);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .profile-name {
+  color: var(--text-main);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .dropdown-arrow {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .courtly-navbar.scrolled .courtly-profile-btn {
+  border-color: var(--border-subtle);
+  background: var(--bg-card);
+}
+
+/* Mobile drawer always uses theme variables (has its own background) */
+[data-theme="light"] .mobile-nav-link {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .mobile-nav-link:hover,
+[data-theme="light"] .mobile-nav-link.active {
+  color: var(--color-electric-blue);
+}
+
 /* Section Header Shared Block */
 .section-heading-wrap {
   margin-bottom: 3.5rem;
@@ -471,6 +663,10 @@ img {
   transition: all var(--transition-normal);
 }
 
+.btn-courtly-outline.text-white {
+  color: #FFFFFF !important;
+}
+
 .btn-courtly-outline:hover {
   background: var(--bg-card-hover);
   border-color: var(--color-teal);
@@ -534,16 +730,15 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 40px;
 }
 
-.logo-pulse-glow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(32, 201, 166, 0.4) 0%, transparent 70%);
-  pointer-events: none;
-  animation: pulseGlow 3.5s infinite;
+.brand-logo-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
 }
 
 /* Nav Menu Links */
@@ -1130,27 +1325,29 @@ img {
   margin-left: 0;
 }
 
-/* Floating Shuttlecock & Ball Vector SVGs */
+/* Floating Badminton Racket & Table Tennis Bat SVGs */
 .floating-svg-shuttlecock {
   position: absolute;
-  top: 15%;
-  left: -40px;
-  width: 68px;
-  height: 68px;
+  top: 12%;
+  left: -45px;
+  width: 90px;
+  height: 105px;
   z-index: 3;
   pointer-events: none;
-  filter: drop-shadow(0 10px 20px rgba(32, 201, 166, 0.45));
+  filter: drop-shadow(0 10px 25px rgba(32, 201, 166, 0.4));
+  opacity: 0.9;
 }
 
 .floating-svg-pingpong {
   position: absolute;
-  bottom: -20px;
-  right: 15%;
-  width: 44px;
-  height: 44px;
+  bottom: -15px;
+  right: 12%;
+  width: 75px;
+  height: 82px;
   z-index: 3;
   pointer-events: none;
-  filter: drop-shadow(0 8px 16px rgba(198, 243, 107, 0.5));
+  filter: drop-shadow(0 8px 20px rgba(198, 243, 107, 0.45));
+  opacity: 0.9;
 }
 
 /* Hero Scroll Bob Indicator */
@@ -1448,6 +1645,34 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.court-card .court-book-now-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.25rem;
+  min-height: 2.75rem;
+  width: auto;
+  max-width: 100%;
+  margin-left: auto;
+  padding: 0.65rem 0.9rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .court-card .court-price-row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .court-card .court-price-row {
+    flex-wrap: wrap;
+  }
 }
 
 .court-price-val {
@@ -1790,6 +2015,32 @@ img {
 .journey-step-card.active .journey-step-desc {
   color: #FFFFFF !important;
   font-weight: 500;
+}
+
+[data-theme="light"] .journey-timeline-line {
+  background: #94A3B8;
+}
+
+[data-theme="light"] .journey-timeline-progress {
+  background: linear-gradient(90deg, #174C80 0%, #087F6D 50%, #547A0E 100%);
+  box-shadow: 0 0 12px rgba(8, 127, 109, 0.25);
+}
+
+[data-theme="light"] .journey-step-card.active .journey-step-title {
+  color: #547A0E !important;
+}
+
+[data-theme="light"] .journey-step-card.active .journey-step-desc {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .journey-step-card.completed .journey-step-title,
+[data-theme="light"] .journey-step-card.completed .journey-step-number-wrap {
+  color: #087F6D;
+}
+
+[data-theme="light"] .journey-step-card.active .step-pulse-ring {
+  border-color: #547A0E;
 }
 
 /* --------------------------------------------------------------------------

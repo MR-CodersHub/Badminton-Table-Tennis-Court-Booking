@@ -731,3 +731,432 @@
     padding: 3rem 1.5rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Mobile: Player Spotlight Card overflow fix
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .h2-player-spotlight-card {
+    position: static;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    margin-top: 1rem;
+    max-width: 100%;
+    animation: none;
+  }
+
+  .h2-floating-stat-badge {
+    position: static;
+    margin-top: 0.75rem;
+    right: auto;
+    top: auto;
+    display: inline-flex !important;
+  }
+
+  .h2-hero-visual-frame {
+    flex-direction: column;
+    min-height: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Light Mode: Home 2 text visibility overrides
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .h2-testimonial-text {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .spotlight-title {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .spotlight-stat-item small {
+  color: var(--text-dimmed);
+}
+
+[data-theme="light"] .spotlight-stat-item strong {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .h2-feature-pill-item {
+  color: var(--text-main);
+}
+
+[data-theme="light"] .h2-dashboard-main-frame {
+  background: #f0f4f8;
+  border-color: rgba(40, 125, 222, 0.3);
+}
+
+[data-theme="light"] .mockup-card-slot {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(16, 29, 50, 0.1);
+}
+
+[data-theme="light"] .mockup-card-slot h5,
+[data-theme="light"] .mockup-card-slot h6 {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .h2-player-spotlight-card {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .h2-floating-stat-badge {
+  background: rgba(240, 244, 248, 0.92);
+}
+
+[data-theme="light"] .h2-floating-stat-badge strong {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .trial-check-item {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .trial-info-panel {
+  background: rgba(240, 244, 248, 0.85);
+  border-color: rgba(16, 29, 50, 0.12);
+}
+
+[data-theme="light"] .h2-bento-card {
+  background: var(--bg-card);
+}
+
+[data-theme="light"] .bento-desc {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .h2-editorial-testimonial-stage {
+  background: var(--bg-card);
+}
+
+[data-theme="light"] .player-experience-showcase-box {
+  background: var(--bg-card);
+}
+
+[data-theme="light"] .player-tab-btn {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .h2-pricing-card {
+  background: var(--bg-card);
+}
+
+[data-theme="light"] .plan-tier-name {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .h2-pricing-card .plan-price-wrap span:not(.plan-price-period) {
+  color: var(--text-heading);
+}
+
+[data-theme="light"] .h2-hero-section .text-white,
+[data-theme="light"] .player-experience-showcase-box .text-white,
+[data-theme="light"] .h2-dashboard-section .text-white,
+[data-theme="light"] .h2-pricing-card .text-white {
+  color: var(--text-heading) !important;
+}
+
+[data-theme="light"] .spotlight-badge,
+[data-theme="light"] .h2-bento-card:not(.card-featured-img) .h2-bento-reveal-text {
+  color: #087F6D;
+}
+
+[data-theme="light"] .h2-final-card .text-teal {
+  color: var(--color-teal) !important;
+}
+
+[data-theme="light"] .h2-final-card .text-lime {
+  color: var(--color-lime) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   COURTLY ATHLETE HUB WIDGET  –  home2.html dashboard section
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Outer shell */
+.ah-widget {
+  background: #0d1526;
+  border: 1px solid rgba(40, 125, 222, 0.28);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(32, 201, 166, 0.08),
+    0 24px 72px rgba(0, 0, 0, 0.6),
+    0 4px 24px rgba(40, 125, 222, 0.18);
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+/* subtle animated gradient glow behind the widget */
+.ah-widget::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(40, 125, 222, 0.14) 0%,
+    rgba(32, 201, 166, 0.06) 50%,
+    rgba(198, 243, 107, 0.06) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Title bar */
+.ah-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(16, 29, 50, 0.9);
+  border-bottom: 1px solid rgba(40, 125, 222, 0.18);
+  position: relative;
+  z-index: 1;
+}
+
+/* macOS-style traffic lights */
+.ah-traffic-lights {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-shrink: 0;
+}
+.ah-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.ah-dot-red    { background: #ff5f57; }
+.ah-dot-yellow { background: #febc2e; }
+.ah-dot-green  { background: #28c840; }
+
+.ah-title-text {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c8d8f0;
+  flex: 1;
+  letter-spacing: 0.01em;
+}
+
+.ah-live-clock {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  color: #28c840;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Body padding */
+.ah-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Top row: two side-by-side cards */
+.ah-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Base card */
+.ah-card {
+  background: #111e35;
+  border: 1px solid rgba(40, 125, 222, 0.2);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.ah-card:hover {
+  border-color: rgba(32, 201, 166, 0.4);
+  box-shadow: 0 6px 24px rgba(32, 201, 166, 0.1);
+}
+
+/* Match card accent */
+.ah-card-match {
+  border-color: rgba(40, 125, 222, 0.3);
+}
+
+/* Membership card accent */
+.ah-card-membership {
+  border-color: rgba(32, 201, 166, 0.25);
+}
+
+/* Tournament row card */
+.ah-card-tournament {
+  border-color: rgba(198, 243, 107, 0.2);
+}
+
+/* Top row inside cards */
+.ah-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Pills */
+.ah-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 3px 10px;
+  display: inline-block;
+}
+.ah-pill-blue {
+  background: #287DDE;
+  color: #fff;
+}
+.ah-pill-dark-green {
+  background: rgba(32, 201, 166, 0.18);
+  color: #20C9A6;
+  border: 1px solid rgba(32, 201, 166, 0.35);
+}
+
+/* Time / price label */
+.ah-match-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #20C9A6;
+}
+.ah-membership-price {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f0f4ff;
+}
+
+/* Card title */
+.ah-card-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+/* Sub text */
+.ah-card-sub {
+  font-size: 0.75rem;
+  color: #7a95b8;
+  margin: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* QR pass box */
+.ah-pass-box {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1.5px dashed rgba(198, 243, 107, 0.45);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #C6F36B;
+  background: rgba(198, 243, 107, 0.05);
+}
+.ah-pass-box i {
+  font-size: 1rem;
+  color: #C6F36B;
+}
+
+/* Progress bar */
+.ah-progress-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.ah-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #20C9A6 0%, #287DDE 100%);
+  border-radius: 10px;
+  animation: ah-progress-anim 1.6s ease both;
+}
+@keyframes ah-progress-anim {
+  from { width: 0 !important; }
+}
+
+/* Tournament label */
+.ah-confirmed-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f5a623;
+  display: block;
+  margin-bottom: 4px;
+}
+.ah-tournament-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Match date button */
+.ah-match-btn {
+  background: #20C9A6;
+  color: #0a1220;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: default;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+}
+.ah-match-btn:hover {
+  background: #17b094;
+}
+
+/* ── Responsive: stack cards on small viewports ── */
+@media (max-width: 520px) {
+  .ah-row {
+    grid-template-columns: 1fr;
+  }
+  .ah-card-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ah-card-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Light theme subtle adjustments */
+[data-theme="light"] .ah-widget {
+  background: #1a2742;
+}
+[data-theme="light"] .ah-card {
+  background: #162038;
+}
+[data-theme="light"] .ah-titlebar {
+  background: rgba(10, 20, 40, 0.95);
+}

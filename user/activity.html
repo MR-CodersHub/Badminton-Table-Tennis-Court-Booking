@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <title>COURTLY Player - My Activity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/user-animations.css">
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" href="css/user-responsive.css">
+  <style>
+    /* ── Activity-specific chart styles ── */
+    .user-chart-wrap { background: var(--user-card-bg); border: 1px solid var(--user-card-border); border-radius: 1rem; padding: 1.5rem; }
+    .user-chart-title { font-family: 'Sora', sans-serif; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--user-muted); margin-bottom: 1.25rem; }
+    .user-chart-grid { display: flex; align-items: flex-end; gap: .6rem; height: 140px; padding-bottom: .25rem; }
+    .user-bar-col { display: flex; flex-direction: column; align-items: center; gap: .25rem; flex: 1; }
+    .user-bar { width: 100%; border-radius: .4rem .4rem 0 0; transition: transform .2s; cursor: default; }
+    .user-bar:hover { transform: scaleY(1.04); transform-origin: bottom; }
+    .user-bar.badminton { background: linear-gradient(180deg, var(--user-accent-blue) 0%, #174C80 100%); }
+    .user-bar.tabletennis { background: linear-gradient(180deg, var(--user-accent-teal) 0%, #0d8a74 100%); }
+    .user-bar-label { font-size: .65rem; color: var(--user-muted); text-align: center; }
+    .user-chart-legend { display: flex; gap: 1.25rem; margin-top: .75rem; }
+    .user-legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: .3rem; }
+    .user-legend-dot.badminton { background: var(--user-accent-blue); }
+    .user-legend-dot.tabletennis { background: var(--user-accent-teal); }
+
+    /* Weekly strip */
+    .user-week-strip { display: flex; gap: .5rem; }
+    .user-week-day { flex: 1; background: var(--user-card-bg); border: 1px solid var(--user-card-border); border-radius: .75rem; padding: .75rem .5rem; text-align: center; }
+    .user-week-day.active { border-color: var(--user-accent-blue); background: rgba(40, 125, 222, .08); }
+    .user-week-day .wd-name { font-size: .6rem; color: var(--user-muted); text-transform: uppercase; letter-spacing: .05em; }
+    .user-week-day .wd-hrs { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--user-text); }
+    .user-week-day .wd-sport { font-size: .58rem; color: var(--user-muted); margin-top: .15rem; }
+  </style>
+</head>
+<body data-user-page="activity" data-page-title="My Activity">
+  <div class="user-shell">
+    <div id="userSidebarMount"></div>
+    <div class="user-main-wrap">
+      <div id="userTopbarMount"></div>
+
+      <main class="user-content">
+        <!-- Page Header -->
+        <div class="mb-4 user-animate-in">
+          <span class="user-demo-pill mb-1">ILLUSTRATIVE DEMO DATA</span>
+          <h1 class="h3 fw-bold mb-1">MY ACTIVITY</h1>
+          <p class="small text-muted mb-0">Track your court sessions, playing hours, and sport progress.</p>
+        </div>
+
+        <!-- KPI Cards -->
+        <section class="row g-3 mb-4" id="actKpiCards"></section>
+
+        <!-- Monthly Chart + Weekly Overview -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-8">
+            <div class="user-chart-wrap user-animate-in">
+              <div class="user-chart-title">Monthly Sessions — 2026</div>
+              <div class="user-chart-grid" id="actMonthlyChart"></div>
+              <div class="user-chart-legend">
+                <span class="small"><span class="user-legend-dot badminton"></span>Badminton</span>
+                <span class="small"><span class="user-legend-dot tabletennis"></span>Table Tennis</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="user-chart-wrap h-100 user-animate-in">
+              <div class="user-chart-title">This Week</div>
+              <div class="user-week-strip" id="actWeekStrip"></div>
+              <div class="mt-3 small text-muted text-center">Nov 18 – Nov 24, 2026 (Demo)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Sessions Timeline -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-6">
+            <div class="user-chart-wrap user-animate-in">
+              <div class="user-chart-title">Recent Sessions</div>
+              <div id="actTimeline"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="user-chart-wrap user-animate-in">
+              <div class="user-chart-title">Sport Breakdown</div>
+              <div id="actSportBreakdown"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking History Table -->
+        <div class="user-chart-wrap user-animate-in mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="user-chart-title mb-0">Booking History</div>
+            <span class="user-demo-pill">DEMO RECORDS</span>
+          </div>
+          <div class="table-responsive">
+            <table class="user-table w-100">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Court</th>
+                  <th>Sport</th>
+                  <th>Date &amp; Slot</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="actBookingTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tournament History -->
+        <div class="user-chart-wrap user-animate-in">
+          <div class="user-chart-title mb-3">Tournament Participation</div>
+          <div class="row g-3" id="actTournHistory"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/site-data.js"></script>
+  <script src="../js/contact-data.js"></script>
+  <script src="js/user-sidebar.js"></script>
+  <script src="js/user-activity.js"></script>
+</body>
+</html>

@@ -156,17 +156,21 @@
     renderReview(0);
   }
 
-  // 3. 3D Dashboard Mockup Interactive Simulation (Section 5)
+  // 3. Dashboard / Athlete Hub clock (Section 5)
   function initDashboardMockup() {
+    // Legacy clock element (kept for compatibility)
     const liveClockEl = document.getElementById('dashboardLiveClock');
-    if (liveClockEl) {
-      function updateTime() {
-        const now = new Date();
-        liveClockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      }
-      updateTime();
-      setInterval(updateTime, 1000);
+    // Athlete Hub live clock
+    const ahClockEl   = document.getElementById('ah-live-clock');
+
+    function updateTime() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      if (liveClockEl) liveClockEl.textContent = timeStr;
+      if (ahClockEl)   ahClockEl.textContent   = timeStr;
     }
+    updateTime();
+    setInterval(updateTime, 1000);
   }
 
   // Initialize all Home 2 components
