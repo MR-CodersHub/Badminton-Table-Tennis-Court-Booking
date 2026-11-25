@@ -1,0 +1,388 @@
+/* ==========================================================================
+   COURTLY - RESPONSIVE STYLESHEET
+   Flawless execution across 360px, 375px, 390px, 430px, 768px, 1024px, 1280px, 1440px, 1920px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Ultra-Wide Displays (1920px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1920px) {
+  .courtly-container {
+    max-width: 1540px;
+  }
+
+  .hero-heading {
+    font-size: 4.5rem;
+  }
+
+  .hero-main-img {
+    height: 580px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Desktop Breakpoint (1280px - 1440px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  .hero-heading {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
+  
+  .section-title-main {
+    font-size: 2.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Tablet & Small Laptop (992px - 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-section {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .bento-card.item-featured {
+    grid-column: span 12;
+  }
+
+  .bento-card.item-medium-1,
+  .bento-card.item-medium-2 {
+    grid-column: span 6;
+  }
+
+  .bento-card.item-small-1,
+  .bento-card.item-small-2,
+  .bento-card.item-small-3 {
+    grid-column: span 4;
+  }
+
+  .journey-timeline-line {
+    display: none;
+  }
+
+  .membership-card.pro-plan {
+    transform: none;
+  }
+
+  .membership-card.pro-plan:hover {
+    transform: translateY(-8px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Tablet Portrait (768px - 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .hero-heading {
+    font-size: 2.75rem;
+  }
+
+  .hero-visual-composition {
+    margin-top: 3rem;
+    min-height: auto;
+  }
+
+  .hero-main-img {
+    height: 420px;
+  }
+
+  .hero-glass-card-1 {
+    left: 0;
+    bottom: -15px;
+  }
+
+  .hero-glass-card-2 {
+    right: 0;
+  }
+
+  .bento-card.item-medium-1,
+  .bento-card.item-medium-2,
+  .bento-card.item-small-1,
+  .bento-card.item-small-2,
+  .bento-card.item-small-3 {
+    grid-column: span 6;
+  }
+
+  .sport-panel {
+    min-height: 420px;
+    margin-bottom: 1.5rem;
+  }
+
+  .countdown-digit {
+    font-size: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile Devices (360px - 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-title-main {
+    font-size: 1.95rem;
+  }
+
+  .section-subtitle-main {
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-heading {
+    font-size: 2.25rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-courtly-primary,
+  .btn-courtly-lime,
+  .btn-courtly-outline {
+    width: 100%;
+  }
+
+  .hero-feature-pills {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .hero-main-image-wrap {
+    width: 100%;
+  }
+
+  .hero-main-img {
+    height: 320px;
+  }
+
+  .hero-rotating-badge {
+    width: 95px;
+    height: 95px;
+    top: -15px;
+    right: -10px;
+  }
+
+  .badge-center-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .floating-svg-shuttlecock,
+  .floating-svg-pingpong {
+    display: none;
+  }
+
+  .hero-glass-card-1 {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-glass-card-2 {
+    display: none;
+  }
+
+  .stat-count-number {
+    font-size: 2rem;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card.item-featured,
+  .bento-card.item-medium-1,
+  .bento-card.item-medium-2,
+  .bento-card.item-small-1,
+  .bento-card.item-small-2,
+  .bento-card.item-small-3 {
+    grid-column: span 1;
+  }
+
+  .countdown-box-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .final-cta-card-box {
+    padding: 3rem 1.5rem;
+  }
+
+  .final-cta-heading {
+    font-size: 2.2rem;
+  }
+
+  .final-cta-btn-group {
+    flex-direction: column;
+  }
+
+  .footer-newsletter-banner {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .newsletter-form .btn-newsletter {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Compact Mobile (360px - 430px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 430px) {
+  .courtly-container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .courtly-btn-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .courtly-profile-btn {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .profile-name {
+    display: none !important;
+  }
+
+  .timeslot-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. RTL Direction Adjustments
+   -------------------------------------------------------------------------- */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .me-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .me-3 {
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+
+[dir="rtl"] .ms-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .courtly-profile-dropdown .courtly-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .newsletter-form .input-wrap .input-icon {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .newsletter-form .newsletter-input {
+  padding: 0.85rem 2.75rem 0.85rem 1rem;
+}
+
+[dir="rtl"] .court-status-pill {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .court-card-badge {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .event-date-badge {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .hero-rotating-badge {
+  right: auto;
+  left: -25px;
+}
+
+[dir="rtl"] .hero-glass-card-1 {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .hero-glass-card-2 {
+  right: auto;
+  left: -35px;
+}
+
+[dir="rtl"] .floating-svg-shuttlecock {
+  left: auto;
+  right: -40px;
+}
+
+[dir="rtl"] .floating-svg-pingpong {
+  right: auto;
+  left: 15%;
+}
+
+[dir="rtl"] .footer-link:hover, 
+[dir="rtl"] .footer-link.active {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+[dir="rtl"] .item-icon-box {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}

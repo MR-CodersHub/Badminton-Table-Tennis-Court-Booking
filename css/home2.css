@@ -1,0 +1,733 @@
+/* ==========================================================================
+   COURTLY - HOME 2 SPECIFIC STYLESHEET
+   Editorial Sports Magazine Aesthetic • Dynamic Hero • Layered Dashboard Mockup
+   Theme: "TRAIN HARD. PLAY SMART. LIVE THE GAME."
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Home 2 Hero Section (Editorial Asymmetric Composition)
+   -------------------------------------------------------------------------- */
+.h2-hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 8.5rem;
+  padding-bottom: 5.5rem;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 15% 20%, rgba(32, 201, 166, 0.15) 0%, transparent 45%),
+              radial-gradient(circle at 85% 80%, rgba(40, 125, 222, 0.18) 0%, transparent 50%),
+              var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Oversized Watermark Editorial Typography */
+.h2-hero-watermark-text {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 14vw, 12rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.025);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .h2-hero-watermark-text {
+  color: rgba(16, 29, 50, 0.035);
+}
+
+.h2-hero-heading {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.h2-hero-desc {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #CBD5E1;
+  max-width: 580px;
+  margin-bottom: 2.25rem;
+}
+
+[data-theme="light"] .h2-hero-desc {
+  color: var(--text-muted);
+}
+
+/* Layered Image Mask & Spotlight */
+.h2-hero-visual-frame {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h2-hero-img-container {
+  position: relative;
+  width: 92%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid var(--border-medium);
+}
+
+.h2-hero-img-container img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.h2-hero-img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Player Spotlight Floating Glass Panel */
+.h2-player-spotlight-card {
+  position: absolute;
+  bottom: -25px;
+  left: -25px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid var(--color-lime);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  max-width: 320px;
+  z-index: 3;
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+
+[dir="rtl"] .h2-player-spotlight-card {
+  left: auto;
+  right: -25px;
+}
+
+.spotlight-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-lime);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.spotlight-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spotlight-stat-item small {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  display: block;
+}
+
+.spotlight-stat-item strong {
+  font-size: 0.82rem;
+  color: #F8FAFC;
+}
+
+/* Floating Skill Badge Right */
+.h2-floating-stat-badge {
+  position: absolute;
+  top: 10%;
+  right: -25px;
+  background: rgba(16, 29, 50, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-teal);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  z-index: 3;
+  animation: floatFast 5s ease-in-out infinite;
+}
+
+[dir="rtl"] .h2-floating-stat-badge {
+  right: auto;
+  left: -25px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section 2: Alternating Editorial Sports Experience
+   -------------------------------------------------------------------------- */
+.h2-sports-experience-section {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.h2-editorial-sport-row {
+  margin-bottom: 6rem;
+}
+
+.h2-editorial-sport-row:last-child {
+  margin-bottom: 0;
+}
+
+.h2-editorial-img-wrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  height: 480px;
+}
+
+.h2-editorial-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.h2-editorial-sport-row:hover .h2-editorial-img-wrap img {
+  transform: scale(1.05);
+}
+
+.h2-editorial-content {
+  padding: 1.5rem;
+}
+
+.h2-editorial-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.h2-editorial-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.h2-editorial-desc {
+  font-size: 1.1rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+[data-theme="light"] .h2-editorial-desc {
+  color: var(--text-muted);
+}
+
+.h2-features-pill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.h2-feature-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #F1F5F9;
+}
+
+[data-theme="light"] .h2-feature-pill-item {
+  color: var(--text-main);
+}
+
+.h2-feature-pill-item i {
+  color: var(--color-teal);
+}
+
+/* --------------------------------------------------------------------------
+   3. Section 3: Features That Elevate Your Game (Interactive Bento)
+   -------------------------------------------------------------------------- */
+.h2-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.h2-bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(12px);
+}
+
+.h2-bento-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-card);
+}
+
+.h2-bento-card.card-featured {
+  grid-column: span 7;
+  background: linear-gradient(135deg, rgba(23, 76, 128, 0.35) 0%, var(--bg-card) 65%);
+  min-height: 360px;
+}
+
+.h2-bento-card.card-featured-img {
+  grid-column: span 5;
+  padding: 0;
+  min-height: 360px;
+}
+
+.h2-bento-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.h2-bento-card.card-featured-img:hover .h2-bento-img-bg {
+  transform: scale(1.06);
+}
+
+.h2-bento-overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 20, 34, 0.95) 80%);
+}
+
+.h2-bento-card.card-small {
+  grid-column: span 3;
+}
+
+.h2-bento-card.card-medium {
+  grid-column: span 6;
+}
+
+.h2-bento-reveal-text {
+  font-size: 0.85rem;
+  color: var(--color-lime);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.h2-bento-card:hover .h2-bento-reveal-text {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section 4: Who Is It For? (Dynamic Player-Type Selector)
+   -------------------------------------------------------------------------- */
+.h2-player-selector-section {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.player-type-nav-tabs {
+  display: flex;
+  gap: 0.85rem;
+  border: none;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.player-tab-btn {
+  flex: 1;
+  min-width: 170px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+}
+
+[dir="rtl"] .player-tab-btn {
+  text-align: right;
+}
+
+.player-tab-num {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-dimmed);
+  margin-bottom: 0.35rem;
+}
+
+.player-tab-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.player-tab-btn:hover {
+  border-color: var(--color-teal);
+  transform: translateY(-3px);
+}
+
+.player-tab-btn.active {
+  background: linear-gradient(135deg, rgba(32, 201, 166, 0.15) 0%, rgba(40, 125, 222, 0.15) 100%);
+  border-color: var(--color-lime);
+  box-shadow: 0 8px 24px rgba(198, 243, 107, 0.2);
+}
+
+.player-tab-btn.active .player-tab-num {
+  color: var(--color-lime);
+}
+
+.player-tab-btn.active .player-tab-name {
+  color: #FFFFFF;
+}
+
+/* Dynamic Showcase Box */
+.player-experience-showcase-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.player-showcase-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.player-showcase-content {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.player-spec-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+}
+
+.player-spec-label {
+  width: 160px;
+  font-weight: 700;
+  color: var(--color-teal);
+  flex-shrink: 0;
+}
+
+.player-spec-value {
+  color: #F1F5F9;
+}
+
+[data-theme="light"] .player-spec-value {
+  color: var(--text-heading);
+}
+
+/* --------------------------------------------------------------------------
+   5. Section 5: Layered 3D Dashboard Mockup
+   -------------------------------------------------------------------------- */
+.h2-dashboard-section {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.h2-dashboard-stage {
+  position: relative;
+  perspective: 1200px;
+  padding: 2rem 0;
+}
+
+.h2-dashboard-main-frame {
+  background: #0E1726;
+  border: 1.5px solid rgba(40, 125, 222, 0.4);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 50px rgba(40, 125, 222, 0.15);
+  padding: 2rem;
+  transform: rotateX(6deg) rotateY(-4deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.h2-dashboard-main-frame:hover {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.mockup-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.mockup-dot-group {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mockup-dot.red { background: #FF5F56; }
+.mockup-dot.yellow { background: #FFBD2E; }
+.mockup-dot.green { background: #27C93F; }
+
+.mockup-card-slot {
+  background: rgba(16, 29, 50, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.floating-mockup-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--color-lime);
+  color: var(--color-deep-navy);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(198, 243, 107, 0.4);
+  z-index: 4;
+}
+
+/* --------------------------------------------------------------------------
+   6. Section 6: Editorial Membership Layout
+   -------------------------------------------------------------------------- */
+.h2-pricing-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.h2-pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-teal);
+  box-shadow: var(--shadow-card);
+}
+
+.h2-pricing-card.featured-pro {
+  background: linear-gradient(180deg, rgba(23, 76, 128, 0.4) 0%, var(--bg-card) 60%);
+  border-color: var(--color-lime);
+  box-shadow: 0 15px 45px rgba(198, 243, 107, 0.18);
+  transform: scale(1.04);
+}
+
+.h2-pricing-card.featured-pro:hover {
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 20px 50px rgba(198, 243, 107, 0.28);
+}
+
+.h2-popular-pill {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-lime);
+  color: var(--color-deep-navy);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 1.25rem;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   7. Section 7: Editorial Testimonials
+   -------------------------------------------------------------------------- */
+.h2-editorial-testimonial-stage {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.h2-quote-large-icon {
+  font-size: 3.5rem;
+  color: var(--color-teal);
+  opacity: 0.35;
+  margin-bottom: 1rem;
+}
+
+.h2-testimonial-text {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  font-style: italic;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section 8: Demo & Trial Experience Section
+   -------------------------------------------------------------------------- */
+.h2-trial-section {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+  background: var(--color-dark-bg);
+}
+
+.h2-trial-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.h2-trial-card-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(16, 29, 50, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(32, 201, 166, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.trial-info-panel {
+  background: rgba(11, 20, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.trial-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #F8FAFC;
+  margin-bottom: 0.75rem;
+}
+
+.trial-check-item:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Section 9: Final Call to Action
+   -------------------------------------------------------------------------- */
+.h2-final-cta-section {
+  background: var(--bg-primary);
+  position: relative;
+  padding: 6.5rem 0;
+  overflow: hidden;
+}
+
+.h2-final-card {
+  background: linear-gradient(135deg, rgba(23, 76, 128, 0.5) 0%, rgba(16, 29, 50, 0.95) 100%);
+  border: 1.5px solid var(--color-teal);
+  border-radius: var(--radius-xl);
+  padding: 4.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .h2-bento-card.card-featured,
+  .h2-bento-card.card-featured-img,
+  .h2-bento-card.card-small,
+  .h2-bento-card.card-medium {
+    grid-column: span 12;
+  }
+
+  .h2-dashboard-main-frame {
+    transform: none !important;
+  }
+
+  .h2-pricing-card.featured-pro {
+    transform: none;
+  }
+
+  .h2-pricing-card.featured-pro:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .h2-hero-desc {
+    font-size: 1.05rem;
+  }
+
+  .player-type-nav-tabs {
+    flex-wrap: nowrap;
+  }
+
+  .player-showcase-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .h2-trial-card-box,
+  .h2-final-card {
+    padding: 3rem 1.5rem;
+  }
+}
